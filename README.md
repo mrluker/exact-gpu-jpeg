@@ -92,6 +92,20 @@ When and why it pays, and what it guarantees: [Decode the same file again](docs/
 
 ![Decoding the same file again: for 12 camera photos (30 MP), a normal decode 13.1 ms, from the UnHuff copy with check="light" 4.1 ms (3.2x faster), with check="full" (the default) 18.3 ms; for 14 public-set photos 4.2, 1.4 and 5.5 ms.](docs/images/repeat-cache.png)
 
+**4. Routing: GPU, CPU, or both.** exact-gpu-jpeg picks a route for every call by itself: one small image (below
+a size it measures once on each machine, `cpu_below`) is decoded by libjpeg-turbo on the CPU, which is faster for
+it; a file the GPU path cannot reproduce exactly goes to libjpeg-turbo too; everything else runs on the GPU, and a
+list is decoded as one GPU batch. Every route gives the same bytes. A program can also split a stream of files
+between GPU threads and libjpeg-turbo threads. On this PC that paid for small and mid-size images (1.46x two GPU
+threads alone at 2 MP, 1.09x at 6 MP, 1.06x on 30 MP camera photos) and not at 12 and 24 MP (0.97x and 0.95x).
+0.1.0 does not make this split by itself; how to: [Decode many files in one call](docs/batches.md). For encodes, an
+exact split (Pillow on the CPU threads) did not pay.
+
+![Routing in exact-gpu-jpeg: on every call the library sends one small image, or a file the GPU cannot reproduce exactly, to libjpeg-turbo on the CPU, and everything else to the GPU; a program can also split a stream between 2 GPU threads and libjpeg-turbo threads, which on this PC paid at 2 and 6 MP and on 30 MP photos and not at 12 and 24 MP.](docs/images/routing.svg)
+
+![Decoding a stream on the GPU and the CPU together, images per second, all bars from one run: at 2 MP 2 GPU threads 578, 8 CPU threads 571, 2 GPU threads plus 6 CPU threads 842 (1.46x); at 24 MP 194, 44.9 and 185 at best (slower than the GPU alone).](docs/images/decode-hybrid.png)
+<!-- numbers: bench/results/20261119 (hybrid_throughput, hybrid_encode); routes: docs/exactness.md, docs/small-images.md -->
+
 **Where it loses, or is unproven.**
 
 - **One small image at a time.** At 0.25 MP one call per image does 887 images a second, against 1,122 for

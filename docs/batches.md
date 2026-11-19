@@ -87,6 +87,12 @@ win; at 0.25 MP it takes batches of 16 (4,124) to beat 8 CPU threads, and from 0
 GTX 1070 + i7-6700, Windows 10: [benchmarks](benchmarks.md#batches).
 <!-- numbers: bench/results/20261118/batch.json -->
 
+Both routes give the same bytes, so a program may also let libjpeg-turbo CPU threads
+(`simplejpeg.decode_jpeg(data, colorspace="RGB", fastdct=False, fastupsample=False)`) take files from the same queue as
+a few threads calling `egj.decode`; the library does not split a stream that way itself. On this PC it paid at 2 and
+6 MP and not at 12 MP and up ([benchmarks](benchmarks.md#decoding)).
+<!-- numbers: bench/results/20261119/hybrid_throughput.json -->
+
 ## Files that gain nothing
 
 ```python

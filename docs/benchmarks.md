@@ -254,6 +254,16 @@ threads, or nvJPEG's batched call.
 
 ![Decode throughput in images per second, one panel per image size: exact-gpu-jpeg is ahead of libjpeg-turbo on 8 CPU threads at every size, 444/s on one GPU thread and 462/s on two against 388/s at 2 MP, up to 3.9 times at 24 MP (144 against 37/s) and on the 30 MP camera photos (93 against 24/s).](images/decode-throughput.png)
 
+A program can also split a stream of files between exact-gpu-jpeg's GPU threads and libjpeg-turbo CPU threads
+pulling from one queue, since both give the same bytes; the library does not do this split itself.
+`python bench/hybrid_throughput.py out.json <group>=<files> [--cpu 2,4,6]` measures it, checking every output against
+libjpeg-turbo. On this PC, against two GPU threads alone in the same run: 1.46x at 2 MP (842 images/s with six CPU
+threads), 1.09x at 6 MP and 1.06x on the 30 MP camera photos, and slower at 12 MP (0.97x) and 24 MP (0.96x); why it is slower
+there was not measured.
+<!-- numbers: bench/results/20261119/hybrid_throughput.json -->
+
+![Decoding a stream on the GPU and the CPU together, images per second (higher is better), every bar from one run: exact-gpu-jpeg on 2 GPU threads alone 578, 377, 309, 194 and 94.6 at 2, 6, 12 and 24 MP and on the 30 MP camera photos; libjpeg-turbo on 8 CPU threads alone 571, 157, 78.8, 44.9 and 25.0; the 2 GPU threads with libjpeg-turbo on 2, 4 or 6 CPU threads at best 842 (6 CPU threads), 411 (2), 300 (2), 185 (2) and 99.9 (4): faster than the GPU threads alone at 2 and 6 MP and on the camera photos, slower at 12 and 24 MP. Every output byte-identical to libjpeg-turbo.](images/decode-hybrid.png)
+
 | image | MB | libjpeg-turbo, ms | **exact-gpu-jpeg, ms** | nvJPEG, ms | CPU 1 thread /s | CPU 8 threads /s | **GPU 1 thread /s** | **GPU 2 threads /s** | nvJPEG batched /s | nvJPEG max diff |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 02 MP 4:4:4 | 0.84 | 14.8 | **1.5** | 13.5 | 64 | 266 | **544** | **577** | 74 | 4 |
@@ -399,6 +409,15 @@ threads are its many-at-once route:
   threads contending for each call's host-side work; it was not measured further.
 - Pillow gains only 1.1–1.2× from threads.
 - All three exports of one photo back to back, from GPU memory: 7.35 ms, against 103 ms with Pillow.
+
+Splitting a stream of encodes between the GPU threads and Pillow threads keeps every file Pillow's, but on this PC
+it was slower than the two GPU threads alone at every size (23.1 against 71.0 images/s at 3840x2560): Pillow's
+threads hardly run in parallel and slow the GPU threads in the same Python process. With simplejpeg on the CPU threads
+the combination was faster (111 at 3840x2560), but those files are not Pillow's. Pillow in separate processes was not
+measured. `python bench/hybrid_encode.py out.json <dir>` measures it.
+<!-- numbers: bench/results/20261119/hybrid_encode.json -->
+
+![Encoding a stream on the GPU and the CPU together, images per second (higher is better), every bar from one run: exact-gpu-jpeg on 2 GPU threads from host memory 71.0, 395 and 577 at 3840 x 2560, 1500 x 1000 and 1200 x 800; Pillow on 8 CPU threads 13.0, 101 and 208; the 2 GPU threads with Pillow on 2 CPU threads, the best of 2, 4 and 6, 23.1, 132 and 260, slower than the GPU threads alone, every file Pillow's; with simplejpeg on 6 CPU threads 111, 787 and 1,514, not Pillow's bytes.](images/encode-hybrid.png)
 
 Where GPU encoding does not pay: [Encode](encode.md#when-gpu-encoding-does-not-pay).
 

@@ -39,6 +39,8 @@ C = {  # one colour per series, the same in every chart and key; white text on e
     "gpu_host": "#1a5fb4", "gpu_dev": "#0e3d73", "sj1": "#5e5c64", "pil1": "#bc4300",
     "eh1": "#1a5fb4", "eh2": "#0e3d73", "ed1": "#7a4fa0", "ed2": "#4b2a73",          # encode many at once: blue from
     "sj4": "#6b6965", "sj8": "#3d3846", "pil4": "#bc4300", "pil8": "#7f2d00",        # host, purple from the GPU
+    "hy2": "#1a7a80", "hy4": "#0b5357", "hy6": "#063c3f",            # a program's GPU + CPU threads together: teal
+    "hp2": "#1a7a80", "hp4": "#0b5357", "hp6": "#063c3f", "hs": "#665500",   # (encode: + Pillow teal, + simplejpeg olive)
     "rep_normal": "#1a5fb4", "rep_light": "#0e3d73", "rep_full": "#7a4fa0", "nvjpeg_one": "#277a4c",
 }
 BOLD = {"gpu", "gpu1", "gpu2", "gpu_host", "gpu_dev", "rep_light", "eh1", "eh2", "ed1", "ed2"}   # exact-gpu-jpeg's bars: their outside text in bold
@@ -53,6 +55,11 @@ NAMES = {"gpu": "exact-gpu-jpeg", "gpu1": "exact-gpu-jpeg, 1 GPU thread", "gpu2"
          "ed1": "exact-gpu-jpeg, pixels on the GPU, 1 GPU thread", "ed2": "exact-gpu-jpeg, pixels on the GPU, 2 GPU threads",
          "sj4": "simplejpeg, 4 CPU threads", "sj8": "simplejpeg, 8 CPU threads", "pil4": "Pillow, 4 CPU threads",
          "pil8": "Pillow, 8 CPU threads",
+         "hy2": "exact-gpu-jpeg (2 GPU) + libjpeg-turbo (2 CPU threads)",
+         "hy4": "exact-gpu-jpeg (2 GPU) + libjpeg-turbo (4 CPU threads)",
+         "hy6": "exact-gpu-jpeg (2 GPU) + libjpeg-turbo (6 CPU threads)",
+         "hp2": "exact-gpu-jpeg (2 GPU) + Pillow (2 CPU threads)", "hp4": "exact-gpu-jpeg (2 GPU) + Pillow (4 CPU threads)",
+         "hp6": "exact-gpu-jpeg (2 GPU) + Pillow (6 CPU threads)", "hs": "exact-gpu-jpeg (2 GPU) + simplejpeg (best N)",
          "rep_normal": "exact-gpu-jpeg, normal decode", "rep_light": 'exact-gpu-jpeg, from the UnHuff copy, check="light"',
          "rep_full": 'exact-gpu-jpeg, from the UnHuff copy, check="full" (the default)', "nvjpeg_one": "nvJPEG (its own C API)"}
 FS = 11          # bar text
@@ -189,6 +196,8 @@ def panel(ax, heading, bars, unit):
         for b, w, bb in zip(bars, where, bold):
             if w != INSIDE:
                 tw = runs_width(out_runs(b, w, bb))
+                if axw - 4 * pad - tw < 0.3 * axw:     # the text alone would take most of the axis: shorten it
+                    raise SystemExit(f"{heading}: the text after the bar {b[2]!r} is too long to fit beside a bar")
                 xmax = max(xmax, b[1] * axw / (axw - 4 * pad - tw))   # (room to spare before the axis ends)
         fits = []
         for i, (b, w) in enumerate(zip(bars, where)):
@@ -559,6 +568,79 @@ def chart_encode_throughput():
     save(fig, "encode-throughput.png")
 
 
+def chart_decode_hybrid():
+    """A program's split of a stream between exact-gpu-jpeg's GPU threads and libjpeg-turbo CPU threads
+    (bench/hybrid_throughput.py): every bar from the same run, so the combination is compared like for like."""
+    h = load("20261119", "hybrid_throughput.json")
+    heads = {"02mp_420": "2 MP, 4:2:0", "06mp_420": "6 MP, 4:2:0", "12mp_420": "12 MP, 4:2:0", "24mp_420": "24 MP, 4:2:0",
+             "camera_30mp_422": "30 MP camera photos, 4:2:2 (12 files)"}
+    ns = h["cpu_threads_tried"]
+    fig, axes = figure("Decoding a stream on the GPU and the CPU together", HIGHER,
+                       f"{MACHINE}; measured {h['measured'][:10]} (v{h['exact_gpu_jpeg']}), machine otherwise idle. A "
+                       f"program's own split, not a library feature: exact-gpu-jpeg on {h['gpu_threads']} GPU threads "
+                       "(egj.decode, a Decoder and CUDA stream each) and libjpeg-turbo (simplejpeg) on N CPU threads take "
+                       "files from one shared queue. Both give the same bytes: every output of every combination was "
+                       "checked against libjpeg-turbo. Images per second from JPEG bytes in host memory, the median of "
+                       f"{h['rounds']} rounds of {h['seconds_a_measurement']:g} s; every bar here is from this run "
+                       "(bench/hybrid_throughput.py), which counts more images a second than decode-throughput.png's run "
+                       "for the GPU and the CPU alone, so compare within this chart. "
+                       "Same files as decode-throughput.png.",
+                       [2 + len(ns)] * len(h["groups"]), ["gpu2", "cpu8"] + [f"hy{n}" for n in ns], key_cols=3,
+                       width=17)
+    for ax, (k, g) in zip(axes, h["groups"].items()):
+        v = g["images_per_s"]
+        ga, ca = v["gpu_alone"], v["cpu_alone"]
+        bars = [("gpu2", ga, NAMES["gpu2"], per_s(ga), ratio_text(ga / ca, "libjpeg-turbo on 8 CPU threads")),
+                ("cpu8", ca, NAMES["cpu8"], per_s(ca))]
+        for n in ns:
+            x = v[f"gpu+cpu{n}"]
+            best = ", best" if n == g["best_cpu_threads"] else ""
+            bars.append((f"hy{n}", x, NAMES[f"hy{n}"] + best, per_s(x),
+                         ratio_text(x / ga, "2 GPU threads alone") + "; "
+                         + ratio_text(x / ca, "8 CPU threads alone")))
+        panel(ax, heads.get(k, k), bars, "images per second")
+    save(fig, "decode-hybrid.png")
+
+
+def chart_encode_hybrid():
+    """A program's split of a stream of images between exact-gpu-jpeg's GPU threads and Pillow CPU threads
+    (bench/hybrid_encode.py): every file Pillow's; every bar from the same run."""
+    h = load("20261119", "hybrid_encode.json")
+    ns = h["cpu_threads_tried"]
+    p1 = load("20261118", "encode.json")["sizes"]["3840_q95_444"]
+    fig, axes = figure("Encoding a stream on the GPU and the CPU together", HIGHER,
+                       f"{MACHINE}; measured {h['measured'][:10]} (v{h['exact_gpu_jpeg']}), machine otherwise idle. A "
+                       f"program's own split, not a library feature: exact-gpu-jpeg on {h['gpu_threads']} GPU threads "
+                       "(egj.encode, an Encoder each) and N CPU threads take images from one shared queue, in one Python "
+                       "process, from host memory (a NumPy array). With Pillow on the CPU threads every file is Pillow's, "
+                       "byte for byte (all checked); simplejpeg's files are not Pillow's. Pillow's threads hardly run in "
+                       f"parallel ({p1['pillow_8t_per_s']:.1f} images/s on 8 threads against {p1['pillow_1t_per_s']:.1f} on "
+                       "one at 3840 px) and slow the GPU threads in the same process: the combination with Pillow is "
+                       "slower than the GPU threads alone at every size. Pillow in separate processes was not measured. "
+                       f"Images per second, the median of {h['rounds']} rounds of {h['seconds_a_measurement']:g} s, every "
+                       f"bar from this run ({h['photos']} camera photos, bench/hybrid_encode.py).",
+                       [4 + len(ns)] * len(h["sizes"]), ["eh2", "pil8", "sj8"] + [f"hp{n}" for n in ns] + ["hs"],
+                       key_cols=3, width=17)
+    for ax, (k, r) in zip(axes, h["sizes"].items()):
+        v = r["images_per_s"]
+        ga, pa, sa = v["gpu_alone"], v["pillow_alone"], v["simplejpeg_alone"]
+        bars = [("eh2", ga, NAMES["eh2"], per_s(ga), ratio_text(ga / pa, "Pillow on 8 CPU threads")),
+                ("pil8", pa, NAMES["pil8"], per_s(pa)),
+                ("sj8", sa, NAMES["sj8"], per_s(sa), "not byte-identical to Pillow")]
+        for n in ns:
+            x = v[f"gpu+pillow{n}"]
+            bars.append((f"hp{n}", x, NAMES[f"hp{n}"], per_s(x),
+                         ratio_text(x / ga, "the GPU threads alone") + "; every file Pillow's"))
+        bn = r["best_simplejpeg_threads"]
+        x = v[f"gpu+simplejpeg{bn}"]
+        bars.append(("hs", x, f"exact-gpu-jpeg (2 GPU) + simplejpeg ({bn} CPU threads)", per_s(x),
+                     ratio_text(x / ga, "the GPU threads alone") + "; " + ratio_text(x / sa, "simplejpeg alone")
+                     + "; not byte-identical to Pillow"))
+        sub = {"444": "4:4:4", "420": "4:2:0"}[r["subsampling"]]
+        panel(ax, f"{r['width']} x {r['height']}, quality {r['quality']}, {sub}", bars, "images per second")
+    save(fig, "encode-hybrid.png")
+
+
 if __name__ == "__main__":
     G = decode_groups()
     chart_batches()
@@ -570,3 +652,5 @@ if __name__ == "__main__":
     chart_repeat()
     chart_one_at_a_time()
     chart_encode_throughput()
+    chart_decode_hybrid()
+    chart_encode_hybrid()

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" role="img" aria-label="Routing in exact-gpu-jpeg: on every call the library sends one small image or a file the GPU cannot reproduce exactly to libjpeg-turbo on the CPU, and everything else to the GPU; a program can also split a stream between 2 GPU threads and libjpeg-turbo threads, which on this PC paid at 2 and 6 MP (1.46x, 1.09x) and on 30 MP photos (1.06x), and not at 12 and 24 MP (0.97x, 0.95x)">
+<title>Routing in exact-gpu-jpeg: on every call the library sends one small image or a file the GPU cannot reproduce exactly to libjpeg-turbo on the CPU, and everything else to the GPU; a program can also split a stream between 2 GPU threads and libjpeg-turbo threads, which on this PC paid at 2 and 6 MP (1.46x, 1.09x) and on 30 MP photos (1.06x), and not at 12 and 24 MP (0.97x, 0.95x)</title>
+<rect width="960" height="560" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a877f"/></marker></defs>
+<text x="40" y="34" font-size="17" fill="#1d1d1b" text-anchor="start" font-weight="700">Routing in exact-gpu-jpeg: GPU, CPU, or both</text>
+<text x="40" y="56" font-size="12.5" fill="#5f5d58" text-anchor="start" font-weight="normal">Every route gives libjpeg-turbo's bytes. Left: what the library does by itself on every call. Right: a split a program can add.</text>
+<rect x="40" y="76" width="420" height="420" rx="10" fill="#f7f6f2" stroke="#8a877f" stroke-width="1.5"/>
+<text x="58" y="104" font-size="14" fill="#1d1d1b" text-anchor="start" font-weight="700">Inside the library (automatic, every call)</text>
+<rect x="175" y="122" width="150" height="34" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="250.0" y="143.5" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">egj.decode(...)</text>
+<path d="M250,156 V172 M145,172 H355 M145,172 V184 M355,172 V184" fill="none" stroke="#8a877f" stroke-width="1.4"/>
+<text x="262" y="168" font-size="11" fill="#5f5d58" text-anchor="start" font-weight="normal">one route per call</text>
+<rect x="56" y="186" width="178" height="76" rx="8" fill="#ffffff" stroke="#8a877f" stroke-width="1.5"/>
+<text x="145.0" y="211.8" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">One small image</text>
+<text x="145.0" y="228.2" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">below cpu_below, measured once</text>
+<text x="145.0" y="244.8" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">on this machine</text>
+<rect x="266" y="186" width="178" height="76" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="355.0" y="220.0" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">libjpeg-turbo on the CPU,</text>
+<text x="355.0" y="236.5" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">then uploaded</text>
+<path d="M236,224 H264" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="56" y="284" width="178" height="76" rx="8" fill="#ffffff" stroke="#8a877f" stroke-width="1.5"/>
+<text x="145.0" y="309.8" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">A file the GPU can't</text>
+<text x="145.0" y="326.2" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">reproduce exactly</text>
+<text x="145.0" y="342.8" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">(progressive, ...)</text>
+<rect x="266" y="284" width="178" height="76" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="355.0" y="318.0" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">libjpeg-turbo on the CPU</text>
+<text x="355.0" y="334.5" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">(the reference itself)</text>
+<path d="M236,322 H264" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="56" y="382" width="178" height="76" rx="8" fill="#ffffff" stroke="#8a877f" stroke-width="1.5"/>
+<text x="145.0" y="424.2" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">Everything else</text>
+<rect x="266" y="382" width="178" height="76" rx="8" fill="#d6e4f6" stroke="#1a5fb4" stroke-width="1.5"/>
+<text x="355.0" y="416.0" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">exact-gpu-jpeg on the GPU</text>
+<text x="355.0" y="432.5" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">a list: one GPU batch</text>
+<path d="M236,420 H264" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="250.0" y="482" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="700">Same bytes on every route.</text>
+<rect x="500" y="76" width="420" height="420" rx="10" fill="#ffffff" stroke="#8a877f" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="518" y="104" font-size="14" fill="#1d1d1b" text-anchor="start" font-weight="700">In your program (optional): split a stream</text>
+<rect x="518" y="150" width="120" height="120" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="578.0" y="196.8" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">one shared</text>
+<text x="578.0" y="214.2" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">queue of</text>
+<text x="578.0" y="231.8" font-size="12.5" fill="#1d1d1b" text-anchor="middle" font-weight="600">JPEG files</text>
+<rect x="678" y="122" width="220" height="52" rx="8" fill="#d6e4f6" stroke="#1a5fb4" stroke-width="1.5"/>
+<text x="788.0" y="144.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">2 GPU threads</text>
+<text x="788.0" y="161.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">exact-gpu-jpeg</text>
+<rect x="678" y="246" width="220" height="52" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="788.0" y="268.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">N CPU threads</text>
+<text x="788.0" y="285.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">libjpeg-turbo</text>
+<path d="M640,190 C658,180 660,150 676,148" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M640,232 C658,242 660,270 676,272" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="518" y="330" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">Measured on this PC (decode, best N), against 2 GPU threads alone:</text>
+<text x="530" y="356" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">2 MP</text>
+<text x="660" y="356" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">1.46x</tspan><tspan font-size="12" fill="#1d1d1b" font-weight="600">  faster</tspan></text>
+<text x="530" y="378" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">6 MP</text>
+<text x="660" y="378" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">1.09x</tspan><tspan font-size="12" fill="#1d1d1b" font-weight="600">  faster</tspan></text>
+<text x="530" y="400" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">12 MP</text>
+<text x="660" y="400" text-anchor="start"><tspan font-size="15" fill="#a51d2d" font-weight="800">0.97x</tspan><tspan font-size="12" fill="#1d1d1b" font-weight="600">  slower</tspan></text>
+<text x="530" y="422" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">24 MP</text>
+<text x="660" y="422" text-anchor="start"><tspan font-size="15" fill="#a51d2d" font-weight="800">0.95x</tspan><tspan font-size="12" fill="#1d1d1b" font-weight="600">  slower</tspan></text>
+<text x="530" y="444" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">30 MP photos</text>
+<text x="660" y="444" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">1.06x</tspan><tspan font-size="12" fill="#1d1d1b" font-weight="600">  faster</tspan></text>
+<text x="518" y="472" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">Not done by the library in 0.1.0. An exact encode split</text>
+<text x="518" y="488" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">(with Pillow on the CPU) did not pay.</text>
+<text x="40" y="524" font-size="11.5" fill="#5f5d58" text-anchor="start" font-weight="normal">Sources: decode routes as in docs/exactness.md; the split from bench/hybrid_throughput.py (bench/results/20261119), GTX 1070 + i7-6700.</text>
+</svg>
