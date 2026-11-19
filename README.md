@@ -31,6 +31,8 @@ up to 110 levels at 4:2:0, within 4 at 4:4:4 and within 1 for gray. Pillow, Open
 libvips gave libjpeg-turbo's pixels on 102 of 102.
 <!-- numbers: bench/results/20261118/public_set_run3.json (summary) -->
 
+![Largest pixel difference from libjpeg-turbo on the 102 public-set JPEGs, by setting: exact-gpu-jpeg 0 levels at every setting (identical on 102 of 102); nvJPEG 110, 77, 4, 1, 108 and 110 levels (identical on none).](docs/images/nvjpeg-differences.svg)
+
 **1. The same bytes.** Identical bytes mean:
 
 - JPEG work moves to the GPU without changing any result, so existing tests, caches and file hashes keep working;
@@ -83,6 +85,8 @@ by default (`memory_bytes`) and drops the least recently used. Without a `Repeat
 When and why it pays, and what it guarantees: [Decode the same file again](docs/repeat.md).
 <!-- numbers: bench/results/20261118/repeat_paths.json (medians of 7 rounds of 5 calls, from a path, the result on the GPU); bench/results/20261118/repeat_sizes.json (the 2 MP crossing); bench/results/20261118/copy_forms.json (bytes: packed / jpeg) -->
 
+![Decoding the same file again: for 12 camera photos (30 MP), a normal decode 13.1 ms, from the UnHuff copy with check="light" 4.1 ms (3.2x faster), with check="full" (the default) 18.3 ms; for 14 public-set photos 4.2, 1.4 and 5.5 ms.](docs/images/repeat-cache.png)
+
 **Where it loses, or is unproven.**
 
 - **One small image at a time.** At 0.25 MP one call per image does 887 images a second, against 1,122 for
@@ -118,6 +122,8 @@ Measured on one PC: an NVIDIA GTX 1070 (2016, 8 GB) and an Intel i7-6700, on Win
 | 2 MP (1736×1160, 4:2:0) | **548** | 178 | 130 | **3.1× faster** | 4.2× faster |
 | 0.25 MP (616×408, 4:2:0) | 887 | 947 | **1,122** | 0.94× (slower) | 0.79× (slower) |
 
+![One image at a time, images per second by size: exact-gpu-jpeg 887 at 0.25 MP (slower than nvJPEG's 947 and libjpeg-turbo's 1,122 on one core), then 763, 665, 548 and 410 from 0.5 to 6 MP and 88.5 for 30 MP camera photos, ahead of both from 0.5 MP up.](docs/images/one-at-a-time.png)
+
 **Many images at once** (images per second; batches of 64 different JPEGs):
 
 | | exact-gpu-jpeg, `decode_batch` | nvJPEG at its fastest (batched, GPU_HYBRID) | libjpeg-turbo, 8 threads | vs nvJPEG | vs libjpeg-turbo |
@@ -131,6 +137,8 @@ Measured on one PC: an NVIDIA GTX 1070 (2016, 8 GB) and an Intel i7-6700, on Win
 | exact-gpu-jpeg | byte-identical to libjpeg-turbo, on every image of both tables |
 | nvJPEG | not identical on any image, whichever API and back end: up to 15 levels off on the camera photos (4:2:2), up to 38 to 50 in the size sets (4:2:0); mean differences 0.47 on the camera photos and 0.52 to 0.64 in the size sets; up to 110 on the 102 public-set JPEGs (4:2:0, through torchvision) |
 <!-- numbers: bench/results/20261118/nvjpeg_direct.json (both tables and the output row); public set: bench/results/20261118/public_set_run3.json -->
+
+![Decoding batches of 64 JPEGs, images per second: exact-gpu-jpeg 7,310 at 0.25 MP, 4,942 at 0.5 MP, 3,194 at 1 MP, 1,881 at 2 MP and 730 at 6 MP, 4.7 to 7.2x nvJPEG at its fastest and 2.4 to 4.7x libjpeg-turbo on 8 CPU threads.](docs/images/batch-throughput.png)
 
 One run on 2026-11-18 (`bench/nvjpeg_direct.py`), from the JPEG bytes in host memory to the decoded RGB image, file
 reads not included. This GPU has no hardware JPEG engine, so nvJPEG runs its CUDA path here. Across the two
@@ -146,6 +154,8 @@ file at the same setting (which this library's encoder reproduces byte for byte)
 lower on every image (both files decoded with libjpeg-turbo). This is a measured statement about one setting: the
 two encoders need not mean the same thing by "quality 95".
 <!-- numbers: bench/results/20261118/public_set_run3.json (summary: nvjpeg_encode_q95_444) -->
+
+![Encoding a photo's three web exports, one at a time, ms per image: at 3840x2560 exact-gpu-jpeg 15.0 ms from host memory and 5.18 ms with the pixels already on the GPU, against 60.4 ms for simplejpeg and 90.6 ms for Pillow; its files are byte-identical to Pillow's.](docs/images/encode.png)
 
 **The public set.** `python bench/public_set.py out.json` repeats these checks and times on your own GPU: it downloads
 imagecompression.info's 8-bit test images and libjpeg-turbo's three benchmark frames, checks the archives' SHA-256
@@ -163,6 +173,8 @@ and makes the 102 JPEGs in memory ([Reproduce the benchmark](docs/benchmarks.md#
 | rejected | a file libjpeg-turbo rejects is rejected by both routes | |
 | outside the claim | CMYK and YCCK (four-component) files: decoded by the CPU decoder with its own colour conversion, because libjpeg-turbo has none to RGB; the reason says so | |
 | not checked | other libjpeg-turbo versions; ARM64 (NEON) builds were not analysed: the bytes are libjpeg-turbo's as built for x86-64 (its C and SSE2/AVX2 code) | other Pillow versions |
+
+![What decode() does with a file: small images go to the CPU decoder; files the GPU path can reproduce exactly are decoded on the GPU; declined files go to the CPU decoder, libjpeg-turbo itself; a file libjpeg-turbo warns about raises by default and is returned with the warning named when strict=False; a file libjpeg-turbo rejects raises on both routes.](docs/images/decode-routes.svg)
 
 `strict` is a keyword of `decode()`, `decode_batch()`, `decode_cpu()` and `Decoder`. Where the warning is reported, which warned files the GPU path itself decodes, and unused bytes at the end of the scan:
 [The claim in one table](docs/exactness.md#the-claim-in-one-table). The evidence for each row, and how to check your
@@ -225,6 +237,8 @@ The Huffman stage is self-synchronising parallel decoding, the method of André 
 (ICPP 2018), going back to Shmuel T. Klein and Yair Wiseman (2003); this implementation was written from the papers.
 The arithmetic is ported from libjpeg-turbo / the Independent JPEG Group's library. Full citations and what this
 library adds: [Prior work and credit](docs/how-it-works.md#prior-work-and-credit).
+
+![Parallel Huffman decoding by self-synchronisation, in four steps: the stream is cut into chunks; each chunk decodes from a guessed state and falls into step with the true code boundaries; passes repeat until every chunk's entry matches the previous chunk's exit; then a write pass decodes every checkpoint piece in its own thread.](docs/images/huffman-sync.svg)
 
 ## License
 
