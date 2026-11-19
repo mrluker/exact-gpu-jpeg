@@ -1,0 +1,48 @@
+{
+ "head": "d08c4d66 bench results 2026-11-18 (release src): decode ladder from big_building (2 to 24 MP, four samplings) and the 30 MP camera photos; fresh settings folder",
+ "library": "0.1.0",
+ "rows": [
+  [
+   "Synthetic corpus (tests/corpus.py)",
+   "347",
+   "320",
+   "320",
+   "same in libjpeg-turbo's AVX2, SSE2 and C paths; 27 declined (progressive, RGB, warned files)"
+  ],
+  [
+   "Crafted extreme coefficients",
+   "400",
+   "34",
+   "34",
+   "all 365 where libjpeg-turbo's own code paths disagree were declined; 1 more declined where they agree"
+  ],
+  [
+   "Local re-encodes of camera photos",
+   "244",
+   "232",
+   "232",
+   "12 declined (decoded by the CPU decoder)"
+  ],
+  [
+   "Camera JPEGs, 6000x4000 to 7008x4672",
+   "376",
+   "376",
+   "376",
+   ""
+  ],
+  [
+   "iPhone and Sony camera JPEGs",
+   "883",
+   "883",
+   "883",
+   "Sony ILCE-6300, Sony ILCE-7M3, Sony ILCE-7M4, iPhone 7, iPhone X; the default call also identical on 883 of 883"
+  ],
+  [
+   "Encoder: camera photos at 6 settings",
+   "72",
+   "72",
+   "72",
+   "vs Pillow 13.0.0, with the photos' EXIF"
+  ]
+ ]
+}

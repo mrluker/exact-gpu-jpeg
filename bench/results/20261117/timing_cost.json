@@ -1,0 +1,109 @@
+{
+ "env": {
+  "gpu": "NVIDIA GeForce GTX 1070, driver 560.94"
+ },
+ "cells": {
+  "decode 488x480": {
+   "off": {
+    "median_ms": 1.1165,
+    "diff_vs_off_ms": 0.0,
+    "se": 0.0,
+    "slower_in": 0
+   },
+   "timings={}": {
+    "median_ms": 1.254,
+    "diff_vs_off_ms": 0.138,
+    "se": 0.0095,
+    "slower_in": 8
+   },
+   "profile=True": {
+    "median_ms": 1.3521,
+    "diff_vs_off_ms": 0.2499,
+    "se": 0.0186,
+    "slower_in": 8
+   },
+   "profile=\"host\"": {
+    "median_ms": 1.1246,
+    "diff_vs_off_ms": 0.0159,
+    "se": 0.0117,
+    "slower_in": 5
+   }
+  },
+  "decode 30 MP": {
+   "off": {
+    "median_ms": 11.0247,
+    "diff_vs_off_ms": 0.0,
+    "se": 0.0,
+    "slower_in": 0
+   },
+   "timings={}": {
+    "median_ms": 11.0714,
+    "diff_vs_off_ms": 0.0253,
+    "se": 0.079,
+    "slower_in": 5
+   },
+   "profile=True": {
+    "median_ms": 11.3277,
+    "diff_vs_off_ms": 0.3463,
+    "se": 0.2039,
+    "slower_in": 5
+   },
+   "profile=\"host\"": {
+    "median_ms": 11.0935,
+    "diff_vs_off_ms": 0.0219,
+    "se": 0.0488,
+    "slower_in": 5
+   }
+  },
+  "encode 488x480": {
+   "off": {
+    "median_ms": 0.391,
+    "diff_vs_off_ms": 0.0,
+    "se": 0.0,
+    "slower_in": 0
+   },
+   "timings={}": {
+    "median_ms": 0.5018,
+    "diff_vs_off_ms": 0.1167,
+    "se": 0.0119,
+    "slower_in": 8
+   },
+   "profile=\"host\"": {
+    "median_ms": 0.4198,
+    "diff_vs_off_ms": 0.0257,
+    "se": 0.0116,
+    "slower_in": 6
+   }
+  },
+  "encode 30 MP": {
+   "off": {
+    "median_ms": 9.8202,
+    "diff_vs_off_ms": 0.0,
+    "se": 0.0,
+    "slower_in": 0
+   },
+   "timings={}": {
+    "median_ms": 10.0237,
+    "diff_vs_off_ms": 0.0533,
+    "se": 0.1622,
+    "slower_in": 5
+   },
+   "profile=\"host\"": {
+    "median_ms": 9.5355,
+    "diff_vs_off_ms": -0.3653,
+    "se": 0.1515,
+    "slower_in": 1
+   }
+  }
+ },
+ "off": {
+  "host_mark_calls_per_call": {
+   "decode 488x480": 3,
+   "decode 30 MP": 3,
+   "encode 488x480": 9,
+   "encode 30 MP": 9,
+   "decode 488x480, GPU-time marks (profile=True)": 13
+  },
+  "ns_per_mark_call_when_off": 67.1
+ }
+}

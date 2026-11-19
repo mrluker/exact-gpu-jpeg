@@ -1,0 +1,67 @@
+{
+ "commit": "11a30a0a (a clean checkout; bench/real_photos.py check as committed there)",
+ "what": "Phone and camera JPEGs found locally by EXIF make, through a Decoder of its own (the GPU path alone) and the default egj.decode, against libjpeg-turbo (simplejpeg, accurate IDCT, fancy upsampling). Counts and camera models only; the files stay local.",
+ "library": "0.1.0",
+ "libjpeg_turbo": "simplejpeg 1.9.0",
+ "groups": {
+  "Sony ILCE-6300": {
+   "counts": {
+    "files": 49,
+    "GPU path byte-identical": 49,
+    "egj.decode byte-identical": 49
+   },
+   "layouts": {
+    "4:4:4": 24,
+    "4:4:4 + restart markers": 25
+   }
+  },
+  "Sony ILCE-7M3": {
+   "counts": {
+    "files": 188,
+    "GPU path byte-identical": 188,
+    "egj.decode byte-identical": 188
+   },
+   "layouts": {
+    "4:2:2": 94,
+    "4:2:0 + restart markers": 94
+   }
+  },
+  "Sony ILCE-7M4": {
+   "counts": {
+    "files": 567,
+    "GPU path byte-identical": 567,
+    "egj.decode byte-identical": 567
+   },
+   "layouts": {
+    "4:2:2": 209,
+    "4:4:4 + restart markers": 188,
+    "4:2:0 + restart markers": 170
+   }
+  },
+  "iPhone 7": {
+   "counts": {
+    "files": 6,
+    "GPU path byte-identical": 6,
+    "egj.decode byte-identical": 6
+   },
+   "layouts": {
+    "4:2:0 + restart markers": 6
+   }
+  },
+  "iPhone X": {
+   "counts": {
+    "files": 73,
+    "GPU path byte-identical": 73,
+    "egj.decode byte-identical": 73
+   },
+   "layouts": {
+    "4:2:0 + restart markers": 73
+   }
+  }
+ },
+ "total": {
+  "files": 883,
+  "GPU path byte-identical": 883,
+  "egj.decode byte-identical": 883
+ }
+}

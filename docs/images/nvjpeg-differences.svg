@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="576" viewBox="0 0 960 576" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" role="img" aria-label="Largest pixel difference from libjpeg-turbo on the 102 public-set JPEGs: exact-gpu-jpeg 0 at every setting; nvJPEG 110, 77, 4, 1, 108 and 110 levels, identical on none">
+<title>Largest pixel difference from libjpeg-turbo on the 102 public-set JPEGs: exact-gpu-jpeg 0 at every setting; nvJPEG 110, 77, 4, 1, 108 and 110 levels, identical on none</title>
+<rect width="960" height="576" fill="#ffffff"/>
+<text x="40" y="32" font-size="17" fill="#1d1d1b" text-anchor="start" font-weight="700">Largest pixel difference from libjpeg-turbo, on the 102 public-set JPEGs</text>
+<text x="40" y="60" font-size="16" fill="#1a5fb4" text-anchor="start" font-weight="700">0 means identical, byte for byte.</text>
+<rect x="352" y="44" width="139" height="22" rx="11.0" fill="#f6d32d" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="361" y="60" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="700">↓ Lower is better</text>
+<text x="40" y="82" font-size="12.5" fill="#5f5d58" text-anchor="start" font-weight="normal">In levels of 255. 17 images per setting. Same GTX 1070; nvJPEG through torchvision at its defaults. Linear axis.</text>
+<rect x="40" y="100" width="14" height="12" fill="#1a5fb4"/>
+<text x="60" y="111" font-size="12.5" fill="#1d1d1b" text-anchor="start" font-weight="normal">exact-gpu-jpeg</text>
+<rect x="190" y="100" width="14" height="12" fill="#277a4c"/>
+<text x="210" y="111" font-size="12.5" fill="#1d1d1b" text-anchor="start" font-weight="normal">nvJPEG (torchvision), NVIDIA's GPU decoder</text>
+<line x1="300.0" y1="164" x2="300.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="300.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">0</text>
+<line x1="380.0" y1="164" x2="380.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="380.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">20</text>
+<line x1="460.0" y1="164" x2="460.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="460.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">40</text>
+<line x1="540.0" y1="164" x2="540.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="540.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">60</text>
+<line x1="620.0" y1="164" x2="620.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="620.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">80</text>
+<line x1="700.0" y1="164" x2="700.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="700.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">100</text>
+<line x1="780.0" y1="164" x2="780.0" y2="484" stroke="#e6e4df" stroke-width="1"/>
+<text x="780.0" y="502" font-size="11.5" fill="#5f5d58" text-anchor="middle" font-weight="normal">120</text>
+<text x="540.0" y="522" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">largest difference in any pixel channel (levels of 255)</text>
+<text x="286" y="195" font-size="12.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">quality 95, 4:2:0</text>
+<rect x="300" y="176" width="3" height="14" fill="#1a5fb4"/>
+<text x="309" y="188" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">0 levels</tspan><tspan font-size="12" fill="#1a5fb4" font-weight="700">: identical on 17 of 17</tspan></text>
+<rect x="300" y="196" width="440.0" height="14" fill="#277a4c"/>
+<text x="746.0" y="208" text-anchor="start"><tspan font-size="15" fill="#277a4c" font-weight="800">110 levels</tspan><tspan font-size="12" fill="#277a4c" font-weight="600">: identical on 0 of 17</tspan></text>
+<text x="286" y="247" font-size="12.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">quality 95, 4:2:2</text>
+<rect x="300" y="228" width="3" height="14" fill="#1a5fb4"/>
+<text x="309" y="240" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">0 levels</tspan><tspan font-size="12" fill="#1a5fb4" font-weight="700">: identical on 17 of 17</tspan></text>
+<rect x="300" y="248" width="308.0" height="14" fill="#277a4c"/>
+<text x="614.0" y="260" text-anchor="start"><tspan font-size="15" fill="#277a4c" font-weight="800">77 levels</tspan><tspan font-size="12" fill="#277a4c" font-weight="600">: identical on 0 of 17</tspan></text>
+<text x="286" y="299" font-size="12.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">quality 95, 4:4:4</text>
+<rect x="300" y="280" width="3" height="14" fill="#1a5fb4"/>
+<text x="309" y="292" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">0 levels</tspan><tspan font-size="12" fill="#1a5fb4" font-weight="700">: identical on 17 of 17</tspan></text>
+<rect x="300" y="300" width="16.0" height="14" fill="#277a4c"/>
+<text x="322.0" y="312" text-anchor="start"><tspan font-size="15" fill="#277a4c" font-weight="800">4 levels</tspan><tspan font-size="12" fill="#277a4c" font-weight="600">: identical on 0 of 17</tspan></text>
+<text x="286" y="351" font-size="12.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">quality 95, grayscale</text>
+<rect x="300" y="332" width="3" height="14" fill="#1a5fb4"/>
+<text x="309" y="344" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">0 levels</tspan><tspan font-size="12" fill="#1a5fb4" font-weight="700">: identical on 17 of 17</tspan></text>
+<rect x="300" y="352" width="4.0" height="14" fill="#277a4c"/>
+<text x="310.0" y="364" text-anchor="start"><tspan font-size="15" fill="#277a4c" font-weight="800">1 level</tspan><tspan font-size="12" fill="#277a4c" font-weight="600">: identical on 0 of 17</tspan></text>
+<text x="286" y="403" font-size="12.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">quality 90, 4:2:0</text>
+<rect x="300" y="384" width="3" height="14" fill="#1a5fb4"/>
+<text x="309" y="396" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">0 levels</tspan><tspan font-size="12" fill="#1a5fb4" font-weight="700">: identical on 17 of 17</tspan></text>
+<rect x="300" y="404" width="432.0" height="14" fill="#277a4c"/>
+<text x="738.0" y="416" text-anchor="start"><tspan font-size="15" fill="#277a4c" font-weight="800">108 levels</tspan><tspan font-size="12" fill="#277a4c" font-weight="600">: identical on 0 of 17</tspan></text>
+<text x="286" y="455" font-size="12.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">quality 95, 4:2:0, optimised tables</text>
+<rect x="300" y="436" width="3" height="14" fill="#1a5fb4"/>
+<text x="309" y="448" text-anchor="start"><tspan font-size="15" fill="#1a5fb4" font-weight="800">0 levels</tspan><tspan font-size="12" fill="#1a5fb4" font-weight="700">: identical on 17 of 17</tspan></text>
+<rect x="300" y="456" width="440.0" height="14" fill="#277a4c"/>
+<text x="746.0" y="468" text-anchor="start"><tspan font-size="15" fill="#277a4c" font-weight="800">110 levels</tspan><tspan font-size="12" fill="#277a4c" font-weight="600">: identical on 0 of 17</tspan></text>
+<line x1="300" y1="164" x2="300" y2="484" stroke="#1a5fb4" stroke-width="2"/>
+<text x="300" y="156" font-size="13" fill="#1a5fb4" text-anchor="middle" font-weight="700">0 = identical to libjpeg-turbo</text>
+<text x="40" y="562" font-size="11.5" fill="#5f5d58" text-anchor="start" font-weight="normal">Source: bench/results/20261118/public_set_run3.json (summary). Measured 2026-11-18 on one PC (GTX 1070, Windows 10).</text>
+</svg>

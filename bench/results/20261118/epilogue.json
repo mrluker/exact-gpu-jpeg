@@ -1,0 +1,17 @@
+{
+ "what": "decode to a normalised float16 CHW array: fused into the colour kernel, against decode + CuPy convert; ms per photo, 3 rounds",
+ "photos": 12,
+ "decode_then_cupy_ms": [
+  28.437,
+  26.94,
+  26.631
+ ],
+ "fused_ms": [
+  14.296,
+  13.986,
+  14.179
+ ],
+ "identical": true,
+ "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+ "measured": "2026-11-18 20:55"
+}

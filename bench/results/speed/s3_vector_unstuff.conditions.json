@@ -1,0 +1,56 @@
+{
+ "what": "decode speed step s3_vector_unstuff",
+ "start": "2026-11-13 09:17:59",
+ "wall_s": 5.215690699988045,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 4.0,
+  "cpu_load_max": 18.0,
+  "gpu_mem_mib": 2421.0,
+  "gpu_temp_c": 52.0,
+  "samples": [
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2421.0,
+    "gpu_temp_c": 54.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 10.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2421.0,
+    "gpu_temp_c": 53.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 16.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2421.0,
+    "gpu_temp_c": 53.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 18.0
+   },
+   {
+    "gpu_util": 3.0,
+    "gpu_mem_mib": 2421.0,
+    "gpu_temp_c": 53.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 10.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2421.0,
+    "gpu_temp_c": 52.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 11.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 31.0,
+  "gpu_mem_mib": 2421.0,
+  "gpu_temp_c": 57.0,
+  "gpu_sm_mhz": 1885.0
+ },
+ "otherwise_idle": true
+}

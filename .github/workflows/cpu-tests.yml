@@ -1,0 +1,25 @@
+# CPU-only checks: header parsing, decline reasons and the API without a GPU. The GPU tests (decode and encode
+# exactness, robustness, fuzzing) skip here: they need an NVIDIA GPU and a self-hosted runner.
+name: cpu-tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        # the oldest and the tested Python (the package supports >=3.10)
+        os: [ubuntu-24.04, windows-latest]
+        python: ["3.10", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[test]"
+      - run: python -m pytest -q

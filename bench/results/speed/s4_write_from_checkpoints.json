@@ -1,0 +1,17 @@
+{
+ "label": "s3 + write pass with one thread per checkpoint piece (8 per chunk), 4096-bit chunks",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 16.4,
+  "passes": 2.0,
+  "upload_ms": 2.02,
+  "huffman_ms": 7.2,
+  "pixels_ms": 3.13
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 60.7,
+  "gpu_1_threads_run1": 61.1,
+  "gpu_2_threads_run0": 76.4,
+  "gpu_2_threads_run1": 77.3
+ }
+}

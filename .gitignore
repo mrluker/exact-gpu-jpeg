@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+# generated test corpus (tests/corpus.py) and local sample folders
+corpus/
+samples/
+# local-only benchmark inputs and raw outputs
+bench/local/
+work/

@@ -1,0 +1,56 @@
+{
+ "what": "decode comparison benchmark",
+ "start": "2026-11-13 10:02:07",
+ "wall_s": 344.10666729998775,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 4.0,
+  "cpu_load_max": 15.0,
+  "gpu_mem_mib": 2405.0,
+  "gpu_temp_c": 50.0,
+  "samples": [
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2405.0,
+    "gpu_temp_c": 52.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 7.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2405.0,
+    "gpu_temp_c": 51.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 9.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2405.0,
+    "gpu_temp_c": 51.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 10.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2405.0,
+    "gpu_temp_c": 51.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 11.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2405.0,
+    "gpu_temp_c": 50.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 15.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 2.0,
+  "gpu_mem_mib": 2127.0,
+  "gpu_temp_c": 60.0,
+  "gpu_sm_mhz": 1860.0
+ },
+ "otherwise_idle": true
+}

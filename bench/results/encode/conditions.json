@@ -1,0 +1,59 @@
+{
+ "what": "egj v0.1 README benchmarks",
+ "mode": "exclusive",
+ "gpu_mb": null,
+ "start": "2026-11-16 12:28:57",
+ "wall_s": 123.57770949997939,
+ "returncode": 0,
+ "running_alongside": [],
+ "gpu_after": {
+  "gpu_util": 5.0,
+  "gpu_mem_mib": 2724.0,
+  "gpu_temp_c": 55.0,
+  "gpu_sm_mhz": 1885.0
+ },
+ "idle_before": {
+  "gpu_util_max": 7.0,
+  "cpu_load_max": 21.0,
+  "gpu_mem_mib": 2719.0,
+  "gpu_temp_c": 42.0,
+  "samples": [
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2720.0,
+    "gpu_temp_c": 42.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 20.0
+   },
+   {
+    "gpu_util": 7.0,
+    "gpu_mem_mib": 2717.0,
+    "gpu_temp_c": 42.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 21.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2717.0,
+    "gpu_temp_c": 42.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 17.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2717.0,
+    "gpu_temp_c": 42.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 10.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 2719.0,
+    "gpu_temp_c": 42.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 12.0
+   }
+  ]
+ },
+ "otherwise_idle": true
+}

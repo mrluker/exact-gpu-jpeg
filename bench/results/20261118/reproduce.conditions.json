@@ -1,0 +1,69 @@
+{
+ "what": "egj numbers pass: reproduce",
+ "src": "b3ea0319 (crossing-fix-next, merged into release-fixes as 6e370624)",
+ "bench_scripts_from": "6d509abf (bench/small_image.py and bench/reproduce.py, identical on release-fixes at 6e370624)",
+ "start": "2026-11-19 03:08:10",
+ "wall_s": 114.86993419995997,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 5.0,
+  "cpu_load_max": 19.0,
+  "gpu_mem_mib": 749.0,
+  "gpu_temp_c": 48.0,
+  "samples": [
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 749.0,
+    "gpu_temp_c": 49.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 19.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 749.0,
+    "gpu_temp_c": 49.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 13.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 749.0,
+    "gpu_temp_c": 49.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 18.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 749.0,
+    "gpu_temp_c": 48.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 12.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 749.0,
+    "gpu_temp_c": 48.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 15.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 2.0,
+  "gpu_mem_mib": 769.0,
+  "gpu_temp_c": 58.0,
+  "gpu_sm_mhz": 1885.0
+ },
+ "otherwise_idle": true,
+ "settings_folder": "a new empty folder for this run (LOCALAPPDATA), so the library's saved settings are what a new user of this head gets; this PC's own settings file was not used",
+ "cpu_below_before_run": {
+  "pixels": 166294,
+  "source": "measured",
+  "crossing": 166294
+ },
+ "cpu_below_after_run": {
+  "pixels": 166294,
+  "source": "saved",
+  "crossing": 166294
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "what": "egj numbers pass: repeat_paths",
+ "start": "2026-11-18 20:03:00",
+ "wall_s": 44.084972999989986,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 5.0,
+  "cpu_load_max": 21.0,
+  "gpu_mem_mib": 615.0,
+  "gpu_temp_c": 56.0,
+  "samples": [
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 615.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 9.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 615.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 20.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 615.0,
+    "gpu_temp_c": 57.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 18.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 615.0,
+    "gpu_temp_c": 56.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 21.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 615.0,
+    "gpu_temp_c": 56.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 17.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 2.0,
+  "gpu_mem_mib": 614.0,
+  "gpu_temp_c": 61.0,
+  "gpu_sm_mhz": 1860.0
+ },
+ "otherwise_idle": true
+}

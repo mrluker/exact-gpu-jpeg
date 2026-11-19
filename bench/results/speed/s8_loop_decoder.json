@@ -1,0 +1,17 @@
+{
+ "label": "v0.1, file read in pieces during the copy (default)",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 13.4,
+  "passes": 2.0,
+  "upload_ms": 4.86,
+  "huffman_ms": 5.07,
+  "pixels_ms": 2.73
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 75.1,
+  "gpu_1_threads_run1": 74.2,
+  "gpu_2_threads_run0": 87.1,
+  "gpu_2_threads_run1": 86.8
+ }
+}

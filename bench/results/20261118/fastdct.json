@@ -1,0 +1,45 @@
+{
+ "what": "tools/check_fastdct.py on the release source: fast_dct=True against libjpeg-turbo's fast integer IDCT in DEFAULT, AVX2, SSE2 and C (each in its own process)",
+ "measured": "2026-11-19",
+ "src": "fba64922 (release-fixes; the decode path is the same at the merge head)",
+ "groups": {
+  "corpus": "tests/corpus.py",
+  "extreme": "400 crafted files with extreme coefficients (--extreme 400)",
+  "local re-encodes of camera photos": "local only, counts only",
+  "camera photos (12, local only)": "local only, counts only"
+ },
+ "counts": {
+  "corpus: GPU declined (references agree)": 27,
+  "corpus: GPU declined (references differ)": 13,
+  "corpus: GPU equals all four": 307,
+  "corpus: files": 347,
+  "corpus: references agree": 334,
+  "corpus: references differ (AVX2/NONE != DEFAULT)": 13,
+  "local re-encodes of camera photos: GPU declined (references agree)": 12,
+  "local re-encodes of camera photos: GPU equals all four": 216,
+  "local re-encodes of camera photos: files": 228,
+  "local re-encodes of camera photos: references agree": 228,
+  "camera photos (12, local only): GPU equals all four": 12,
+  "camera photos (12, local only): files": 12,
+  "camera photos (12, local only): references agree": 12,
+  "extreme: GPU declined (references agree)": 1,
+  "extreme: GPU declined (references differ)": 371,
+  "extreme: GPU equals all four": 28,
+  "extreme: files": 400,
+  "extreme: references agree": 29,
+  "extreme: references differ (AVX2/NONE != DEFAULT)": 371
+ },
+ "failures": [],
+ "decline_reasons": {
+  "coefficients outside the range where all libjpeg-turbo IDCTs agree": 385,
+  "progressive JPEG": 36,
+  "RGB-coded JPEG": 2,
+  "libjpeg-turbo warns: Premature end of JPEG file (no end marker) (declined because strict=True; strict=False decodes it as libjpeg-turbo does)": 1
+ },
+ "modes": [
+  "DEFAULT",
+  "AVX2",
+  "SSE2",
+  "NONE"
+ ]
+}

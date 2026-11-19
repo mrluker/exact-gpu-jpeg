@@ -1,0 +1,11 @@
+Decode -> normalised float16 CHW (ImageNet mean / std), 12 camera photos (30 MP 4:2:2) from bytes in memory,
+ms per photo, 3 rounds. GTX 1070, exclusive GPU lock, machine otherwise idle, 2026-11-16 (conditions.json).
+Run with the logic of bench/epilogue_bench.py (identity then checked on one photo; the script now checks all).
+
+r0 decode + CuPy convert : 29.63 ms per photo
+r0 fused epilogue        : 14.83 ms per photo
+r1 decode + CuPy convert : 27.41 ms per photo
+r1 fused epilogue        : 14.59 ms per photo
+r2 decode + CuPy convert : 27.46 ms per photo
+r2 fused epilogue        : 15.10 ms per photo
+identical: True

@@ -1,0 +1,59 @@
+{
+ "what": "egj decode bench: new ladder + camera",
+ "mode": "exclusive",
+ "gpu_mb": null,
+ "start": "2026-11-16 13:05:01",
+ "wall_s": 336.38131460000295,
+ "returncode": 0,
+ "running_alongside": [],
+ "gpu_after": {
+  "gpu_util": 2.0,
+  "gpu_mem_mib": 2703.0,
+  "gpu_temp_c": 59.0,
+  "gpu_sm_mhz": 1506.0
+ },
+ "idle_before": {
+  "gpu_util_max": 6.0,
+  "cpu_load_max": 18.0,
+  "gpu_mem_mib": 2726.0,
+  "gpu_temp_c": 41.0,
+  "samples": [
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2726.0,
+    "gpu_temp_c": 41.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 15.0
+   },
+   {
+    "gpu_util": 6.0,
+    "gpu_mem_mib": 2726.0,
+    "gpu_temp_c": 41.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 14.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2726.0,
+    "gpu_temp_c": 40.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 18.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2726.0,
+    "gpu_temp_c": 41.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 17.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2726.0,
+    "gpu_temp_c": 41.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 17.0
+   }
+  ]
+ },
+ "otherwise_idle": true
+}

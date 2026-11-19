@@ -1,0 +1,206 @@
+{
+ "measured": "2026-11-18 20:04",
+ "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+ "rows": [
+  {
+   "width": 400,
+   "height": 250,
+   "mp": 0.1,
+   "bytes": {
+    "jpeg": 13848,
+    "packed": 37832,
+    "raw": 319200
+   },
+   "calls_per_round": 200,
+   "ms": {
+    "decode": 1.0042,
+    "decode, keep packed": 1.5674,
+    "decode, keep raw": 1.0188,
+    "from a packed handle": 0.2887,
+    "from a raw handle": 0.2339
+   },
+   "spread_ms": {
+    "decode": [
+     0.9833,
+     1.1242
+    ],
+    "decode, keep packed": [
+     1.4745,
+     1.7876
+    ],
+    "decode, keep raw": [
+     1.0003,
+     1.0694
+    ],
+    "from a packed handle": [
+     0.2551,
+     0.3292
+    ],
+    "from a raw handle": [
+     0.201,
+     0.2897
+    ]
+   }
+  },
+  {
+   "width": 1200,
+   "height": 800,
+   "mp": 0.96,
+   "bytes": {
+    "jpeg": 132356,
+    "packed": 371042,
+    "raw": 2992500
+   },
+   "calls_per_round": 30,
+   "ms": {
+    "decode": 1.2438,
+    "decode, keep packed": 1.7482,
+    "decode, keep raw": 1.2588,
+    "from a packed handle": 0.4272,
+    "from a raw handle": 0.3202
+   },
+   "spread_ms": {
+    "decode": [
+     1.1608,
+     1.2976
+    ],
+    "decode, keep packed": [
+     1.7085,
+     2.118
+    ],
+    "decode, keep raw": [
+     1.1729,
+     1.3565
+    ],
+    "from a packed handle": [
+     0.3578,
+     0.495
+    ],
+    "from a raw handle": [
+     0.2878,
+     0.3614
+    ]
+   }
+  },
+  {
+   "width": 2400,
+   "height": 1600,
+   "mp": 3.84,
+   "bytes": {
+    "jpeg": 530518,
+    "packed": 1478212,
+    "raw": 11970000
+   },
+   "calls_per_round": 8,
+   "ms": {
+    "decode": 1.7393,
+    "decode, keep packed": 2.2995,
+    "decode, keep raw": 1.7218,
+    "from a packed handle": 0.7096,
+    "from a raw handle": 0.5746
+   },
+   "spread_ms": {
+    "decode": [
+     1.6598,
+     1.8516
+    ],
+    "decode, keep packed": [
+     2.2561,
+     2.6779
+    ],
+    "decode, keep raw": [
+     1.6235,
+     1.7835
+    ],
+    "from a packed handle": [
+     0.5979,
+     0.7283
+    ],
+    "from a raw handle": [
+     0.5437,
+     0.6683
+    ]
+   }
+  },
+  {
+   "width": 3600,
+   "height": 2400,
+   "mp": 8.64,
+   "bytes": {
+    "jpeg": 1213126,
+    "packed": 3356066,
+    "raw": 26932500
+   },
+   "calls_per_round": 8,
+   "ms": {
+    "decode": 2.4508,
+    "decode, keep packed": 3.3566,
+    "decode, keep raw": 2.4948,
+    "from a packed handle": 1.2059,
+    "from a raw handle": 1.0097
+   },
+   "spread_ms": {
+    "decode": [
+     2.4293,
+     2.6034
+    ],
+    "decode, keep packed": [
+     3.2931,
+     3.714
+    ],
+    "decode, keep raw": [
+     2.4126,
+     2.6839
+    ],
+    "from a packed handle": [
+     1.1319,
+     1.2278
+    ],
+    "from a raw handle": [
+     0.9693,
+     1.0519
+    ]
+   }
+  },
+  {
+   "width": 6000,
+   "height": 4000,
+   "mp": 24.0,
+   "bytes": {
+    "jpeg": 3368611,
+    "packed": 9340074,
+    "raw": 74812500
+   },
+   "calls_per_round": 8,
+   "ms": {
+    "decode": 5.2404,
+    "decode, keep packed": 6.7761,
+    "decode, keep raw": 5.5244,
+    "from a packed handle": 2.6743,
+    "from a raw handle": 2.2421
+   },
+   "spread_ms": {
+    "decode": [
+     5.1522,
+     6.0785
+    ],
+    "decode, keep packed": [
+     6.7136,
+     7.9382
+    ],
+    "decode, keep raw": [
+     5.1476,
+     5.6888
+    ],
+    "from a packed handle": [
+     2.535,
+     2.957
+    ],
+    "from a raw handle": [
+     2.1889,
+     2.4433
+    ]
+   }
+  }
+ ]
+}

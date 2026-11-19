@@ -1,0 +1,91 @@
+{
+ "photos": 6,
+ "gpu": "NVIDIA GeForce GTX 1070",
+ "sizes": {
+  "3840_q95_444": {
+   "width": 3840,
+   "height": 2560,
+   "quality": 95,
+   "subsampling": "444",
+   "pillow_ms": 90.58,
+   "simplejpeg_ms": 60.44,
+   "gpu_ms": 5.18,
+   "gpu_from_host_ms": 15.03,
+   "gpu_split_ms": {
+    "dct": 1.79,
+    "huffman": 1.33,
+    "stuff_download": 2.05
+   },
+   "raw_rgb_mb": 29.49,
+   "jpeg_mb": 2.51,
+   "pillow_1t_per_s": 11.11,
+   "simplejpeg_1t_per_s": 16.3,
+   "pillow_4t_per_s": 13.19,
+   "simplejpeg_4t_per_s": 50.05,
+   "pillow_8t_per_s": 12.98,
+   "simplejpeg_8t_per_s": 66.23,
+   "gpu_1t_per_s": 187.71,
+   "gpu_from_host_1t_per_s": 65.75,
+   "gpu_2t_per_s": 217.68,
+   "gpu_from_host_2t_per_s": 69.72
+  },
+  "1500_q90_444": {
+   "width": 1500,
+   "height": 1000,
+   "quality": 90,
+   "subsampling": "444",
+   "pillow_ms": 11.3,
+   "simplejpeg_ms": 7.9,
+   "gpu_ms": 1.05,
+   "gpu_from_host_ms": 2.64,
+   "gpu_split_ms": {
+    "dct": 0.31,
+    "huffman": 0.36,
+    "stuff_download": 0.22
+   },
+   "raw_rgb_mb": 4.5,
+   "jpeg_mb": 0.29,
+   "pillow_1t_per_s": 81.99,
+   "simplejpeg_1t_per_s": 120.56,
+   "pillow_4t_per_s": 93.1,
+   "simplejpeg_4t_per_s": 375.65,
+   "pillow_8t_per_s": 91.29,
+   "simplejpeg_8t_per_s": 482.15,
+   "gpu_1t_per_s": 660.66,
+   "gpu_from_host_1t_per_s": 337.31,
+   "gpu_2t_per_s": 772.28,
+   "gpu_from_host_2t_per_s": 378.09
+  },
+  "1200_q87_420": {
+   "width": 1200,
+   "height": 800,
+   "quality": 87,
+   "subsampling": "420",
+   "pillow_ms": 5.21,
+   "simplejpeg_ms": 2.84,
+   "gpu_ms": 0.78,
+   "gpu_from_host_ms": 1.73,
+   "gpu_split_ms": {
+    "dct": 0.23,
+    "huffman": 0.21,
+    "stuff_download": 0.24
+   },
+   "raw_rgb_mb": 2.88,
+   "jpeg_mb": 0.15,
+   "pillow_1t_per_s": 175.54,
+   "simplejpeg_1t_per_s": 327.11,
+   "pillow_4t_per_s": 200.87,
+   "simplejpeg_4t_per_s": 1060.45,
+   "pillow_8t_per_s": 204.49,
+   "simplejpeg_8t_per_s": 1304.57,
+   "gpu_1t_per_s": 1048.59,
+   "gpu_from_host_1t_per_s": 538.34,
+   "gpu_2t_per_s": 971.54,
+   "gpu_from_host_2t_per_s": 566.51
+  }
+ },
+ "three_exports_ms": {
+  "gpu": 7.35,
+  "pillow": 103.33
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "gpu": "NVIDIA GeForce GTX 1070",
+ "sizes": {
+  "1224x816": {
+   "megapixels": 1.0,
+   "mb": 3.0,
+   "get_ms": 1.492,
+   "get_into_pinned_ms": 0.556,
+   "get_gb_per_s": 2.01,
+   "pinned_gb_per_s": 5.39
+  },
+  "3000x2000": {
+   "megapixels": 6.0,
+   "mb": 18.0,
+   "get_ms": 9.046,
+   "get_into_pinned_ms": 3.052,
+   "get_gb_per_s": 1.99,
+   "pinned_gb_per_s": 5.9
+  },
+  "6000x4000": {
+   "megapixels": 24.0,
+   "mb": 72.0,
+   "get_ms": 39.233,
+   "get_into_pinned_ms": 12.696,
+   "get_gb_per_s": 1.84,
+   "pinned_gb_per_s": 5.67
+  },
+  "6336x4752": {
+   "megapixels": 30.1,
+   "mb": 90.3,
+   "get_ms": 49.92,
+   "get_into_pinned_ms": 15.69,
+   "get_gb_per_s": 1.81,
+   "pinned_gb_per_s": 5.76
+  }
+ }
+}

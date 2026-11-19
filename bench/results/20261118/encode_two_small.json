@@ -1,0 +1,37 @@
+{
+ "exact_gpu_jpeg": "0.1.0",
+ "measured": "2026-11-19 03:46",
+ "gpu": "NVIDIA GeForce GTX 1070",
+ "image": "488x480",
+ "quality": 90,
+ "subsampling": "420",
+ "identical_to_pillow": true,
+ "rounds_ms_per_pair": {
+  "two encode() calls": [
+   0.8222,
+   0.7707,
+   0.7748,
+   0.7755,
+   0.8284,
+   0.7583,
+   0.7749,
+   0.83,
+   0.776
+  ],
+  "queued on two encoders": [
+   0.6329,
+   0.5384,
+   0.5484,
+   0.5912,
+   0.5812,
+   0.5939,
+   0.581,
+   0.5712,
+   0.6276
+  ]
+ },
+ "median_ms_per_pair": {
+  "two encode() calls": 0.775,
+  "queued on two encoders": 0.581
+ }
+}

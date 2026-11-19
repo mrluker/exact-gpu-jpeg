@@ -1,0 +1,45 @@
+{
+ "what": "Decoder.upload_ahead: a stream of 48 camera photos (30 MP 4:2:2, 12 files x 4) decoded one at a time from disk; plain = decode(path); ahead = two decoders taking turns, a reader thread staging the next photo while the current one decodes. 3 runs of bench/decode_alone.py, 2 paired rounds each (order flipped), exclusive GPU lock, GTX 1070, 2026-11-16.",
+ "plain": {
+  "decode_call_ms": [
+   13.76,
+   13.25,
+   13.64,
+   13.87,
+   13.71,
+   13.31
+  ],
+  "photos_per_s": [
+   72.6,
+   75.4,
+   72.7,
+   70.5,
+   72.8,
+   74.7
+  ]
+ },
+ "ahead": {
+  "decode_call_ms": [
+   10.39,
+   10.42,
+   10.29,
+   10.43,
+   10.28,
+   10.4
+  ],
+  "photos_per_s": [
+   92.6,
+   93.6,
+   94.9,
+   94.8,
+   94.5,
+   94.8
+  ]
+ },
+ "mean": {
+  "plain_ms": 13.59,
+  "ahead_ms": 10.37,
+  "plain_per_s": 73.1,
+  "ahead_per_s": 94.2
+ }
+}

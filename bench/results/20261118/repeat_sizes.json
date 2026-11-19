@@ -1,0 +1,339 @@
+{
+ "measured": "2026-11-18 20:06",
+ "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+ "rows": [
+  {
+   "width": 400,
+   "height": 250,
+   "mp": 0.1,
+   "file_bytes": 13848,
+   "calls_per_round": 200,
+   "ms": {
+    "file, no cache": 1.3112,
+    "file, copy, full": 0.5241,
+    "file, copy, light": 0.4643,
+    "bytes, no cache": 1.0261,
+    "bytes, copy, full": 0.3387
+   },
+   "spread_ms": {
+    "file, no cache": [
+     1.3027,
+     1.5377
+    ],
+    "file, copy, full": [
+     0.5069,
+     0.643
+    ],
+    "file, copy, light": [
+     0.4161,
+     0.5382
+    ],
+    "bytes, no cache": [
+     1.0167,
+     1.125
+    ],
+    "bytes, copy, full": [
+     0.3196,
+     0.4579
+    ]
+   },
+   "copy_bytes": 37832
+  },
+  {
+   "width": 640,
+   "height": 400,
+   "mp": 0.26,
+   "file_bytes": 35218,
+   "calls_per_round": 110,
+   "ms": {
+    "file, no cache": 1.3212,
+    "file, copy, full": 0.5907,
+    "file, copy, light": 0.4518,
+    "bytes, no cache": 1.0424,
+    "bytes, copy, full": 0.4128
+   },
+   "spread_ms": {
+    "file, no cache": [
+     1.3007,
+     1.7039
+    ],
+    "file, copy, full": [
+     0.5481,
+     0.791
+    ],
+    "file, copy, light": [
+     0.4335,
+     0.5156
+    ],
+    "bytes, no cache": [
+     1.0142,
+     1.1013
+    ],
+    "bytes, copy, full": [
+     0.3739,
+     0.525
+    ]
+   },
+   "copy_bytes": 97382
+  },
+  {
+   "width": 800,
+   "height": 600,
+   "mp": 0.48,
+   "file_bytes": 66268,
+   "calls_per_round": 60,
+   "ms": {
+    "file, no cache": 1.4398,
+    "file, copy, full": 0.8809,
+    "file, copy, light": 0.4962,
+    "bytes, no cache": 1.1497,
+    "bytes, copy, full": 0.6278
+   },
+   "spread_ms": {
+    "file, no cache": [
+     1.3527,
+     1.5752
+    ],
+    "file, copy, full": [
+     0.7648,
+     0.9311
+    ],
+    "file, copy, light": [
+     0.4735,
+     0.5973
+    ],
+    "bytes, no cache": [
+     1.1261,
+     1.2037
+    ],
+    "bytes, copy, full": [
+     0.5405,
+     0.6709
+    ]
+   },
+   "copy_bytes": 184870
+  },
+  {
+   "width": 1200,
+   "height": 800,
+   "mp": 0.96,
+   "file_bytes": 131218,
+   "calls_per_round": 30,
+   "ms": {
+    "file, no cache": 1.5702,
+    "file, copy, full": 1.0285,
+    "file, copy, light": 0.6041,
+    "bytes, no cache": 1.3268,
+    "bytes, copy, full": 0.768
+   },
+   "spread_ms": {
+    "file, no cache": [
+     1.4308,
+     1.8185
+    ],
+    "file, copy, full": [
+     0.9744,
+     1.0883
+    ],
+    "file, copy, light": [
+     0.5178,
+     0.685
+    ],
+    "bytes, no cache": [
+     1.21,
+     1.4859
+    ],
+    "bytes, copy, full": [
+     0.7287,
+     1.0467
+    ]
+   },
+   "copy_bytes": 367186
+  },
+  {
+   "width": 1600,
+   "height": 1200,
+   "mp": 1.92,
+   "file_bytes": 267669,
+   "calls_per_round": 10,
+   "ms": {
+    "file, no cache": 1.8214,
+    "file, copy, full": 1.5923,
+    "file, copy, light": 0.6958,
+    "bytes, no cache": 1.5231,
+    "bytes, copy, full": 1.3883
+   },
+   "spread_ms": {
+    "file, no cache": [
+     1.7586,
+     2.1733
+    ],
+    "file, copy, full": [
+     1.4951,
+     1.7051
+    ],
+    "file, copy, light": [
+     0.6602,
+     1.0402
+    ],
+    "bytes, no cache": [
+     1.4074,
+     1.6874
+    ],
+    "bytes, copy, full": [
+     1.1759,
+     1.6721
+    ]
+   },
+   "copy_bytes": 739708
+  },
+  {
+   "width": 2400,
+   "height": 1600,
+   "mp": 3.84,
+   "file_bytes": 524170,
+   "calls_per_round": 8,
+   "ms": {
+    "file, no cache": 2.3192,
+    "file, copy, full": 2.6759,
+    "file, copy, light": 0.9259,
+    "bytes, no cache": 1.8875,
+    "bytes, copy, full": 2.1648
+   },
+   "spread_ms": {
+    "file, no cache": [
+     2.2474,
+     2.8263
+    ],
+    "file, copy, full": [
+     2.4526,
+     3.6699
+    ],
+    "file, copy, light": [
+     0.8692,
+     1.1932
+    ],
+    "bytes, no cache": [
+     1.8525,
+     2.1934
+    ],
+    "bytes, copy, full": [
+     2.0714,
+     2.3802
+    ]
+   },
+   "copy_bytes": 1465808
+  },
+  {
+   "width": 3600,
+   "height": 2400,
+   "mp": 8.64,
+   "file_bytes": 1207938,
+   "calls_per_round": 8,
+   "ms": {
+    "file, no cache": 3.3271,
+    "file, copy, full": 4.9933,
+    "file, copy, light": 1.3952,
+    "bytes, no cache": 2.5724,
+    "bytes, copy, full": 3.9527
+   },
+   "spread_ms": {
+    "file, no cache": [
+     2.9361,
+     4.0734
+    ],
+    "file, copy, full": [
+     4.676,
+     6.2428
+    ],
+    "file, copy, light": [
+     1.3261,
+     1.4979
+    ],
+    "bytes, no cache": [
+     2.5121,
+     2.9303
+    ],
+    "bytes, copy, full": [
+     3.618,
+     4.0606
+    ]
+   },
+   "copy_bytes": 3350480
+  },
+  {
+   "width": 4800,
+   "height": 3200,
+   "mp": 15.36,
+   "file_bytes": 2144463,
+   "calls_per_round": 8,
+   "ms": {
+    "file, no cache": 4.4062,
+    "file, copy, full": 6.0559,
+    "file, copy, light": 2.0544,
+    "bytes, no cache": 3.7145,
+    "bytes, copy, full": 4.6034
+   },
+   "spread_ms": {
+    "file, no cache": [
+     4.3165,
+     4.9667
+    ],
+    "file, copy, full": [
+     5.7115,
+     7.2398
+    ],
+    "file, copy, light": [
+     1.9216,
+     2.5105
+    ],
+    "bytes, no cache": [
+     3.5253,
+     4.2432
+    ],
+    "bytes, copy, full": [
+     4.3481,
+     5.3396
+    ]
+   },
+   "copy_bytes": 5953106
+  },
+  {
+   "width": 6000,
+   "height": 4000,
+   "mp": 24.0,
+   "file_bytes": 3371097,
+   "calls_per_round": 8,
+   "ms": {
+    "file, no cache": 6.722,
+    "file, copy, full": 7.8727,
+    "file, copy, light": 2.916,
+    "bytes, no cache": 5.8933,
+    "bytes, copy, full": 6.2542
+   },
+   "spread_ms": {
+    "file, no cache": [
+     6.3131,
+     8.4295
+    ],
+    "file, copy, full": [
+     7.4891,
+     10.4219
+    ],
+    "file, copy, light": [
+     2.7757,
+     3.3868
+    ],
+    "bytes, no cache": [
+     5.2387,
+     6.3584
+    ],
+    "bytes, copy, full": [
+     5.3291,
+     6.7606
+    ]
+   },
+   "copy_bytes": 9345844
+  }
+ ]
+}

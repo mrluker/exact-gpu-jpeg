@@ -1,0 +1,461 @@
+{
+ "measured": "2026-11-18 11:47",
+ "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+ "limits": [
+  64,
+  5,
+  4
+ ],
+ "rows": [
+  {
+   "label": "crafted, 8-bit symbols, 8 MB",
+   "file_mb": 8.0,
+   "cpu_ms": 9.4,
+   "by_limit": {
+    "64": {
+     "ms": 1355.8,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 197.8,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 180.0,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 1351.1,
+   "gpu_alone_decoded": true,
+   "passes": 63
+  },
+  {
+   "label": "crafted, 8-bit symbols, 9.3 MB",
+   "file_mb": 9.3,
+   "cpu_ms": 11.3,
+   "by_limit": {
+    "64": {
+     "ms": 1445.2,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 206.1,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 184.3,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 1437.4,
+   "gpu_alone_decoded": false,
+   "passes": null
+  },
+  {
+   "label": "crafted, 8-bit symbols, 250 MB",
+   "file_mb": 250.0,
+   "cpu_ms": 297.7,
+   "by_limit": {
+    "64": {
+     "ms": 2792.4,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 757.9,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 725.0,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 2471.6,
+   "gpu_alone_decoded": false,
+   "passes": null
+  },
+  {
+   "label": "crafted, 3-bit blocks, 8 MB",
+   "file_mb": 8.0,
+   "cpu_ms": 9.7,
+   "by_limit": {
+    "64": {
+     "ms": 5695.8,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 753.6,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 662.7,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 5689.0,
+   "gpu_alone_decoded": true,
+   "passes": 63
+  },
+  {
+   "label": "crafted, 3-bit blocks, 9.3 MB",
+   "file_mb": 9.3,
+   "cpu_ms": 10.9,
+   "by_limit": {
+    "64": {
+     "ms": 6019.4,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 778.2,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 684.2,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 6005.9,
+   "gpu_alone_decoded": false,
+   "passes": null
+  },
+  {
+   "label": "crafted, 3-bit blocks, 250 MB",
+   "file_mb": 250.0,
+   "cpu_ms": 328.0,
+   "by_limit": {
+    "64": {
+     "ms": 2976.9,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 809.4,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 808.9,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 2657.8,
+   "gpu_alone_decoded": false,
+   "passes": null
+  },
+  {
+   "label": "blank page with a few lines, 64 MP, 4:2:0, default tables",
+   "file_mb": 1.07,
+   "cpu_ms": 136.7,
+   "by_limit": {
+    "64": {
+     "ms": 95.5,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 93.1,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 94.2,
+     "path": "gpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 93.3,
+   "gpu_alone_decoded": true,
+   "passes": 4
+  },
+  {
+   "label": "blank page with a few lines, 64 MP, 4:4:4, default tables",
+   "file_mb": 1.82,
+   "cpu_ms": 181.6,
+   "by_limit": {
+    "64": {
+     "ms": 10.4,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 9.9,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 11.3,
+     "path": "gpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 9.8,
+   "gpu_alone_decoded": true,
+   "passes": 2
+  },
+  {
+   "label": "blank page with a few lines, 64 MP, 4:2:0, optimised tables",
+   "file_mb": 0.41,
+   "cpu_ms": 128.8,
+   "by_limit": {
+    "64": {
+     "ms": 449.1,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 488.1,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 424.2,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 449.5,
+   "gpu_alone_decoded": true,
+   "passes": 12
+  },
+  {
+   "label": "blank page with a few lines, 64 MP, 4:4:4, optimised tables",
+   "file_mb": 0.77,
+   "cpu_ms": 187.5,
+   "by_limit": {
+    "64": {
+     "ms": 762.8,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 510.1,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 504.3,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 764.9,
+   "gpu_alone_decoded": true,
+   "passes": 21
+  },
+  {
+   "label": "blank page with a few lines, 100 MP, 4:2:0, default tables",
+   "file_mb": 1.72,
+   "cpu_ms": 206.3,
+   "by_limit": {
+    "64": {
+     "ms": 139.4,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 129.1,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 424.2,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 127.9,
+   "gpu_alone_decoded": true,
+   "passes": 5
+  },
+  {
+   "label": "blank page with a few lines, 100 MP, 4:4:4, default tables",
+   "file_mb": 2.88,
+   "cpu_ms": 288.3,
+   "by_limit": {
+    "64": {
+     "ms": 20.7,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 19.5,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 19.2,
+     "path": "gpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 20.2,
+   "gpu_alone_decoded": true,
+   "passes": 2
+  },
+  {
+   "label": "blank page with a few lines, 100 MP, 4:2:0, optimised tables",
+   "file_mb": 0.67,
+   "cpu_ms": 220.0,
+   "by_limit": {
+    "64": {
+     "ms": 662.2,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 583.9,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 551.0,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 663.8,
+   "gpu_alone_decoded": true,
+   "passes": 18
+  },
+  {
+   "label": "blank page with a few lines, 100 MP, 4:4:4, optimised tables",
+   "file_mb": 1.25,
+   "cpu_ms": 294.5,
+   "by_limit": {
+    "64": {
+     "ms": 1162.2,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 681.8,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 628.4,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 1160.4,
+   "gpu_alone_decoded": true,
+   "passes": 33
+  },
+  {
+   "label": "blank page with a few lines, 144 MP, 4:2:0, default tables",
+   "file_mb": 2.38,
+   "cpu_ms": 329.2,
+   "by_limit": {
+    "64": {
+     "ms": 868.3,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 548.3,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 554.4,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 853.3,
+   "gpu_alone_decoded": true,
+   "passes": 61
+  },
+  {
+   "label": "blank page with a few lines, 144 MP, 4:4:4, default tables",
+   "file_mb": 4.06,
+   "cpu_ms": 392.1,
+   "by_limit": {
+    "64": {
+     "ms": 28.1,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 27.6,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 28.0,
+     "path": "gpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 27.3,
+   "gpu_alone_decoded": true,
+   "passes": 2
+  },
+  {
+   "label": "blank page with a few lines, 144 MP, 4:2:0, optimised tables",
+   "file_mb": 0.91,
+   "cpu_ms": 258.2,
+   "by_limit": {
+    "64": {
+     "ms": 885.2,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 716.2,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 676.8,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 1584.7,
+   "gpu_alone_decoded": true,
+   "passes": 24
+  },
+  {
+   "label": "blank page with a few lines, 144 MP, 4:4:4, optimised tables",
+   "file_mb": 1.74,
+   "cpu_ms": 420.3,
+   "by_limit": {
+    "64": {
+     "ms": 1578.7,
+     "path": "gpu",
+     "same_pixels": true
+    },
+    "5": {
+     "ms": 851.1,
+     "path": "cpu",
+     "same_pixels": true
+    },
+    "4": {
+     "ms": 831.5,
+     "path": "cpu",
+     "same_pixels": true
+    }
+   },
+   "gpu_alone_ms": 3554.9,
+   "gpu_alone_decoded": true,
+   "passes": 45
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "label": "s2 + unstuffing with one 16-byte load per thread",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 18.24,
+  "passes": 2.0,
+  "upload_ms": 2.13,
+  "huffman_ms": 8.45,
+  "pixels_ms": 3.3
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 56.4,
+  "gpu_1_threads_run1": 56.1,
+  "gpu_2_threads_run0": 69.1,
+  "gpu_2_threads_run1": 68.9
+ }
+}

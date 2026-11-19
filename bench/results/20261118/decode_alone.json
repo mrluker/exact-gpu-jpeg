@@ -1,0 +1,37 @@
+{
+ "label": "release source, read auto",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 13.47,
+  "passes": 2.0,
+  "upload_ms": 5.42,
+  "huffman_ms": 4.41,
+  "pixels_ms": 2.91
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 75.7,
+  "gpu_1_threads_run1": 75.6,
+  "gpu_2_threads_run0": 98.3,
+  "gpu_2_threads_run1": 101.1,
+  "gpu_3_threads_run0": 100.3,
+  "gpu_3_threads_run1": 102.6
+ },
+ "stream": {
+  "plain_run0": {
+   "decode_call_ms": 13.52,
+   "photos_per_s": 73.4
+  },
+  "ahead_run0": {
+   "decode_call_ms": 9.83,
+   "photos_per_s": 101.2
+  },
+  "ahead_run1": {
+   "decode_call_ms": 9.64,
+   "photos_per_s": 100.2
+  },
+  "plain_run1": {
+   "decode_call_ms": 12.89,
+   "photos_per_s": 76.5
+  }
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "photos": 6,
+ "gpu": "NVIDIA GeForce GTX 1070",
+ "sizes": {
+  "3840_q95_444": {
+   "width": 3840,
+   "height": 2560,
+   "quality": 95,
+   "subsampling": "444",
+   "pillow_ms": 85.47,
+   "simplejpeg_ms": 60.83,
+   "gpu_ms": 5.34,
+   "gpu_split_ms": {
+    "dct": 1.88,
+    "huffman": 1.13,
+    "stuff_download": 1.55
+   },
+   "raw_rgb_mb": 29.49,
+   "jpeg_mb": 2.51,
+   "pillow_1t_per_s": 11.66,
+   "simplejpeg_1t_per_s": 16.67,
+   "pillow_4t_per_s": 13.45,
+   "simplejpeg_4t_per_s": 49.93,
+   "pillow_8t_per_s": 12.63,
+   "simplejpeg_8t_per_s": 65.55,
+   "gpu_1t_per_s": 161.18,
+   "gpu_2t_per_s": 227.47
+  },
+  "1500_q90_444": {
+   "width": 1500,
+   "height": 1000,
+   "quality": 90,
+   "subsampling": "444",
+   "pillow_ms": 12.85,
+   "simplejpeg_ms": 7.89,
+   "gpu_ms": 1.14,
+   "gpu_split_ms": {
+    "dct": 0.31,
+    "huffman": 0.5,
+    "stuff_download": 0.52
+   },
+   "raw_rgb_mb": 4.5,
+   "jpeg_mb": 0.29,
+   "pillow_1t_per_s": 80.75,
+   "simplejpeg_1t_per_s": 101.62,
+   "pillow_4t_per_s": 89.59,
+   "simplejpeg_4t_per_s": 373.19,
+   "pillow_8t_per_s": 93.04,
+   "simplejpeg_8t_per_s": 482.07,
+   "gpu_1t_per_s": 618.1,
+   "gpu_2t_per_s": 591.99
+  },
+  "1200_q87_420": {
+   "width": 1200,
+   "height": 800,
+   "quality": 87,
+   "subsampling": "420",
+   "pillow_ms": 5.55,
+   "simplejpeg_ms": 2.9,
+   "gpu_ms": 1.0,
+   "gpu_split_ms": {
+    "dct": 0.26,
+    "huffman": 0.37,
+    "stuff_download": 0.47
+   },
+   "raw_rgb_mb": 2.88,
+   "jpeg_mb": 0.15,
+   "pillow_1t_per_s": 157.59,
+   "simplejpeg_1t_per_s": 290.58,
+   "pillow_4t_per_s": 202.14,
+   "simplejpeg_4t_per_s": 975.64,
+   "pillow_8t_per_s": 203.91,
+   "simplejpeg_8t_per_s": 1306.4,
+   "gpu_1t_per_s": 719.19,
+   "gpu_2t_per_s": 706.39
+  }
+ },
+ "three_exports_ms": {
+  "gpu": 8.26,
+  "pillow": 111.18
+ }
+}

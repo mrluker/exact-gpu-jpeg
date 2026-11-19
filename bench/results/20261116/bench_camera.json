@@ -1,0 +1,41 @@
+{
+ "env": {
+  "gpu": "NVIDIA GeForce GTX 1070",
+  "cpu": "Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",
+  "cpu_threads": 8,
+  "os": "Windows-10-10.0.19045-SP0",
+  "python": "3.12.10",
+  "cupy": "14.2.0",
+  "simplejpeg": "1.9.0",
+  "libjpeg_turbo": "3.1.2 (bundled in simplejpeg 1.9.0)",
+  "exact_gpu_jpeg": "0.1.0",
+  "torch": null,
+  "torchvision": null
+ },
+ "groups": {
+  "camera_30mp_422": {
+   "n": 12,
+   "megapixels": 30.1,
+   "subsampling": [
+    "4:2:2"
+   ],
+   "restart": [
+    0
+   ],
+   "mb_per_file": 11.16,
+   "gpu_supported": 12,
+   "gpu_exact": 12,
+   "cpu_ms": 193.74,
+   "gpu_ms": 12.04,
+   "gpu_split_ms": {
+    "upload": 2.04,
+    "huffman": 4.98,
+    "pixels": 2.64
+   },
+   "cpu_1t_per_s": 5.17,
+   "cpu_8t_per_s": 24.0,
+   "gpu_1t_per_s": 83.39,
+   "gpu_2t_per_s": 90.44
+  }
+ }
+}

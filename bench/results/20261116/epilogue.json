@@ -1,0 +1,4 @@
+{"what": "decode -> normalised float16 CHW (ImageNet mean / std), 12 camera photos (30 MP 4:2:2) from bytes in memory, ms per photo, 3 rounds (epilogue.txt)",
+ "decode_then_cupy_ms": [29.63, 27.41, 27.46],
+ "fused_ms": [14.83, 14.59, 15.10],
+ "identical": true}

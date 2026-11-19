@@ -1,0 +1,206 @@
+{
+ "lib": "E:\\work\\egj-merge\\bench\\..\\src\\exact_gpu_jpeg\\__init__.py",
+ "cupy": "14.2.0",
+ "sched": "auto",
+ "set_flags_status": null,
+ "measured": "2026-11-18 20:55",
+ "device_flags": 8,
+ "decode": {
+  "16x16": {
+   "host_ms": {
+    "read, parse": 0.0265,
+    "start": 0.0062,
+    "tables": 0.0082,
+    "memory check": 0.0203,
+    "upload": 0.0107,
+    "unstuff": 0.0788,
+    "chunk table": 0.0411,
+    "sync pass 0": 0.0187,
+    "sync pass 1": 0.015,
+    "sync pass 2": 0.0138,
+    "prefix sums": 0.0179,
+    "write pass": 0.0294,
+    "dc prediction": 0.0125,
+    "idct": 0.0176,
+    "colour": 0.0177,
+    "result words": 0.0087,
+    "wait, readback": 0.202,
+    "checks": 0.0132
+   },
+   "sum": 0.5583,
+   "call_profiled": [
+    0.6127,
+    0.5228,
+    1.3758
+   ],
+   "call": [
+    0.582,
+    0.4891,
+    1.3291
+   ],
+   "egj_decode": [
+    0.5883,
+    0.4973,
+    1.319
+   ],
+   "gpu_ms": {
+    "tables": 0.002,
+    "memory check": 0.378,
+    "upload": 0.002,
+    "unstuff": 0.069,
+    "chunk table": 0.006,
+    "sync pass 0": 0.022,
+    "sync pass 1": 0.005,
+    "sync pass 2": 0.005,
+    "prefix sums": 0.005,
+    "write pass": 0.024,
+    "dc prediction": 0.007,
+    "idct": 0.007,
+    "colour": 0.005
+   },
+   "gpu_sum": 0.537,
+   "bytes": 694
+  },
+  "64x64": {
+   "host_ms": {
+    "read, parse": 0.0267,
+    "start": 0.0062,
+    "tables": 0.0081,
+    "memory check": 0.02,
+    "upload": 0.0107,
+    "unstuff": 0.0792,
+    "chunk table": 0.0409,
+    "sync pass 0": 0.0186,
+    "sync pass 1": 0.0147,
+    "sync pass 2": 0.0135,
+    "prefix sums": 0.0178,
+    "write pass": 0.0299,
+    "dc prediction": 0.0127,
+    "idct": 0.018,
+    "colour": 0.0177,
+    "result words": 0.0087,
+    "wait, readback": 0.2766,
+    "checks": 0.0126
+   },
+   "sum": 0.6326,
+   "call_profiled": [
+    0.688,
+    0.5983,
+    1.5026
+   ],
+   "call": [
+    0.6667,
+    0.58,
+    1.6286
+   ],
+   "egj_decode": [
+    0.6709,
+    0.5815,
+    1.3994
+   ],
+   "gpu_ms": {
+    "tables": 0.002,
+    "memory check": 0.3855,
+    "upload": 0.002,
+    "unstuff": 0.097,
+    "chunk table": 0.006,
+    "sync pass 0": 0.091,
+    "sync pass 1": 0.005,
+    "sync pass 2": 0.005,
+    "prefix sums": 0.005,
+    "write pass": 0.027,
+    "dc prediction": 0.007,
+    "idct": 0.007,
+    "colour": 0.005
+   },
+   "gpu_sum": 0.6445,
+   "bytes": 1854
+  }
+ },
+ "encode": {
+  "16x16": {
+   "host_ms": {
+    "checks, wait for the caller's stream": 0.0061,
+    "file header": 0.0069,
+    "tables": 0.002,
+    "dct": 0.0307,
+    "dc bits, offsets": 0.0278,
+    "write": 0.0126,
+    "stuffing, size words": 0.0331,
+    "wait, size readback": 0.1447,
+    "download, wait": 0.0081,
+    "bytes": 0.0017
+   },
+   "sum": 0.2737,
+   "call": [
+    0.2615,
+    0.2263,
+    0.6216
+   ]
+  },
+  "64x64": {
+   "host_ms": {
+    "checks, wait for the caller's stream": 0.006,
+    "file header": 0.007,
+    "tables": 0.0021,
+    "dct": 0.0312,
+    "dc bits, offsets": 0.0283,
+    "write": 0.0126,
+    "stuffing, size words": 0.0342,
+    "wait, size readback": 0.1255,
+    "download, wait": 0.0079,
+    "bytes": 0.0017
+   },
+   "sum": 0.2565,
+   "call": [
+    0.3424,
+    0.2503,
+    1.1069
+   ]
+  }
+ },
+ "pieces_us": {
+  "1 empty launches: queue them": 8.5,
+  "1 empty launches: wait for them": 30.5,
+  "1 empty launches: per launch, all in": 39.0,
+  "15 empty launches: queue them": 100.8,
+  "15 empty launches: wait for them": 65.7,
+  "15 empty launches: per launch, all in": 11.1,
+  "45 empty launches: queue them": 323.7,
+  "45 empty launches: wait for them": 43.3,
+  "45 empty launches: per launch, all in": 8.15,
+  "one RawKernel launch (queue only, 12 arguments)": 8.1,
+  "wait on an idle stream": 0.6,
+  "cp.empty(16)": 3.2,
+  "cp.zeros(16) (allocation + fill launch)": 7.1,
+  "x.fill(v)": 12.6,
+  "cp.cumsum of 4096 ints": 38.7,
+  "x.astype": 21.2,
+  "x + y": 16.5,
+  "x[y] (take)": 43.0,
+  "cp.concatenate of 4 small arrays": 78.9,
+  "a slice (no GPU work)": 2.2,
+  "cp.cuda.Event() + record": 3.3,
+  "small readback, stream idle (x.get)": 53.7,
+  "one launch + readback (round trip)": 102.85,
+  "cudaMemGetInfo": 2.2,
+  "memory pool free_bytes()": 0.3,
+  "pinned -> GPU copy of 4 kB (queue only)": 15.0,
+  "cp.asarray of 64 ints (pageable)": 41.6,
+  "parse the header (64x64 file)": 40.0,
+  "device tables lookup (cached)": 3.8
+ },
+ "wait_cpu_share": 0.987,
+ "calls": {
+  "0.25 MP": [
+   1.1231,
+   1.0417,
+   1.9388
+  ],
+  "camera photos (bytes)": [
+   11.4685,
+   11.1585,
+   11.9257
+  ]
+ }
+}

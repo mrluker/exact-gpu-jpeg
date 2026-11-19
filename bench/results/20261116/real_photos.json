@@ -1,0 +1,9 @@
+{"what": "GPU decode vs libjpeg-turbo (simplejpeg 1.9.0, accurate IDCT, fancy upsampling) on local JPEGs found by EXIF make (phones and a second camera brand); counts only, files stay local. 2026-11-16, GTX 1070.",
+ "groups": {
+  "iPhone X, 4:2:0 + restart markers": {"files": 73, "gpu_byte_identical": 73},
+  "iPhone 7, 4:2:0 + restart markers": {"files": 6, "gpu_byte_identical": 6},
+  "Sony camera EXIF (ILCE-7M4: 4:2:2, 4:4:4 + restart, 4:2:0 + restart)": {"files": 567, "gpu_byte_identical": 567},
+  "Sony camera EXIF (ILCE-7M3: 4:2:2, 4:2:0 + restart)": {"files": 188, "gpu_byte_identical": 188},
+  "Sony camera EXIF (ILCE-6300: 4:4:4, 4:4:4 + restart)": {"files": 49, "gpu_byte_identical": 49}
+ },
+ "total": {"files": 883, "gpu_byte_identical": 883, "declined": 0, "differ": 0}}

@@ -1,0 +1,59 @@
+{
+ "measured": "2026-11-18 22:13",
+ "rounds": 5,
+ "cases": {
+  "488x480 decode, 64x64 encode": {
+   "nothing": {
+    "first_decode_ms": 63.3,
+    "first_encode_ms": 65.4,
+    "loop_decode_ms": 1.5,
+    "loop_encode_ms": 1.17
+   },
+   "self_check": {
+    "first_decode_ms": 3.1,
+    "first_encode_ms": 2.7,
+    "loop_decode_ms": 1.88,
+    "loop_encode_ms": 1.21,
+    "self_check_ms": 477
+   }
+  },
+  "5.3 MB decode, 3840x2560 4:4:4 encode": {
+   "nothing": {
+    "first_decode_ms": 82.2,
+    "first_encode_ms": 109.8,
+    "loop_decode_ms": 8.79,
+    "loop_encode_ms": 4.75
+   },
+   "self_check": {
+    "first_decode_ms": 14.6,
+    "first_encode_ms": 9.2,
+    "loop_decode_ms": 8.56,
+    "loop_encode_ms": 4.73,
+    "self_check_ms": 453
+   }
+  }
+ },
+ "first_run_on_a_machine_ms": {
+  "decode": {
+   "each": [
+    3329.9,
+    2342.5
+   ],
+   "median": 2836
+  },
+  "encode": {
+   "each": [
+    1651.9,
+    1646.5
+   ],
+   "median": 1649
+  },
+  "batch": {
+   "each": [
+    8381.5,
+    7227.8
+   ],
+   "median": 7805
+  }
+ }
+}

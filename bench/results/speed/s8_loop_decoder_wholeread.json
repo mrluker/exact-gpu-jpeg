@@ -1,0 +1,17 @@
+{
+ "label": "v0.1, whole file read then upload (EGJ_STREAM_READ=0, as s0-s4)",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 14.79,
+  "passes": 2.0,
+  "upload_ms": 1.99,
+  "huffman_ms": 5.33,
+  "pixels_ms": 2.93
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 70.1,
+  "gpu_1_threads_run1": 70.8,
+  "gpu_2_threads_run0": 93.8,
+  "gpu_2_threads_run1": 96.0
+ }
+}

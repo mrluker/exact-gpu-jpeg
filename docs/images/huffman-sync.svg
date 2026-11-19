@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="646" viewBox="0 0 960 646" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" role="img" aria-label="Parallel Huffman decoding by self-synchronisation: chunks decoded from guessed states fall into step with the true code boundaries; passes repeat until each chunk's entry matches its neighbour's exit; a write pass then decodes every checkpoint piece in parallel">
+<title>Parallel Huffman decoding by self-synchronisation: chunks decoded from guessed states fall into step with the true code boundaries; passes repeat until each chunk's entry matches its neighbour's exit; a write pass then decodes every checkpoint piece in parallel</title>
+<rect width="960" height="646" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a877f"/></marker></defs>
+<text x="40" y="32" font-size="17" fill="#1d1d1b" text-anchor="start" font-weight="700">Parallel Huffman decoding in exact-gpu-jpeg, by self-synchronisation</text>
+<text x="40" y="54" font-size="12.5" fill="#5f5d58" text-anchor="start" font-weight="normal">The method of Weißenberger and Schmidt (ICPP 2018), as this library uses it. Drawn with 5 chunks and 3 checkpoints each; real files have thousands of chunks.</text>
+<path d="M40,78 q9,-9 18,0" fill="none" stroke="#1a5fb4" stroke-width="2"/>
+<text x="64" y="82" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">decoded from a true code boundary</text>
+<path d="M290,78 q9,-9 18,0" fill="none" stroke="#c64600" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="314" y="82" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">decoded from a wrong start (a guess)</text>
+<path d="M560,72 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<text x="572" y="82" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">checkpoint (state recorded)</text>
+<path d="M750,78 q9,-12 18,0" fill="none" stroke="#62a0ea" stroke-width="1.8" stroke-dasharray="4 3"/>
+<text x="774" y="82" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">past the chunk's end</text>
+<text x="40" y="112" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">1  The compressed stream (after byte unstuffing) is cut into chunks, one GPU thread each: 1,024, 2,048 or 8,192 bits, by the file's size.</text>
+<rect x="40" y="126" width="880" height="26" fill="#f3f2ee" stroke="#8a877f"/>
+<line x1="58" y1="132" x2="58" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="73" y1="132" x2="73" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="92" y1="132" x2="92" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="115" y1="132" x2="115" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="128" y1="132" x2="128" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="142" y1="132" x2="142" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="168" y1="132" x2="168" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="189" y1="132" x2="189" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="203" y1="132" x2="203" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="221" y1="132" x2="221" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="243" y1="132" x2="243" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="256" y1="132" x2="256" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="283" y1="132" x2="283" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="304" y1="132" x2="304" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="320" y1="132" x2="320" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="333" y1="132" x2="333" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="347" y1="132" x2="347" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="366" y1="132" x2="366" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="385" y1="132" x2="385" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="399" y1="132" x2="399" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="415" y1="132" x2="415" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="429" y1="132" x2="429" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="450" y1="132" x2="450" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="469" y1="132" x2="469" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="482" y1="132" x2="482" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="508" y1="132" x2="508" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="530" y1="132" x2="530" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="544" y1="132" x2="544" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="560" y1="132" x2="560" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="583" y1="132" x2="583" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="606" y1="132" x2="606" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="628" y1="132" x2="628" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="641" y1="132" x2="641" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="663" y1="132" x2="663" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="685" y1="132" x2="685" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="704" y1="132" x2="704" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="717" y1="132" x2="717" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="733" y1="132" x2="733" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="746" y1="132" x2="746" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="767" y1="132" x2="767" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="793" y1="132" x2="793" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="808" y1="132" x2="808" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="825" y1="132" x2="825" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="844" y1="132" x2="844" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="859" y1="132" x2="859" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="880" y1="132" x2="880" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="894" y1="132" x2="894" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="916" y1="132" x2="916" y2="146" stroke="#b9b6ae" stroke-width="1"/>
+<line x1="216.0" y1="122" x2="216.0" y2="156" stroke="#1d1d1b" stroke-width="1.6"/>
+<line x1="392.0" y1="122" x2="392.0" y2="156" stroke="#1d1d1b" stroke-width="1.6"/>
+<line x1="568.0" y1="122" x2="568.0" y2="156" stroke="#1d1d1b" stroke-width="1.6"/>
+<line x1="744.0" y1="122" x2="744.0" y2="156" stroke="#1d1d1b" stroke-width="1.6"/>
+<text x="128.0" y="170" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">chunk 0</text>
+<text x="304.0" y="170" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">chunk 1</text>
+<text x="480.0" y="170" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">chunk 2</text>
+<text x="656.0" y="170" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">chunk 3</text>
+<text x="832.0" y="170" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">chunk 4</text>
+<text x="920" y="188" font-size="11.5" fill="#5f5d58" text-anchor="end" font-weight="normal">grey ticks: where the true codes begin (unknown to a chunk that starts mid-stream)</text>
+<text x="40" y="232" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">2  First pass: every chunk decodes from its own first bit with a guessed state, to the first code boundary past its end.</text>
+<rect x="40.0" y="248" width="176.0" height="40" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="216.0" y="248" width="176.0" height="40" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="392.0" y="248" width="176.0" height="40" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="568.0" y="248" width="176.0" height="40" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="744.0" y="248" width="176.0" height="40" fill="none" stroke="#8a877f" stroke-width="1"/>
+<path d="M40,278 Q49.0,269 58,278 M58,278 Q65.5,269 73,278 M73,278 Q82.5,269 92,278 M92,278 Q103.5,269 115,278 M115,278 Q121.5,269 128,278 M128,278 Q135.0,269 142,278 M142,278 Q155.0,269 168,278 M168,278 Q178.5,269 189,278 M189,278 Q196.0,269 203,278" fill="none" stroke="#1a5fb4" stroke-width="1.8"/>
+<path d="M203,278 Q212.0,262 221,278" fill="none" stroke="#62a0ea" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M115,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M142,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M189,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M218.0,278 Q224.0,269 230.0,278 M230.0,278 Q235.5,269 241.0,278 M241.0,278 Q250.5,269 260.0,278 M260.0,278 Q269.5,269 279.0,278 M279.0,278 Q291.5,269 304,278" fill="none" stroke="#c64600" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M304,278 Q312.0,269 320,278 M320,278 Q326.5,269 333,278 M333,278 Q340.0,269 347,278 M347,278 Q356.5,269 366,278 M366,278 Q375.5,269 385,278" fill="none" stroke="#1a5fb4" stroke-width="1.8"/>
+<path d="M385,278 Q392.0,262 399,278" fill="none" stroke="#62a0ea" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M320,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M333,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M366,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M394.0,278 Q400.5,269 407.0,278 M407.0,278 Q414.5,269 422.0,278 M422.0,278 Q427.5,269 433.0,278 M433.0,278 Q442.0,269 451.0,278 M451.0,278 Q460.0,269 469,278" fill="none" stroke="#c64600" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M469,278 Q475.5,269 482,278 M482,278 Q495.0,269 508,278 M508,278 Q519.0,269 530,278 M530,278 Q537.0,269 544,278 M544,278 Q552.0,269 560,278" fill="none" stroke="#1a5fb4" stroke-width="1.8"/>
+<path d="M560,278 Q571.5,262 583,278" fill="none" stroke="#62a0ea" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M482,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M508,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M544,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M570.0,278 Q575.5,269 581.0,278 M581.0,278 Q590.5,269 600.0,278 M600.0,278 Q605.0,269 610.0,278 M610.0,278 Q619.5,269 629.0,278 M629.0,278 Q635.0,269 641,278" fill="none" stroke="#c64600" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M641,278 Q652.0,269 663,278 M663,278 Q674.0,269 685,278 M685,278 Q694.5,269 704,278 M704,278 Q710.5,269 717,278 M717,278 Q725.0,269 733,278" fill="none" stroke="#1a5fb4" stroke-width="1.8"/>
+<path d="M733,278 Q739.5,262 746,278" fill="none" stroke="#62a0ea" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M663,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M704,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M717,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M746.0,278 Q754.5,269 763.0,278 M763.0,278 Q772.0,269 781.0,278 M781.0,278 Q787.0,269 793,278" fill="none" stroke="#c64600" stroke-width="1.8" stroke-dasharray="4 3"/>
+<path d="M793,278 Q800.5,269 808,278 M808,278 Q816.5,269 825,278 M825,278 Q834.5,269 844,278 M844,278 Q851.5,269 859,278 M859,278 Q869.5,269 880,278 M880,278 Q887.0,269 894,278 M894,278 Q905.0,269 916,278" fill="none" stroke="#1a5fb4" stroke-width="1.8"/>
+<path d="M825,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M844,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M880,282 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<path d="M469,294 V308" stroke="#c64600" stroke-width="1.2"/>
+<text x="463" y="320" font-size="11.5" fill="#c64600" text-anchor="start" font-weight="normal">falls into step with the true code boundaries, typically within tens to a few hundred bits</text>
+<text x="40" y="338" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">Light blue: each chunk runs just past its own end, into the next chunk, to the first code boundary there. That crossing is on purpose:</text>
+<text x="40" y="355" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">the state at that boundary is the chunk's exit, which the next chunk checks against. It also records how many 8×8 blocks it finished, and its checkpoint states (7 or 15).</text>
+<text x="40" y="384" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">3  Next passes: each chunk compares its entry with the previous chunk's exit and, if they differ, decodes again from that exit.</text>
+<rect x="40.0" y="400" width="176.0" height="48" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="216.0" y="400" width="176.0" height="48" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="392.0" y="400" width="176.0" height="48" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="568.0" y="400" width="176.0" height="48" fill="none" stroke="#8a877f" stroke-width="1"/>
+<rect x="744.0" y="400" width="176.0" height="48" fill="none" stroke="#8a877f" stroke-width="1"/>
+<path d="M186.0,422 C202.0,406 226.0,406 242.0,422" fill="none" stroke="#1a5fb4" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M362.0,422 C378.0,406 402.0,406 418.0,422" fill="none" stroke="#1a5fb4" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M538.0,422 C554.0,406 578.0,406 594.0,422" fill="none" stroke="#1a5fb4" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M714.0,422 C730.0,406 754.0,406 770.0,422" fill="none" stroke="#1a5fb4" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M393.0,440 Q396.0,433 399,440 M399,440 Q407.0,433 415,440 M415,440 Q422.0,433 429,440 M429,440 Q439.5,433 450,440 M450,440 Q459.5,433 469,440 M469,440 Q475.5,433 482,440" fill="none" stroke="#1a5fb4" stroke-width="1.8"/>
+<path d="M482,437 l5,5 l-5,5 l-5,-5 z" fill="#1d1d1b"/>
+<text x="40" y="464" font-size="11.5" fill="#1a5fb4" text-anchor="start" font-weight="normal">arrows: one chunk's exit state becomes the next chunk's entry</text>
+<text x="920" y="464" font-size="11.5" fill="#1d1d1b" text-anchor="end" font-weight="normal">chunk 2 decodes again from its true entry and stops at its first checkpoint</text>
+<text x="40" y="486" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">Within a CUDA block of 128 chunks this repeats in shared memory until nothing changes; global passes, launched three at a time, carry exits across blocks.</text>
+<text x="40" y="503" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">A re-decode stops at the first checkpoint whose state matches the one recorded before: from there on its decode is identical, so most re-decodes are short.</text>
+<text x="40" y="536" font-size="13" fill="#1d1d1b" text-anchor="start" font-weight="600">4  When no exit changes, every entry is true. A prefix sum numbers the blocks, and the write pass decodes every piece in its own thread.</text>
+<rect x="40.0" y="550" width="75.0" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="115" y="550" width="27" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="142" y="550" width="47" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="189" y="550" width="27.0" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="216.0" y="550" width="104.0" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="320" y="550" width="13" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="333" y="550" width="33" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="366" y="550" width="26.0" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="392.0" y="550" width="90.0" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="482" y="550" width="26" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="508" y="550" width="36" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="544" y="550" width="24.0" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="568.0" y="550" width="95.0" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="663" y="550" width="41" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="704" y="550" width="13" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="717" y="550" width="27.0" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="744.0" y="550" width="81.0" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="825" y="550" width="19" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<rect x="844" y="550" width="36" height="24" fill="#a9c6ee" stroke="#ffffff" stroke-width="1"/>
+<rect x="880" y="550" width="40.0" height="24" fill="#d6e4f6" stroke="#ffffff" stroke-width="1"/>
+<text x="40" y="592" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">Each piece between checkpoints starts from a known-true state, so all pieces run at once (8 or 16 threads per chunk) and write the 8×8 blocks' coefficients.</text>
+<text x="40" y="616" font-size="12" fill="#1d1d1b" text-anchor="start" font-weight="normal">Camera photos settle in 2 passes. A file not settled after 3 passes is redone with up to 5 more; then it is declined to the CPU decoder.</text>
+<text x="40" y="633" font-size="12" fill="#1d1d1b" text-anchor="start" font-weight="normal">Restart markers, where a file has them, cut the stream into independent segments. An error bit (a code not in the table, data ending early) declines the file.</text>
+</svg>

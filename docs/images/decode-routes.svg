@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="896" viewBox="0 0 960 896" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" role="img" aria-label="decode() routes: small images to the CPU decoder; files the GPU path can reproduce exactly are decoded on the GPU; declined files go to the CPU decoder, libjpeg-turbo itself; a file libjpeg-turbo warns about raises by default and is returned with the warning named when strict=False; a file libjpeg-turbo rejects is rejected by both routes">
+<title>decode() routes: small images to the CPU decoder; files the GPU path can reproduce exactly are decoded on the GPU; declined files go to the CPU decoder, libjpeg-turbo itself; a file libjpeg-turbo warns about raises by default and is returned with the warning named when strict=False; a file libjpeg-turbo rejects is rejected by both routes</title>
+<rect width="960" height="896" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a877f"/></marker></defs>
+<text x="40" y="32" font-size="17" fill="#1d1d1b" text-anchor="start" font-weight="700">What exact-gpu-jpeg's decode() does with a file: GPU, CPU fallback and strict mode</text>
+<text x="40" y="54" font-size="12.5" fill="#5f5d58" text-anchor="start" font-weight="normal">Every image it returns is libjpeg-turbo's, byte for byte, whichever route made it.</text>
+<rect x="390" y="72" width="180" height="36" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="480.0" y="94.5" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">egj.decode(file)</text>
+<rect x="305" y="142" width="350" height="48" rx="8" fill="#f7f6f2" stroke="#8a877f" stroke-width="1.5"/>
+<text x="480.0" y="162.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">Smaller than cpu_below?</text>
+<text x="480.0" y="179.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">one small image, below a size measured on this machine</text>
+<rect x="200" y="232" width="560" height="98" rx="8" fill="#f7f6f2" stroke="#8a877f" stroke-width="1.5"/>
+<text x="480.0" y="260.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">Can the GPU path reproduce it exactly?</text>
+<text x="480.0" y="277.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">8-bit baseline or extended-sequential Huffman, one scan, integral sampling;</text>
+<text x="480.0" y="294.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">no libjpeg-turbo warning; no error bit; settles within 8 launches;</text>
+<text x="480.0" y="311.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">libjpeg-turbo's own code paths agree on every block</text>
+<rect x="40" y="396" width="330" height="62" rx="8" fill="#d6e4f6" stroke="#1a5fb4" stroke-width="1.5"/>
+<text x="205.0" y="423.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">GPU image</text>
+<text x="205.0" y="440.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">byte-identical to libjpeg-turbo · info['path'] = 'gpu'</text>
+<rect x="530" y="396" width="390" height="62" rx="8" fill="#ffffff" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="725.0" y="423.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">CPU decoder: libjpeg-turbo itself</text>
+<text x="725.0" y="440.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">simplejpeg's TurboJPEG API; the image is uploaded to the GPU</text>
+<rect x="575" y="506" width="300" height="44" rx="8" fill="#f7f6f2" stroke="#8a877f" stroke-width="1.5"/>
+<text x="725.0" y="532.5" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">What does libjpeg-turbo report?</text>
+<rect x="40" y="618" width="280" height="62" rx="8" fill="#d6e4f6" stroke="#1a5fb4" stroke-width="1.5"/>
+<text x="180.0" y="645.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">Reference image</text>
+<text x="180.0" y="662.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">the same pixels · info['path'] = 'cpu'</text>
+<rect x="390" y="608" width="220" height="44" rx="8" fill="#f7f6f2" stroke="#8a877f" stroke-width="1.5"/>
+<text x="500.0" y="634.5" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">A warning: strict?</text>
+<rect x="680" y="618" width="250" height="62" rx="8" fill="#fbeeee" stroke="#a51d2d" stroke-width="1.5"/>
+<text x="805.0" y="645.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">Rejected: raises an error</text>
+<text x="805.0" y="662.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">libjpeg-turbo rejects it, so both routes do</text>
+<rect x="190" y="750" width="290" height="62" rx="8" fill="#fbeeee" stroke="#a51d2d" stroke-width="1.5"/>
+<text x="335.0" y="777.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">strict=True (default): raises</text>
+<text x="335.0" y="794.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">naming libjpeg-turbo's warning</text>
+<rect x="520" y="750" width="320" height="62" rx="8" fill="#d6e4f6" stroke="#1a5fb4" stroke-width="1.5"/>
+<text x="680.0" y="777.0" font-size="13" fill="#1d1d1b" text-anchor="middle" font-weight="600">strict=False: libjpeg-turbo's image</text>
+<text x="680.0" y="794.0" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">the warning named in info['warning']</text>
+<path d="M480,108 V140" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M480,190 V230" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="488" y="215" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">no</text>
+<path d="M655,166 H840 V394" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="748" y="159" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">yes</text>
+<path d="M300,330 V358 H205 V394" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="308" y="350" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">yes</text>
+<path d="M640,330 V394" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="648" y="366" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">no: declined, with a reason</text>
+<path d="M725,458 V504" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M575,528 H180 V616" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="380" y="520" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">decodes it cleanly</text>
+<path d="M680,550 V578 H500 V606" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="590" y="571" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">decodes it with a warning</text>
+<path d="M805,550 V616" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="813" y="586" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">rejects it</text>
+<path d="M455,652 V706 H335 V748" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="345" y="700" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">True (default)</text>
+<path d="M545,652 V706 H680 V748" fill="none" stroke="#8a877f" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="555" y="700" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">False</text>
+<text x="40" y="846" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">With fallback=False, a declined file returns None and its reason instead of going to the CPU decoder.</text>
+<text x="40" y="864" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">CMYK and YCCK files are decoded by the CPU decoder with its own colour conversion: outside the claim, and the reason says so.</text>
+<text x="40" y="882" font-size="12" fill="#5f5d58" text-anchor="start" font-weight="normal">With strict=False the GPU path itself decodes two warned kinds (no end marker; a JFIF segment after the scan) and names the warning.</text>
+</svg>

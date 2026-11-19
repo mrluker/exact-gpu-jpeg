@@ -1,0 +1,68 @@
+{
+ "what": "egj numbers pass: decode_alone_streamed",
+ "src": "fba64922 (release-fixes; charts-release worktree, only docs changed; the decode path is the same at the merge head)",
+ "start": "2026-11-19 05:35:42",
+ "wall_s": 7.894758200040087,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 1.0,
+  "cpu_load_max": 19.0,
+  "gpu_mem_mib": 786.0,
+  "gpu_temp_c": 58.0,
+  "samples": [
+   {
+    "gpu_util": 1.0,
+    "gpu_mem_mib": 786.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 1873.0,
+    "cpu_load": 14.0
+   },
+   {
+    "gpu_util": 1.0,
+    "gpu_mem_mib": 786.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 1873.0,
+    "cpu_load": 16.0
+   },
+   {
+    "gpu_util": 1.0,
+    "gpu_mem_mib": 786.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 1873.0,
+    "cpu_load": 19.0
+   },
+   {
+    "gpu_util": 1.0,
+    "gpu_mem_mib": 786.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 1873.0,
+    "cpu_load": 17.0
+   },
+   {
+    "gpu_util": 1.0,
+    "gpu_mem_mib": 786.0,
+    "gpu_temp_c": 58.0,
+    "gpu_sm_mhz": 1873.0,
+    "cpu_load": 7.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 58.0,
+  "gpu_mem_mib": 786.0,
+  "gpu_temp_c": 61.0,
+  "gpu_sm_mhz": 1860.0
+ },
+ "otherwise_idle": true,
+ "settings_folder": "a new empty folder for this run (LOCALAPPDATA), so the library's saved settings are what a new user of this head gets; this PC's own settings file was not used",
+ "cpu_below_before_run": {
+  "pixels": 181342,
+  "source": "measured",
+  "crossing": 181342
+ },
+ "cpu_below_after_run": {
+  "pixels": 181342,
+  "source": "saved",
+  "crossing": 181342
+ }
+}

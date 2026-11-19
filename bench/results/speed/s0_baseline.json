@@ -1,0 +1,17 @@
+{
+ "label": "baseline: library 7a54ed8 (per-pixel-pair colour kernel, host sync every 4 passes)",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 19.25,
+  "passes": 4.42,
+  "upload_ms": 1.97,
+  "huffman_ms": 9.65,
+  "pixels_ms": 3.35
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 51.9,
+  "gpu_1_threads_run1": 52.2,
+  "gpu_2_threads_run0": 65.1,
+  "gpu_2_threads_run1": 64.7
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "what": "egj numbers pass: first_calls",
+ "start": "2026-11-18 22:12:02",
+ "wall_s": 67.64631930005271,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 4.0,
+  "cpu_load_max": 20.0,
+  "gpu_mem_mib": 603.0,
+  "gpu_temp_c": 44.0,
+  "samples": [
+   {
+    "gpu_util": 2.0,
+    "gpu_mem_mib": 603.0,
+    "gpu_temp_c": 44.0,
+    "gpu_sm_mhz": 1506.0,
+    "cpu_load": 17.0
+   },
+   {
+    "gpu_util": 2.0,
+    "gpu_mem_mib": 603.0,
+    "gpu_temp_c": 44.0,
+    "gpu_sm_mhz": 923.0,
+    "cpu_load": 19.0
+   },
+   {
+    "gpu_util": 2.0,
+    "gpu_mem_mib": 603.0,
+    "gpu_temp_c": 44.0,
+    "gpu_sm_mhz": 923.0,
+    "cpu_load": 15.0
+   },
+   {
+    "gpu_util": 3.0,
+    "gpu_mem_mib": 603.0,
+    "gpu_temp_c": 43.0,
+    "gpu_sm_mhz": 708.0,
+    "cpu_load": 17.0
+   },
+   {
+    "gpu_util": 4.0,
+    "gpu_mem_mib": 603.0,
+    "gpu_temp_c": 44.0,
+    "gpu_sm_mhz": 202.0,
+    "cpu_load": 20.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 4.0,
+  "gpu_mem_mib": 602.0,
+  "gpu_temp_c": 46.0,
+  "gpu_sm_mhz": 923.0
+ },
+ "otherwise_idle": true,
+ "settings_folder": "a new empty folder for this run (LOCALAPPDATA), so the library's saved settings are what a new user of this head gets; this PC's own settings file was not used",
+ "cpu_below_before_run": {
+  "pixels": 273407,
+  "source": "measured",
+  "crossing": 273407
+ },
+ "cpu_below_after_run": {
+  "pixels": 273407,
+  "source": "saved",
+  "crossing": 273407
+ }
+}

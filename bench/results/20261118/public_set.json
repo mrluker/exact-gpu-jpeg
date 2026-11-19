@@ -1,0 +1,5140 @@
+{
+ "measured": "2026-11-18",
+ "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+ "versions": {
+  "torch": "2.14.1+cu126",
+  "torchvision": "0.29.1+cu126",
+  "opencv": "5.0.0",
+  "pyvips": "3.2.0",
+  "pillow": "13.0.0",
+  "simplejpeg": "1.9.0",
+  "exact_gpu_jpeg": "0.1.0"
+ },
+ "archives": [
+  {
+   "name": "rgb8bit.zip",
+   "url": "https://imagecompression.info/test_images/rgb8bit.zip",
+   "bytes": 346126330,
+   "sha256": "16c273504425923259b1ddf8e39dfa9cb27585d249f6263cfc6bea39cfafa660"
+  },
+  {
+   "name": "3dtestimages.tar.bz2",
+   "url": "https://libjpeg-turbo.org/pmwiki/uploads/About/3dtestimages.tar.bz2",
+   "bytes": 764181,
+   "sha256": "60e5cac0da25712a9b49da60212f14266d07c586dfb5d6c968e34fec6937b667"
+  }
+ ],
+ "settings": [
+  "q95_420",
+  "q95_422",
+  "q95_444",
+  "q95_gray",
+  "q90_420",
+  "q95_420_opt"
+ ],
+ "other_decoders": [
+  "Pillow",
+  "libjpeg-turbo fast modes (fast IDCT + fast upsampling)",
+  "torchvision.io.decode_jpeg on the CPU",
+  "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)",
+  "OpenCV imdecode",
+  "libvips (pyvips)"
+ ],
+ "files": [
+  {
+   "image": "artificial",
+   "setting": "q95_420",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1589,
+   "blocks": 147456,
+   "route": "gpu",
+   "ms": {
+    "this library": 6.02,
+    "libjpeg-turbo, one thread": 25.263,
+    "nvJPEG (torchvision)": 18.066
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 17.1,
+   "packed_against_scan": 2.527,
+   "wide_blocks": 0.0529,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 85,
+     "pixels_differ": 0.47125,
+     "psnr": 42.39
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 84,
+     "pixels_differ": 0.56066,
+     "psnr": 43.67
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "artificial",
+   "setting": "q95_422",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1785,
+   "blocks": 196608,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.939,
+    "libjpeg-turbo, one thread": 26.618,
+    "nvJPEG (torchvision)": 27.327
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 15.2,
+   "packed_against_scan": 2.661,
+   "wide_blocks": 0.0399,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 61,
+     "pixels_differ": 0.42118,
+     "psnr": 44.46
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 57,
+     "pixels_differ": 0.53476,
+     "psnr": 46.74
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "artificial",
+   "setting": "q95_444",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.2087,
+   "blocks": 294912,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.928,
+    "libjpeg-turbo, one thread": 31.807,
+    "nvJPEG (torchvision)": 39.432
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 13.0,
+   "packed_against_scan": 2.924,
+   "wide_blocks": 0.0265,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 19,
+     "pixels_differ": 0.37157,
+     "psnr": 47.25
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.50429,
+     "psnr": 53.32
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "artificial",
+   "setting": "q95_gray",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1232,
+   "blocks": 98304,
+   "route": "gpu",
+   "ms": {
+    "this library": 6.89,
+    "libjpeg-turbo, one thread": 24.402,
+    "nvJPEG (torchvision)": 12.926
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 19.4,
+   "packed_against_scan": 2.456,
+   "wide_blocks": 0.0789,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 19,
+     "pixels_differ": 0.26309,
+     "psnr": 48.75
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.00569,
+     "psnr": 70.58
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "artificial",
+   "setting": "q90_420",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1124,
+   "blocks": 147456,
+   "route": "gpu",
+   "ms": {
+    "this library": 9.884,
+    "libjpeg-turbo, one thread": 19.534,
+    "nvJPEG (torchvision)": 14.8
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 13.2,
+   "packed_against_scan": 2.761,
+   "wide_blocks": 0.0147,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 84,
+     "pixels_differ": 0.62236,
+     "psnr": 42.82
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 83,
+     "pixels_differ": 0.56547,
+     "psnr": 43.85
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "artificial",
+   "setting": "q95_420_opt",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1532,
+   "blocks": 147456,
+   "route": "gpu",
+   "ms": {
+    "this library": 12.809,
+    "libjpeg-turbo, one thread": 22.744,
+    "nvJPEG (torchvision)": 17.681
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 17.1,
+   "packed_against_scan": 2.621,
+   "wide_blocks": 0.0529,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 85,
+     "pixels_differ": 0.47125,
+     "psnr": 42.39
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 84,
+     "pixels_differ": 0.56066,
+     "psnr": 43.67
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_building",
+   "setting": "q95_420",
+   "megapixels": 39.05,
+   "bytes_per_pixel": 0.3469,
+   "blocks": 917334,
+   "route": "gpu",
+   "ms": {
+    "this library": 16.597,
+    "libjpeg-turbo, one thread": 219.385,
+    "nvJPEG (torchvision)": 191.071
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 30.8,
+   "packed_against_scan": 2.083,
+   "wide_blocks": 0.0652,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 45,
+     "pixels_differ": 0.92343,
+     "psnr": 41.9
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 45,
+     "pixels_differ": 0.93244,
+     "psnr": 44.66
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_building",
+   "setting": "q95_422",
+   "megapixels": 39.05,
+   "bytes_per_pixel": 0.3959,
+   "blocks": 1221308,
+   "route": "gpu",
+   "ms": {
+    "this library": 17.246,
+    "libjpeg-turbo, one thread": 250.072,
+    "nvJPEG (torchvision)": 228.165
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.4,
+   "packed_against_scan": 2.165,
+   "wide_blocks": 0.049,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 36,
+     "pixels_differ": 0.91692,
+     "psnr": 42.48
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 34,
+     "pixels_differ": 0.92286,
+     "psnr": 46.04
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_building",
+   "setting": "q95_444",
+   "megapixels": 39.05,
+   "bytes_per_pixel": 0.4877,
+   "blocks": 1831962,
+   "route": "gpu",
+   "ms": {
+    "this library": 19.825,
+    "libjpeg-turbo, one thread": 311.406,
+    "nvJPEG (torchvision)": 292.45
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 23.8,
+   "packed_against_scan": 2.287,
+   "wide_blocks": 0.0326,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.88851,
+     "psnr": 43.93
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.85708,
+     "psnr": 51.06
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_building",
+   "setting": "q95_gray",
+   "megapixels": 39.05,
+   "bytes_per_pixel": 0.2964,
+   "blocks": 610654,
+   "route": "gpu",
+   "ms": {
+    "this library": 11.057,
+    "libjpeg-turbo, one thread": 197.275,
+    "nvJPEG (torchvision)": 156.849
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 37.3,
+   "packed_against_scan": 1.968,
+   "wide_blocks": 0.0978,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.58596,
+     "psnr": 47.17
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01698,
+     "psnr": 65.83
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_building",
+   "setting": "q90_420",
+   "megapixels": 39.05,
+   "bytes_per_pixel": 0.2323,
+   "blocks": 917334,
+   "route": "gpu",
+   "ms": {
+    "this library": 10.62,
+    "libjpeg-turbo, one thread": 171.499,
+    "nvJPEG (torchvision)": 141.687
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 22.5,
+   "packed_against_scan": 2.272,
+   "wide_blocks": 0.0071,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 44,
+     "pixels_differ": 0.89889,
+     "psnr": 43.43
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 43,
+     "pixels_differ": 0.9171,
+     "psnr": 45.93
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_building",
+   "setting": "q95_420_opt",
+   "megapixels": 39.05,
+   "bytes_per_pixel": 0.3377,
+   "blocks": 917334,
+   "route": "gpu",
+   "ms": {
+    "this library": 14.853,
+    "libjpeg-turbo, one thread": 206.595,
+    "nvJPEG (torchvision)": 187.667
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 30.8,
+   "packed_against_scan": 2.14,
+   "wide_blocks": 0.0652,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 45,
+     "pixels_differ": 0.92343,
+     "psnr": 41.9
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 45,
+     "pixels_differ": 0.93244,
+     "psnr": 44.66
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_tree",
+   "setting": "q95_420",
+   "megapixels": 27.7,
+   "bytes_per_pixel": 0.3859,
+   "blocks": 651510,
+   "route": "gpu",
+   "ms": {
+    "this library": 11.366,
+    "libjpeg-turbo, one thread": 157.754,
+    "nvJPEG (torchvision)": 146.653
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 35.2,
+   "packed_against_scan": 2.146,
+   "wide_blocks": 0.0586,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.96834,
+     "psnr": 37.89
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.98493,
+     "psnr": 38.69
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_tree",
+   "setting": "q95_422",
+   "megapixels": 27.7,
+   "bytes_per_pixel": 0.4682,
+   "blocks": 867156,
+   "route": "gpu",
+   "ms": {
+    "this library": 11.315,
+    "libjpeg-turbo, one thread": 205.336,
+    "nvJPEG (torchvision)": 180.694
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 32.3,
+   "packed_against_scan": 2.162,
+   "wide_blocks": 0.0444,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 56,
+     "pixels_differ": 0.95615,
+     "psnr": 39.59
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.97634,
+     "psnr": 40.94
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_tree",
+   "setting": "q95_444",
+   "megapixels": 27.7,
+   "bytes_per_pixel": 0.6247,
+   "blocks": 1299027,
+   "route": "gpu",
+   "ms": {
+    "this library": 16.547,
+    "libjpeg-turbo, one thread": 252.43,
+    "nvJPEG (torchvision)": 251.53
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 29.1,
+   "packed_against_scan": 2.185,
+   "wide_blocks": 0.0296,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.87343,
+     "psnr": 44.01
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.85969,
+     "psnr": 50.94
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_tree",
+   "setting": "q95_gray",
+   "megapixels": 27.7,
+   "bytes_per_pixel": 0.2891,
+   "blocks": 433009,
+   "route": "gpu",
+   "ms": {
+    "this library": 8.296,
+    "libjpeg-turbo, one thread": 144.839,
+    "nvJPEG (torchvision)": 102.389
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 38.9,
+   "packed_against_scan": 2.103,
+   "wide_blocks": 0.0879,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.54502,
+     "psnr": 47.19
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01747,
+     "psnr": 65.71
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_tree",
+   "setting": "q90_420",
+   "megapixels": 27.7,
+   "bytes_per_pixel": 0.2409,
+   "blocks": 651510,
+   "route": "gpu",
+   "ms": {
+    "this library": 8.691,
+    "libjpeg-turbo, one thread": 129.836,
+    "nvJPEG (torchvision)": 103.606
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 24.6,
+   "packed_against_scan": 2.401,
+   "wide_blocks": 0.0174,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 76,
+     "pixels_differ": 0.95085,
+     "psnr": 39.12
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 76,
+     "pixels_differ": 0.97539,
+     "psnr": 39.82
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "big_tree",
+   "setting": "q95_420_opt",
+   "megapixels": 27.7,
+   "bytes_per_pixel": 0.3774,
+   "blocks": 651510,
+   "route": "gpu",
+   "ms": {
+    "this library": 12.075,
+    "libjpeg-turbo, one thread": 154.306,
+    "nvJPEG (torchvision)": 143.501
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 35.2,
+   "packed_against_scan": 2.195,
+   "wide_blocks": 0.0586,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.96834,
+     "psnr": 37.89
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.98493,
+     "psnr": 38.69
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "bridge",
+   "setting": "q95_420",
+   "megapixels": 11.13,
+   "bytes_per_pixel": 0.4276,
+   "blocks": 262128,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.386,
+    "libjpeg-turbo, one thread": 78.599,
+    "nvJPEG (torchvision)": 67.897
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 38.6,
+   "packed_against_scan": 2.123,
+   "wide_blocks": 0.0986,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 28,
+     "pixels_differ": 0.96227,
+     "psnr": 39.38
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 29,
+     "pixels_differ": 0.97946,
+     "psnr": 40.71
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "bridge",
+   "setting": "q95_422",
+   "megapixels": 11.13,
+   "bytes_per_pixel": 0.5144,
+   "blocks": 348816,
+   "route": "gpu",
+   "ms": {
+    "this library": 15.865,
+    "libjpeg-turbo, one thread": 86.378,
+    "nvJPEG (torchvision)": 80.411
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 35.4,
+   "packed_against_scan": 2.156,
+   "wide_blocks": 0.0741,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 24,
+     "pixels_differ": 0.95454,
+     "psnr": 40.56
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 22,
+     "pixels_differ": 0.97308,
+     "psnr": 42.6
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "bridge",
+   "setting": "q95_444",
+   "megapixels": 11.13,
+   "bytes_per_pixel": 0.6707,
+   "blocks": 523224,
+   "route": "gpu",
+   "ms": {
+    "this library": 7.931,
+    "libjpeg-turbo, one thread": 107.516,
+    "nvJPEG (torchvision)": 101.767
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 31.5,
+   "packed_against_scan": 2.206,
+   "wide_blocks": 0.0494,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.88134,
+     "psnr": 43.66
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.86442,
+     "psnr": 50.89
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "bridge",
+   "setting": "q95_gray",
+   "megapixels": 11.13,
+   "bytes_per_pixel": 0.3419,
+   "blocks": 174408,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.398,
+    "libjpeg-turbo, one thread": 67.087,
+    "nvJPEG (torchvision)": 47.138
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 45.1,
+   "packed_against_scan": 2.065,
+   "wide_blocks": 0.1482,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 12,
+     "pixels_differ": 0.57394,
+     "psnr": 46.31
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01792,
+     "psnr": 65.6
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "bridge",
+   "setting": "q90_420",
+   "megapixels": 11.13,
+   "bytes_per_pixel": 0.2691,
+   "blocks": 262128,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.682,
+    "libjpeg-turbo, one thread": 52.794,
+    "nvJPEG (torchvision)": 46.045
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 26.5,
+   "packed_against_scan": 2.318,
+   "wide_blocks": 0.0225,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 29,
+     "pixels_differ": 0.92494,
+     "psnr": 41.8
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 29,
+     "pixels_differ": 0.95556,
+     "psnr": 43.23
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "bridge",
+   "setting": "q95_420_opt",
+   "megapixels": 11.13,
+   "bytes_per_pixel": 0.4176,
+   "blocks": 262128,
+   "route": "gpu",
+   "ms": {
+    "this library": 6.502,
+    "libjpeg-turbo, one thread": 65.768,
+    "nvJPEG (torchvision)": 62.298
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 38.6,
+   "packed_against_scan": 2.175,
+   "wide_blocks": 0.0986,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 28,
+     "pixels_differ": 0.96227,
+     "psnr": 39.38
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 29,
+     "pixels_differ": 0.97946,
+     "psnr": 40.71
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "cathedral",
+   "setting": "q95_420",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.3364,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.302,
+    "libjpeg-turbo, one thread": 41.721,
+    "nvJPEG (torchvision)": 28.623
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 30.8,
+   "packed_against_scan": 2.144,
+   "wide_blocks": 0.0346,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.9084,
+     "psnr": 42.68
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.91891,
+     "psnr": 45.21
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "cathedral",
+   "setting": "q95_422",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.3891,
+   "blocks": 188000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.175,
+    "libjpeg-turbo, one thread": 37.394,
+    "nvJPEG (torchvision)": 35.608
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.6,
+   "packed_against_scan": 2.214,
+   "wide_blocks": 0.0259,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 38,
+     "pixels_differ": 0.90201,
+     "psnr": 43.16
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 35,
+     "pixels_differ": 0.90835,
+     "psnr": 46.35
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "cathedral",
+   "setting": "q95_444",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.4855,
+   "blocks": 282000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.361,
+    "libjpeg-turbo, one thread": 48.306,
+    "nvJPEG (torchvision)": 44.365
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 24.0,
+   "packed_against_scan": 2.32,
+   "wide_blocks": 0.0173,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.85829,
+     "psnr": 44.73
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.80962,
+     "psnr": 51.46
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "cathedral",
+   "setting": "q95_gray",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.2846,
+   "blocks": 94000,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.374,
+    "libjpeg-turbo, one thread": 33.228,
+    "nvJPEG (torchvision)": 22.326
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 37.0,
+   "packed_against_scan": 2.034,
+   "wide_blocks": 0.0519,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.52047,
+     "psnr": 48.46
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01697,
+     "psnr": 65.83
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "cathedral",
+   "setting": "q90_420",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.2166,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.729,
+    "libjpeg-turbo, one thread": 29.849,
+    "nvJPEG (torchvision)": 22.02
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 22.5,
+   "packed_against_scan": 2.438,
+   "wide_blocks": 0.007,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 51,
+     "pixels_differ": 0.88524,
+     "psnr": 43.79
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.89143,
+     "psnr": 46.37
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "cathedral",
+   "setting": "q95_420_opt",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.3314,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.824,
+    "libjpeg-turbo, one thread": 36.454,
+    "nvJPEG (torchvision)": 31.304
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 30.8,
+   "packed_against_scan": 2.176,
+   "wide_blocks": 0.0346,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.9084,
+     "psnr": 42.68
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.91891,
+     "psnr": 45.21
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "deer",
+   "setting": "q95_420",
+   "megapixels": 10.68,
+   "bytes_per_pixel": 0.4536,
+   "blocks": 251988,
+   "route": "gpu",
+   "ms": {
+    "this library": 6.704,
+    "libjpeg-turbo, one thread": 70.332,
+    "nvJPEG (torchvision)": 68.52
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 41.9,
+   "packed_against_scan": 2.18,
+   "wide_blocks": 0.0142,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.96769,
+     "psnr": 38.83
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.9839,
+     "psnr": 39.63
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "deer",
+   "setting": "q95_422",
+   "megapixels": 10.68,
+   "bytes_per_pixel": 0.576,
+   "blocks": 334972,
+   "route": "gpu",
+   "ms": {
+    "this library": 9.002,
+    "libjpeg-turbo, one thread": 89.046,
+    "nvJPEG (torchvision)": 82.226
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 40.6,
+   "packed_against_scan": 2.212,
+   "wide_blocks": 0.0107,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 51,
+     "pixels_differ": 0.96635,
+     "psnr": 39.43
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.98389,
+     "psnr": 40.4
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "deer",
+   "setting": "q95_444",
+   "megapixels": 10.68,
+   "bytes_per_pixel": 0.8885,
+   "blocks": 502458,
+   "route": "gpu",
+   "ms": {
+    "this library": 9.964,
+    "libjpeg-turbo, one thread": 130.13,
+    "nvJPEG (torchvision)": 124.202
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 42.0,
+   "packed_against_scan": 2.227,
+   "wide_blocks": 0.0071,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.85483,
+     "psnr": 45.04
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.84543,
+     "psnr": 51.02
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "deer",
+   "setting": "q95_gray",
+   "megapixels": 10.68,
+   "bytes_per_pixel": 0.3674,
+   "blocks": 167486,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.898,
+    "libjpeg-turbo, one thread": 68.178,
+    "nvJPEG (torchvision)": 48.828
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 49.6,
+   "packed_against_scan": 2.119,
+   "wide_blocks": 0.0214,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 16,
+     "pixels_differ": 0.49897,
+     "psnr": 49.91
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01971,
+     "psnr": 65.18
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "deer",
+   "setting": "q90_420",
+   "megapixels": 10.68,
+   "bytes_per_pixel": 0.2757,
+   "blocks": 251988,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.75,
+    "libjpeg-turbo, one thread": 54.929,
+    "nvJPEG (torchvision)": 46.352
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 28.7,
+   "packed_against_scan": 2.457,
+   "wide_blocks": 0.0036,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 68,
+     "pixels_differ": 0.91508,
+     "psnr": 42.17
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 69,
+     "pixels_differ": 0.93044,
+     "psnr": 43.9
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "deer",
+   "setting": "q95_420_opt",
+   "megapixels": 10.68,
+   "bytes_per_pixel": 0.4409,
+   "blocks": 251988,
+   "route": "gpu",
+   "ms": {
+    "this library": 6.995,
+    "libjpeg-turbo, one thread": 71.647,
+    "nvJPEG (torchvision)": 64.091
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 41.9,
+   "packed_against_scan": 2.243,
+   "wide_blocks": 0.0142,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.96769,
+     "psnr": 38.83
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 72,
+     "pixels_differ": 0.9839,
+     "psnr": 39.63
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "fireworks",
+   "setting": "q95_420",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1536,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.619,
+    "libjpeg-turbo, one thread": 29.844,
+    "nvJPEG (torchvision)": 20.606
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.4,
+   "packed_against_scan": 2.804,
+   "wide_blocks": 0.0421,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 45,
+     "pixels_differ": 0.55865,
+     "psnr": 44.6
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.43341,
+     "psnr": 48.67
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "fireworks",
+   "setting": "q95_422",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1736,
+   "blocks": 230496,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.076,
+    "libjpeg-turbo, one thread": 33.974,
+    "nvJPEG (torchvision)": 28.411
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 16.5,
+   "packed_against_scan": 2.967,
+   "wide_blocks": 0.0316,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 42,
+     "pixels_differ": 0.55892,
+     "psnr": 45.1
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 36,
+     "pixels_differ": 0.42702,
+     "psnr": 50.4
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "fireworks",
+   "setting": "q95_444",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.2134,
+   "blocks": 345744,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.729,
+    "libjpeg-turbo, one thread": 39.471,
+    "nvJPEG (torchvision)": 33.672
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 14.6,
+   "packed_against_scan": 3.205,
+   "wide_blocks": 0.0211,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 19,
+     "pixels_differ": 0.55223,
+     "psnr": 45.94
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.41124,
+     "psnr": 54.92
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "fireworks",
+   "setting": "q95_gray",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1305,
+   "blocks": 115248,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.217,
+    "libjpeg-turbo, one thread": 29.686,
+    "nvJPEG (torchvision)": 15.566
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 21.9,
+   "packed_against_scan": 2.624,
+   "wide_blocks": 0.0632,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 18,
+     "pixels_differ": 0.33139,
+     "psnr": 47.25
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.00991,
+     "psnr": 68.17
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "fireworks",
+   "setting": "q90_420",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.0971,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.701,
+    "libjpeg-turbo, one thread": 22.758,
+    "nvJPEG (torchvision)": 16.339
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 13.5,
+   "packed_against_scan": 3.255,
+   "wide_blocks": 0.0262,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 56,
+     "pixels_differ": 0.52971,
+     "psnr": 46.67
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 53,
+     "pixels_differ": 0.41552,
+     "psnr": 49.16
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "fireworks",
+   "setting": "q95_420_opt",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.15,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.101,
+    "libjpeg-turbo, one thread": 27.288,
+    "nvJPEG (torchvision)": 20.988
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.4,
+   "packed_against_scan": 2.87,
+   "wide_blocks": 0.0421,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 45,
+     "pixels_differ": 0.55865,
+     "psnr": 44.6
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.43341,
+     "psnr": 48.67
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "flower_foveon",
+   "setting": "q95_420",
+   "megapixels": 3.43,
+   "bytes_per_pixel": 0.1573,
+   "blocks": 80940,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.123,
+    "libjpeg-turbo, one thread": 13.037,
+    "nvJPEG (torchvision)": 10.175
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.1,
+   "packed_against_scan": 2.715,
+   "wide_blocks": 0.0064,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 31,
+     "pixels_differ": 0.84125,
+     "psnr": 43.69
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 30,
+     "pixels_differ": 0.86606,
+     "psnr": 46.22
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "flower_foveon",
+   "setting": "q95_422",
+   "megapixels": 3.43,
+   "bytes_per_pixel": 0.179,
+   "blocks": 107352,
+   "route": "gpu",
+   "ms": {
+    "this library": 1.813,
+    "libjpeg-turbo, one thread": 15.509,
+    "nvJPEG (torchvision)": 14.513
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 16.3,
+   "packed_against_scan": 2.856,
+   "wide_blocks": 0.0049,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 22,
+     "pixels_differ": 0.83748,
+     "psnr": 44.44
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 22,
+     "pixels_differ": 0.85822,
+     "psnr": 47.79
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "flower_foveon",
+   "setting": "q95_444",
+   "megapixels": 3.43,
+   "bytes_per_pixel": 0.2139,
+   "blocks": 161028,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.204,
+    "libjpeg-turbo, one thread": 19.225,
+    "nvJPEG (torchvision)": 15.744
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 14.3,
+   "packed_against_scan": 3.133,
+   "wide_blocks": 0.0032,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 10,
+     "pixels_differ": 0.8113,
+     "psnr": 45.85
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.83376,
+     "psnr": 51.35
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "flower_foveon",
+   "setting": "q95_gray",
+   "megapixels": 3.43,
+   "bytes_per_pixel": 0.127,
+   "blocks": 53676,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.418,
+    "libjpeg-turbo, one thread": 15.247,
+    "nvJPEG (torchvision)": 10.409
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 21.0,
+   "packed_against_scan": 2.583,
+   "wide_blocks": 0.0096,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 8,
+     "pixels_differ": 0.49595,
+     "psnr": 50.68
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01376,
+     "psnr": 66.75
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "flower_foveon",
+   "setting": "q90_420",
+   "megapixels": 3.43,
+   "bytes_per_pixel": 0.0944,
+   "blocks": 80940,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.352,
+    "libjpeg-turbo, one thread": 11.457,
+    "nvJPEG (torchvision)": 14.66
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 13.1,
+   "packed_against_scan": 3.265,
+   "wide_blocks": 0.0,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 30,
+     "pixels_differ": 0.87446,
+     "psnr": 43.53
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 30,
+     "pixels_differ": 0.8699,
+     "psnr": 46.28
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "flower_foveon",
+   "setting": "q95_420_opt",
+   "megapixels": 3.43,
+   "bytes_per_pixel": 0.1553,
+   "blocks": 80940,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.62,
+    "libjpeg-turbo, one thread": 13.335,
+    "nvJPEG (torchvision)": 10.253
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.1,
+   "packed_against_scan": 2.751,
+   "wide_blocks": 0.0064,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 31,
+     "pixels_differ": 0.84125,
+     "psnr": 43.69
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 30,
+     "pixels_differ": 0.86606,
+     "psnr": 46.22
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "hdr",
+   "setting": "q95_420",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1667,
+   "blocks": 147456,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.735,
+    "libjpeg-turbo, one thread": 25.116,
+    "nvJPEG (torchvision)": 19.285
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.6,
+   "packed_against_scan": 2.621,
+   "wide_blocks": 0.0103,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.86328,
+     "psnr": 44.28
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 48,
+     "pixels_differ": 0.86174,
+     "psnr": 47.92
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "hdr",
+   "setting": "q95_422",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1871,
+   "blocks": 196608,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.402,
+    "libjpeg-turbo, one thread": 28.3,
+    "nvJPEG (torchvision)": 22.302
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 16.7,
+   "packed_against_scan": 2.797,
+   "wide_blocks": 0.0077,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 38,
+     "pixels_differ": 0.87584,
+     "psnr": 44.56
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 38,
+     "pixels_differ": 0.85528,
+     "psnr": 49.01
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "hdr",
+   "setting": "q95_444",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.2234,
+   "blocks": 294912,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.185,
+    "libjpeg-turbo, one thread": 35.113,
+    "nvJPEG (torchvision)": 30.154
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 14.7,
+   "packed_against_scan": 3.094,
+   "wide_blocks": 0.0051,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 18,
+     "pixels_differ": 0.86705,
+     "psnr": 45.14
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.83877,
+     "psnr": 50.92
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "hdr",
+   "setting": "q95_gray",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1414,
+   "blocks": 98304,
+   "route": "gpu",
+   "ms": {
+    "this library": 1.645,
+    "libjpeg-turbo, one thread": 24.599,
+    "nvJPEG (torchvision)": 15.128
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 22.0,
+   "packed_against_scan": 2.433,
+   "wide_blocks": 0.0154,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 16,
+     "pixels_differ": 0.50373,
+     "psnr": 50.22
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01378,
+     "psnr": 66.74
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "hdr",
+   "setting": "q90_420",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1038,
+   "blocks": 147456,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.463,
+    "libjpeg-turbo, one thread": 20.565,
+    "nvJPEG (torchvision)": 15.077
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 13.9,
+   "packed_against_scan": 3.142,
+   "wide_blocks": 0.0013,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 51,
+     "pixels_differ": 0.87106,
+     "psnr": 44.51
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 53,
+     "pixels_differ": 0.86494,
+     "psnr": 48.15
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "hdr",
+   "setting": "q95_420_opt",
+   "megapixels": 6.29,
+   "bytes_per_pixel": 0.1658,
+   "blocks": 147456,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.566,
+    "libjpeg-turbo, one thread": 24.822,
+    "nvJPEG (torchvision)": 19.374
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.6,
+   "packed_against_scan": 2.634,
+   "wide_blocks": 0.0103,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.86328,
+     "psnr": 44.28
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 48,
+     "pixels_differ": 0.86174,
+     "psnr": 47.92
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_1600",
+   "setting": "q95_420",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.5107,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.82,
+    "libjpeg-turbo, one thread": 38.774,
+    "nvJPEG (torchvision)": 39.535
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 44.9,
+   "packed_against_scan": 2.062,
+   "wide_blocks": 0.1732,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 35,
+     "pixels_differ": 0.96555,
+     "psnr": 38.13
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 34,
+     "pixels_differ": 0.97467,
+     "psnr": 39.99
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_1600",
+   "setting": "q95_422",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.5866,
+   "blocks": 188000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.665,
+    "libjpeg-turbo, one thread": 48.569,
+    "nvJPEG (torchvision)": 49.307
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 39.2,
+   "packed_against_scan": 2.09,
+   "wide_blocks": 0.1299,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 28,
+     "pixels_differ": 0.9528,
+     "psnr": 39.52
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 24,
+     "pixels_differ": 0.96035,
+     "psnr": 42.54
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_1600",
+   "setting": "q95_444",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.724,
+   "blocks": 282000,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.648,
+    "libjpeg-turbo, one thread": 61.639,
+    "nvJPEG (torchvision)": 58.168
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 33.0,
+   "packed_against_scan": 2.139,
+   "wide_blocks": 0.0866,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 19,
+     "pixels_differ": 0.89336,
+     "psnr": 41.81
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.83807,
+     "psnr": 51.14
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_1600",
+   "setting": "q95_gray",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.4201,
+   "blocks": 94000,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.487,
+    "libjpeg-turbo, one thread": 34.513,
+    "nvJPEG (torchvision)": 31.387
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 54.3,
+   "packed_against_scan": 2.018,
+   "wide_blocks": 0.2599,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.64292,
+     "psnr": 43.28
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01843,
+     "psnr": 65.48
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_1600",
+   "setting": "q90_420",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.3375,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.376,
+    "libjpeg-turbo, one thread": 32.034,
+    "nvJPEG (torchvision)": 31.394
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 30.6,
+   "packed_against_scan": 2.125,
+   "wide_blocks": 0.061,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 37,
+     "pixels_differ": 0.93944,
+     "psnr": 40.25
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 36,
+     "pixels_differ": 0.95945,
+     "psnr": 41.24
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_1600",
+   "setting": "q95_420_opt",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.4895,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.909,
+    "libjpeg-turbo, one thread": 37.185,
+    "nvJPEG (torchvision)": 40.354
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 44.9,
+   "packed_against_scan": 2.152,
+   "wide_blocks": 0.1732,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 35,
+     "pixels_differ": 0.96555,
+     "psnr": 38.13
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 34,
+     "pixels_differ": 0.97467,
+     "psnr": 39.99
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_200",
+   "setting": "q95_420",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.4283,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.598,
+    "libjpeg-turbo, one thread": 33.298,
+    "nvJPEG (torchvision)": 36.299
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 37.9,
+   "packed_against_scan": 2.075,
+   "wide_blocks": 0.1656,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 35,
+     "pixels_differ": 0.9376,
+     "psnr": 39.05
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 32,
+     "pixels_differ": 0.9317,
+     "psnr": 41.51
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_200",
+   "setting": "q95_422",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.4793,
+   "blocks": 188000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.365,
+    "libjpeg-turbo, one thread": 40.839,
+    "nvJPEG (torchvision)": 41.985
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 32.7,
+   "packed_against_scan": 2.131,
+   "wide_blocks": 0.1242,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 28,
+     "pixels_differ": 0.92299,
+     "psnr": 40.32
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 25,
+     "pixels_differ": 0.90831,
+     "psnr": 44.28
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_200",
+   "setting": "q95_444",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.5709,
+   "blocks": 282000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.986,
+    "libjpeg-turbo, one thread": 51.403,
+    "nvJPEG (torchvision)": 49.502
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.1,
+   "packed_against_scan": 2.229,
+   "wide_blocks": 0.0828,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 20,
+     "pixels_differ": 0.89287,
+     "psnr": 41.9
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.82806,
+     "psnr": 51.27
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_200",
+   "setting": "q95_gray",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.3623,
+   "blocks": 94000,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.188,
+    "libjpeg-turbo, one thread": 36.361,
+    "nvJPEG (torchvision)": 27.444
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 46.7,
+   "packed_against_scan": 2.013,
+   "wide_blocks": 0.2484,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 18,
+     "pixels_differ": 0.63679,
+     "psnr": 43.48
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01716,
+     "psnr": 65.79
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_200",
+   "setting": "q90_420",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.2946,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.213,
+    "libjpeg-turbo, one thread": 28.562,
+    "nvJPEG (torchvision)": 26.302
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.0,
+   "packed_against_scan": 2.152,
+   "wide_blocks": 0.0567,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 36,
+     "pixels_differ": 0.91744,
+     "psnr": 40.89
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 35,
+     "pixels_differ": 0.92502,
+     "psnr": 42.12
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "leaves_iso_200",
+   "setting": "q95_420_opt",
+   "megapixels": 6.02,
+   "bytes_per_pixel": 0.4091,
+   "blocks": 141000,
+   "route": "gpu",
+   "ms": {
+    "this library": 8.498,
+    "libjpeg-turbo, one thread": 36.458,
+    "nvJPEG (torchvision)": 32.683
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 37.9,
+   "packed_against_scan": 2.173,
+   "wide_blocks": 0.1656,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 35,
+     "pixels_differ": 0.9376,
+     "psnr": 39.05
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 32,
+     "pixels_differ": 0.9317,
+     "psnr": 41.51
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_100",
+   "setting": "q95_420",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1895,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.017,
+    "libjpeg-turbo, one thread": 32.188,
+    "nvJPEG (torchvision)": 24.29
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 20.9,
+   "packed_against_scan": 2.59,
+   "wide_blocks": 0.0365,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 58,
+     "pixels_differ": 0.87404,
+     "psnr": 42.89
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 58,
+     "pixels_differ": 0.9125,
+     "psnr": 45.54
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_100",
+   "setting": "q95_422",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.2189,
+   "blocks": 230496,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.471,
+    "libjpeg-turbo, one thread": 37.048,
+    "nvJPEG (torchvision)": 29.367
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 19.0,
+   "packed_against_scan": 2.711,
+   "wide_blocks": 0.0273,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.86937,
+     "psnr": 44.01
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 41,
+     "pixels_differ": 0.89951,
+     "psnr": 48.1
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_100",
+   "setting": "q95_444",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.273,
+   "blocks": 345744,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.219,
+    "libjpeg-turbo, one thread": 46.794,
+    "nvJPEG (torchvision)": 41.365
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 17.0,
+   "packed_against_scan": 2.914,
+   "wide_blocks": 0.0182,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.85723,
+     "psnr": 44.94
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.86878,
+     "psnr": 51.31
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_100",
+   "setting": "q95_gray",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1553,
+   "blocks": 115248,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.411,
+    "libjpeg-turbo, one thread": 29.504,
+    "nvJPEG (torchvision)": 19.404
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 24.4,
+   "packed_against_scan": 2.457,
+   "wide_blocks": 0.0547,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 16,
+     "pixels_differ": 0.51874,
+     "psnr": 48.49
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01443,
+     "psnr": 66.54
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_100",
+   "setting": "q90_420",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1174,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.819,
+    "libjpeg-turbo, one thread": 24.482,
+    "nvJPEG (torchvision)": 18.209
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 14.8,
+   "packed_against_scan": 2.963,
+   "wide_blocks": 0.0086,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.88587,
+     "psnr": 43.26
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 50,
+     "pixels_differ": 0.91444,
+     "psnr": 45.55
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_100",
+   "setting": "q95_420_opt",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.1874,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.644,
+    "libjpeg-turbo, one thread": 29.533,
+    "nvJPEG (torchvision)": 24.065
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 20.9,
+   "packed_against_scan": 2.618,
+   "wide_blocks": 0.0365,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 58,
+     "pixels_differ": 0.87404,
+     "psnr": 42.89
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 58,
+     "pixels_differ": 0.9125,
+     "psnr": 45.54
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "setting": "q95_420",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.3959,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.889,
+    "libjpeg-turbo, one thread": 42.703,
+    "nvJPEG (torchvision)": 42.287
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 36.2,
+   "packed_against_scan": 2.144,
+   "wide_blocks": 0.0259,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 62,
+     "pixels_differ": 0.95122,
+     "psnr": 40.11
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 61,
+     "pixels_differ": 0.96191,
+     "psnr": 40.97
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "setting": "q95_422",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.4716,
+   "blocks": 230496,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.857,
+    "libjpeg-turbo, one thread": 52.714,
+    "nvJPEG (torchvision)": 48.045
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 32.7,
+   "packed_against_scan": 2.17,
+   "wide_blocks": 0.0194,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 49,
+     "pixels_differ": 0.93418,
+     "psnr": 41.78
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 47,
+     "pixels_differ": 0.94621,
+     "psnr": 43.33
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "setting": "q95_444",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.6223,
+   "blocks": 345744,
+   "route": "gpu",
+   "ms": {
+    "this library": 7.042,
+    "libjpeg-turbo, one thread": 67.907,
+    "nvJPEG (torchvision)": 65.648
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 29.2,
+   "packed_against_scan": 2.202,
+   "wide_blocks": 0.013,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 16,
+     "pixels_differ": 0.84777,
+     "psnr": 45.26
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.81128,
+     "psnr": 51.48
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "setting": "q95_gray",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.3121,
+   "blocks": 115248,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.178,
+    "libjpeg-turbo, one thread": 43.036,
+    "nvJPEG (torchvision)": 29.771
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 41.6,
+   "packed_against_scan": 2.083,
+   "wide_blocks": 0.0388,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.50767,
+     "psnr": 49.13
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01803,
+     "psnr": 65.57
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "setting": "q90_420",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.2439,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.946,
+    "libjpeg-turbo, one thread": 34.216,
+    "nvJPEG (torchvision)": 30.999
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 25.5,
+   "packed_against_scan": 2.454,
+   "wide_blocks": 0.0061,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 61,
+     "pixels_differ": 0.92748,
+     "psnr": 41.54
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 64,
+     "pixels_differ": 0.94438,
+     "psnr": 42.66
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "setting": "q95_420_opt",
+   "megapixels": 7.38,
+   "bytes_per_pixel": 0.3893,
+   "blocks": 172872,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.992,
+    "libjpeg-turbo, one thread": 42.143,
+    "nvJPEG (torchvision)": 41.406
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 36.2,
+   "packed_against_scan": 2.18,
+   "wide_blocks": 0.0259,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 62,
+     "pixels_differ": 0.95122,
+     "psnr": 40.11
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 61,
+     "pixels_differ": 0.96191,
+     "psnr": 40.97
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "spider_web",
+   "setting": "q95_420",
+   "megapixels": 12.12,
+   "bytes_per_pixel": 0.1645,
+   "blocks": 284088,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.065,
+    "libjpeg-turbo, one thread": 46.649,
+    "nvJPEG (torchvision)": 37.423
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 19.4,
+   "packed_against_scan": 2.764,
+   "wide_blocks": 0.0043,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 21,
+     "pixels_differ": 0.85428,
+     "psnr": 45.14
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 24,
+     "pixels_differ": 0.86369,
+     "psnr": 50.12
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "spider_web",
+   "setting": "q95_422",
+   "megapixels": 12.12,
+   "bytes_per_pixel": 0.1852,
+   "blocks": 378784,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.738,
+    "libjpeg-turbo, one thread": 60.57,
+    "nvJPEG (torchvision)": 53.321
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 17.5,
+   "packed_against_scan": 2.959,
+   "wide_blocks": 0.0032,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 18,
+     "pixels_differ": 0.85204,
+     "psnr": 45.24
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.85733,
+     "psnr": 50.64
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "spider_web",
+   "setting": "q95_444",
+   "megapixels": 12.12,
+   "bytes_per_pixel": 0.2262,
+   "blocks": 568176,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.698,
+    "libjpeg-turbo, one thread": 72.953,
+    "nvJPEG (torchvision)": 58.316
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 15.6,
+   "packed_against_scan": 3.241,
+   "wide_blocks": 0.0021,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.84731,
+     "psnr": 45.36
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.84919,
+     "psnr": 51.12
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "spider_web",
+   "setting": "q95_gray",
+   "megapixels": 12.12,
+   "bytes_per_pixel": 0.1414,
+   "blocks": 189392,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.228,
+    "libjpeg-turbo, one thread": 51.734,
+    "nvJPEG (torchvision)": 27.356
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 23.1,
+   "packed_against_scan": 2.546,
+   "wide_blocks": 0.0064,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 12,
+     "pixels_differ": 0.48552,
+     "psnr": 50.84
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01442,
+     "psnr": 66.54
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "spider_web",
+   "setting": "q90_420",
+   "megapixels": 12.12,
+   "bytes_per_pixel": 0.1038,
+   "blocks": 284088,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.579,
+    "libjpeg-turbo, one thread": 42.886,
+    "nvJPEG (torchvision)": 32.946
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 14.4,
+   "packed_against_scan": 3.246,
+   "wide_blocks": 0.0005,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 21,
+     "pixels_differ": 0.8558,
+     "psnr": 45.24
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 21,
+     "pixels_differ": 0.86419,
+     "psnr": 50.01
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "spider_web",
+   "setting": "q95_420_opt",
+   "megapixels": 12.12,
+   "bytes_per_pixel": 0.1629,
+   "blocks": 284088,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.794,
+    "libjpeg-turbo, one thread": 52.132,
+    "nvJPEG (torchvision)": 36.935
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 19.4,
+   "packed_against_scan": 2.789,
+   "wide_blocks": 0.0043,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 21,
+     "pixels_differ": 0.85428,
+     "psnr": 45.14
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 24,
+     "pixels_differ": 0.86369,
+     "psnr": 50.12
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_5674_0098",
+   "setting": "q95_420",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.4204,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 7.17,
+    "libjpeg-turbo, one thread": 6.85,
+    "nvJPEG (torchvision)": 7.222
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 35.5,
+   "packed_against_scan": 1.993,
+   "wide_blocks": 0.0792,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 92,
+     "pixels_differ": 0.66579,
+     "psnr": 37.49
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 97,
+     "pixels_differ": 0.88038,
+     "psnr": 38.11
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_5674_0098",
+   "setting": "q95_422",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.4853,
+   "blocks": 37440,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.454,
+    "libjpeg-turbo, one thread": 9.779,
+    "nvJPEG (torchvision)": 9.514
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 31.9,
+   "packed_against_scan": 2.065,
+   "wide_blocks": 0.0595,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 75,
+     "pixels_differ": 0.64534,
+     "psnr": 39.03
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 75,
+     "pixels_differ": 0.86714,
+     "psnr": 39.97
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_5674_0098",
+   "setting": "q95_444",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.625,
+   "blocks": 55800,
+   "route": "gpu",
+   "ms": {
+    "this library": 3.527,
+    "libjpeg-turbo, one thread": 10.064,
+    "nvJPEG (torchvision)": 10.917
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 28.7,
+   "packed_against_scan": 2.152,
+   "wide_blocks": 0.04,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.61065,
+     "psnr": 44.77
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.80756,
+     "psnr": 51.06
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_5674_0098",
+   "setting": "q95_gray",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.3588,
+   "blocks": 18600,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.834,
+    "libjpeg-turbo, one thread": 6.829,
+    "nvJPEG (torchvision)": 5.576
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 43.8,
+   "packed_against_scan": 1.909,
+   "wide_blocks": 0.1195,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 14,
+     "pixels_differ": 0.41459,
+     "psnr": 46.86
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.01277,
+     "psnr": 67.07
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_5674_0098",
+   "setting": "q90_420",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.3043,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.839,
+    "libjpeg-turbo, one thread": 5.961,
+    "nvJPEG (torchvision)": 5.607
+   },
+   "gpu_decoded": true,
+   "passes": 3,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.1,
+   "packed_against_scan": 2.098,
+   "wide_blocks": 0.0149,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 96,
+     "pixels_differ": 0.85221,
+     "psnr": 37.69
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 96,
+     "pixels_differ": 0.88025,
+     "psnr": 38.15
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_5674_0098",
+   "setting": "q95_420_opt",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.4004,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 8.883,
+    "libjpeg-turbo, one thread": 7.263,
+    "nvJPEG (torchvision)": 6.909
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 35.5,
+   "packed_against_scan": 2.093,
+   "wide_blocks": 0.0792,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 92,
+     "pixels_differ": 0.66579,
+     "psnr": 37.49
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 97,
+     "pixels_differ": 0.88038,
+     "psnr": 38.11
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6434_0018",
+   "setting": "q95_420",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.1848,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.823,
+    "libjpeg-turbo, one thread": 4.375,
+    "nvJPEG (torchvision)": 3.953
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 20.0,
+   "packed_against_scan": 2.556,
+   "wide_blocks": 0.0526,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 112,
+     "pixels_differ": 0.67368,
+     "psnr": 36.95
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 110,
+     "pixels_differ": 0.88296,
+     "psnr": 37.19
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6434_0018",
+   "setting": "q95_422",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2183,
+   "blocks": 37440,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.333,
+    "libjpeg-turbo, one thread": 4.862,
+    "nvJPEG (torchvision)": 4.646
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 18.3,
+   "packed_against_scan": 2.642,
+   "wide_blocks": 0.0417,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 77,
+     "pixels_differ": 0.53955,
+     "psnr": 39.32
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 77,
+     "pixels_differ": 0.8765,
+     "psnr": 39.76
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6434_0018",
+   "setting": "q95_444",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2861,
+   "blocks": 55800,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.378,
+    "libjpeg-turbo, one thread": 6.427,
+    "nvJPEG (torchvision)": 6.463
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 16.8,
+   "packed_against_scan": 2.751,
+   "wide_blocks": 0.0299,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 17,
+     "pixels_differ": 0.5192,
+     "psnr": 46.95
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 4,
+     "pixels_differ": 0.84397,
+     "psnr": 51.76
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6434_0018",
+   "setting": "q95_gray",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.1344,
+   "blocks": 18600,
+   "route": "gpu",
+   "ms": {
+    "this library": 1.662,
+    "libjpeg-turbo, one thread": 4.628,
+    "nvJPEG (torchvision)": 3.046
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 21.8,
+   "packed_against_scan": 2.533,
+   "wide_blocks": 0.0722,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 15,
+     "pixels_differ": 0.29999,
+     "psnr": 48.61
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.00419,
+     "psnr": 71.91
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6434_0018",
+   "setting": "q90_420",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.132,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.279,
+    "libjpeg-turbo, one thread": 3.93,
+    "nvJPEG (torchvision)": 3.265
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 15.2,
+   "packed_against_scan": 2.725,
+   "wide_blocks": 0.0128,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 106,
+     "pixels_differ": 0.82013,
+     "psnr": 36.95
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 108,
+     "pixels_differ": 0.89413,
+     "psnr": 37.11
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6434_0018",
+   "setting": "q95_420_opt",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.1787,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.84,
+    "libjpeg-turbo, one thread": 4.385,
+    "nvJPEG (torchvision)": 4.053
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 20.0,
+   "packed_against_scan": 2.643,
+   "wide_blocks": 0.0526,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 112,
+     "pixels_differ": 0.67368,
+     "psnr": 36.95
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 110,
+     "pixels_differ": 0.88296,
+     "psnr": 37.19
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6548_0026",
+   "setting": "q95_420",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2755,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 7.124,
+    "libjpeg-turbo, one thread": 5.918,
+    "nvJPEG (torchvision)": 4.897
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.3,
+   "packed_against_scan": 2.338,
+   "wide_blocks": 0.1446,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 58,
+     "pixels_differ": 0.22415,
+     "psnr": 42.8
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 59,
+     "pixels_differ": 0.00952,
+     "psnr": 56.31
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6548_0026",
+   "setting": "q95_422",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2794,
+   "blocks": 37440,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.359,
+    "libjpeg-turbo, one thread": 5.71,
+    "nvJPEG (torchvision)": 5.373
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 22.0,
+   "packed_against_scan": 2.477,
+   "wide_blocks": 0.1084,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 49,
+     "pixels_differ": 0.22337,
+     "psnr": 42.88
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 43,
+     "pixels_differ": 0.00859,
+     "psnr": 58.36
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6548_0026",
+   "setting": "q95_444",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2876,
+   "blocks": 55800,
+   "route": "gpu",
+   "ms": {
+    "this library": 2.92,
+    "libjpeg-turbo, one thread": 6.468,
+    "nvJPEG (torchvision)": 7.569
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 16.8,
+   "packed_against_scan": 2.732,
+   "wide_blocks": 0.0728,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 22,
+     "pixels_differ": 0.22276,
+     "psnr": 42.99
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 3,
+     "pixels_differ": 0.00749,
+     "psnr": 69.83
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6548_0026",
+   "setting": "q95_gray",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2706,
+   "blocks": 18600,
+   "route": "gpu",
+   "ms": {
+    "this library": 4.138,
+    "libjpeg-turbo, one thread": 5.287,
+    "nvJPEG (torchvision)": 4.701
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 38.1,
+   "packed_against_scan": 2.201,
+   "wide_blocks": 0.2182,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 21,
+     "pixels_differ": 0.22253,
+     "psnr": 43.0
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 1,
+     "pixels_differ": 0.00569,
+     "psnr": 70.58
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6548_0026",
+   "setting": "q90_420",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2152,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 6.139,
+    "libjpeg-turbo, one thread": 4.951,
+    "nvJPEG (torchvision)": 5.603
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 23.7,
+   "packed_against_scan": 2.597,
+   "wide_blocks": 0.1114,
+   "encode_same_bytes": true,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 56,
+     "pixels_differ": 0.86229,
+     "psnr": 46.95
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 55,
+     "pixels_differ": 0.00956,
+     "psnr": 56.43
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  },
+  {
+   "image": "vgl_6548_0026",
+   "setting": "q95_420_opt",
+   "megapixels": 1.19,
+   "bytes_per_pixel": 0.2472,
+   "blocks": 28080,
+   "route": "gpu",
+   "ms": {
+    "this library": 5.62,
+    "libjpeg-turbo, one thread": 4.607,
+    "nvJPEG (torchvision)": 4.549
+   },
+   "gpu_decoded": true,
+   "passes": 2,
+   "same_pixels": true,
+   "from_packed_same": true,
+   "packed_bytes_per_block": 27.3,
+   "packed_against_scan": 2.606,
+   "wide_blocks": 0.1446,
+   "others": {
+    "Pillow": {
+     "same": true
+    },
+    "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+     "same": false,
+     "max_diff": 58,
+     "pixels_differ": 0.22415,
+     "psnr": 42.8
+    },
+    "torchvision.io.decode_jpeg on the CPU": {
+     "same": true
+    },
+    "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+     "same": false,
+     "max_diff": 59,
+     "pixels_differ": 0.00952,
+     "psnr": 56.31
+    },
+    "OpenCV imdecode": {
+     "same": true
+    },
+    "libvips (pyvips)": {
+     "same": true
+    }
+   }
+  }
+ ],
+ "nvjpeg_encode": [
+  {
+   "image": "artificial",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9909,
+   "psnr_against_source": 45.13,
+   "libjpeg_turbo_psnr_against_source": 46.49
+  },
+  {
+   "image": "big_building",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9903,
+   "psnr_against_source": 40.37,
+   "libjpeg_turbo_psnr_against_source": 41.24
+  },
+  {
+   "image": "big_tree",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9903,
+   "psnr_against_source": 38.05,
+   "libjpeg_turbo_psnr_against_source": 38.47
+  },
+  {
+   "image": "bridge",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9912,
+   "psnr_against_source": 38.01,
+   "libjpeg_turbo_psnr_against_source": 38.38
+  },
+  {
+   "image": "cathedral",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9879,
+   "psnr_against_source": 40.05,
+   "libjpeg_turbo_psnr_against_source": 40.72
+  },
+  {
+   "image": "deer",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.992,
+   "psnr_against_source": 36.02,
+   "libjpeg_turbo_psnr_against_source": 36.29
+  },
+  {
+   "image": "fireworks",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9581,
+   "psnr_against_source": 45.77,
+   "libjpeg_turbo_psnr_against_source": 46.59
+  },
+  {
+   "image": "flower_foveon",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9765,
+   "psnr_against_source": 44.38,
+   "libjpeg_turbo_psnr_against_source": 46.93
+  },
+  {
+   "image": "hdr",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9749,
+   "psnr_against_source": 43.71,
+   "libjpeg_turbo_psnr_against_source": 45.89
+  },
+  {
+   "image": "leaves_iso_1600",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9924,
+   "psnr_against_source": 38.29,
+   "libjpeg_turbo_psnr_against_source": 38.67
+  },
+  {
+   "image": "leaves_iso_200",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9923,
+   "psnr_against_source": 40.37,
+   "libjpeg_turbo_psnr_against_source": 41.08
+  },
+  {
+   "image": "nightshot_iso_100",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9793,
+   "psnr_against_source": 43.65,
+   "libjpeg_turbo_psnr_against_source": 45.63
+  },
+  {
+   "image": "nightshot_iso_1600",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9888,
+   "psnr_against_source": 38.4,
+   "libjpeg_turbo_psnr_against_source": 38.66
+  },
+  {
+   "image": "spider_web",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9785,
+   "psnr_against_source": 45.06,
+   "libjpeg_turbo_psnr_against_source": 48.53
+  },
+  {
+   "image": "vgl_5674_0098",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9943,
+   "psnr_against_source": 39.6,
+   "libjpeg_turbo_psnr_against_source": 40.34
+  },
+  {
+   "image": "vgl_6434_0018",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.989,
+   "psnr_against_source": 43.39,
+   "libjpeg_turbo_psnr_against_source": 44.07
+  },
+  {
+   "image": "vgl_6548_0026",
+   "same_bytes": false,
+   "size_against_libjpeg_turbo": 0.9988,
+   "psnr_against_source": 47.89,
+   "libjpeg_turbo_psnr_against_source": 47.91
+  }
+ ],
+ "summary": {
+  "jpegs": 102,
+  "on_the_gpu_route": 102,
+  "decoded_on_the_gpu": 102,
+  "pixels_identical": 102,
+  "passes": {
+   "2": 101,
+   "3": 1
+  },
+  "encodes_compared": 68,
+  "encodes_byte_identical": 68,
+  "from_packed_identical": 102,
+  "bytes_per_pixel": [
+   0.0944,
+   0.8885
+  ],
+  "others": {
+   "Pillow": {
+    "identical": 102,
+    "differ": 0,
+    "failed": 0
+   },
+   "libjpeg-turbo fast modes (fast IDCT + fast upsampling)": {
+    "identical": 0,
+    "differ": 102,
+    "failed": 0,
+    "max_diff": 112,
+    "pixels_differ": [
+     0.22253,
+     0.96834
+    ],
+    "psnr": [
+     36.95,
+     50.84
+    ],
+    "by_setting": {
+     "q95_420": {
+      "identical": 0,
+      "max_diff": 112
+     },
+     "q95_422": {
+      "identical": 0,
+      "max_diff": 77
+     },
+     "q95_444": {
+      "identical": 0,
+      "max_diff": 22
+     },
+     "q95_gray": {
+      "identical": 0,
+      "max_diff": 21
+     },
+     "q90_420": {
+      "identical": 0,
+      "max_diff": 106
+     },
+     "q95_420_opt": {
+      "identical": 0,
+      "max_diff": 112
+     }
+    }
+   },
+   "torchvision.io.decode_jpeg on the CPU": {
+    "identical": 102,
+    "differ": 0,
+    "failed": 0
+   },
+   "nvJPEG (torchvision.io.decode_jpeg, device='cuda', defaults)": {
+    "identical": 0,
+    "differ": 102,
+    "failed": 0,
+    "max_diff": 110,
+    "pixels_differ": [
+     0.00419,
+     0.98493
+    ],
+    "psnr": [
+     37.11,
+     71.91
+    ],
+    "by_setting": {
+     "q95_420": {
+      "identical": 0,
+      "max_diff": 110
+     },
+     "q95_422": {
+      "identical": 0,
+      "max_diff": 77
+     },
+     "q95_444": {
+      "identical": 0,
+      "max_diff": 4
+     },
+     "q95_gray": {
+      "identical": 0,
+      "max_diff": 1
+     },
+     "q90_420": {
+      "identical": 0,
+      "max_diff": 108
+     },
+     "q95_420_opt": {
+      "identical": 0,
+      "max_diff": 110
+     }
+    }
+   },
+   "OpenCV imdecode": {
+    "identical": 102,
+    "differ": 0,
+    "failed": 0
+   },
+   "libvips (pyvips)": {
+    "identical": 102,
+    "differ": 0,
+    "failed": 0
+   }
+  },
+  "ms_per_coded_mb": {
+   "this library": {
+    "4:2:0": {
+     "ms_per_coded_mb": 0.58,
+     "se": 0.26,
+     "ms_per_megapixel": 0.1,
+     "se_mp": 0.09,
+     "jpegs": 42
+    },
+    "4:2:2": {
+     "ms_per_coded_mb": 1.03,
+     "se": 0.6,
+     "ms_per_megapixel": -0.05,
+     "se_mp": 0.27,
+     "jpegs": 14
+    },
+    "4:4:4": {
+     "ms_per_coded_mb": 0.57,
+     "se": 0.13,
+     "ms_per_megapixel": 0.19,
+     "se_mp": 0.08,
+     "jpegs": 14
+    }
+   },
+   "libjpeg-turbo, one thread": {
+    "4:2:0": {
+     "ms_per_coded_mb": 8.65,
+     "se": 0.42,
+     "ms_per_megapixel": 2.44,
+     "se_mp": 0.15,
+     "jpegs": 42
+    },
+    "4:2:2": {
+     "ms_per_coded_mb": 9.29,
+     "se": 0.64,
+     "ms_per_megapixel": 2.85,
+     "se_mp": 0.29,
+     "jpegs": 14
+    },
+    "4:4:4": {
+     "ms_per_coded_mb": 9.14,
+     "se": 0.35,
+     "ms_per_megapixel": 3.48,
+     "se_mp": 0.21,
+     "jpegs": 14
+    }
+   },
+   "nvJPEG (torchvision)": {
+    "4:2:0": {
+     "ms_per_coded_mb": 10.77,
+     "se": 0.21,
+     "ms_per_megapixel": 1.1,
+     "se_mp": 0.08,
+     "jpegs": 42
+    },
+    "4:2:2": {
+     "ms_per_coded_mb": 9.27,
+     "se": 0.49,
+     "ms_per_megapixel": 2.15,
+     "se_mp": 0.22,
+     "jpegs": 14
+    },
+    "4:4:4": {
+     "ms_per_coded_mb": 10.07,
+     "se": 0.46,
+     "ms_per_megapixel": 2.63,
+     "se_mp": 0.27,
+     "jpegs": 14
+    }
+   }
+  },
+  "packed_bytes_per_block": [
+   13.0,
+   54.3
+  ],
+  "packed_against_scan": [
+   1.909,
+   3.265
+  ],
+  "wide_blocks": [
+   0.0,
+   0.2599
+  ],
+  "nvjpeg_encode_q95_444": {
+   "images": 17,
+   "byte_identical": 0,
+   "size_against_libjpeg_turbo": [
+    0.9581,
+    0.9988
+   ],
+   "psnr_minus_libjpeg_turbo": [
+    -3.47,
+    -0.02
+   ]
+  }
+ }
+}

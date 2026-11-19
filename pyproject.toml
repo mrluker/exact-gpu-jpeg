@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77"]   # PEP 639: license = "MIT" and license-files
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exact-gpu-jpeg"
+version = "0.1.0"
+description = "GPU JPEG decoding and encoding (CUDA, CuPy), byte-identical to libjpeg-turbo and Pillow, with a CPU fallback"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "licenses/*"]
+authors = [{ name = "Luke Riley" }]
+# simplejpeg (libjpeg-turbo's TurboJPEG API, wheels for Windows, Linux and macOS): the CPU decoder, which reports
+# libjpeg-turbo's warnings, so that strict holds on the CPU route too. Pillow is used where it cannot read a file.
+dependencies = ["numpy>=1.22", "simplejpeg>=1.9"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Topic :: Multimedia :: Graphics",
+]
+
+[project.optional-dependencies]
+# CuPy is the only GPU requirement. Install the wheel that matches your CUDA, e.g. cupy-cuda12x.
+cuda12 = ["cupy-cuda12x>=13"]
+cuda11 = ["cupy-cuda11x>=13"]
+cpu = []                         # (kept so that ".[cpu]" still installs: simplejpeg is a dependency now)
+torch = ["torch>=2.0"]
+test = ["pytest>=7", "pillow>=10"]
+bench = ["matplotlib>=3.7", "pillow>=10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+exact_gpu_jpeg = ["_kernels.cu", "_batch_kernels.cu", "_enc_kernels.cu", "_repeat_kernels.cu", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

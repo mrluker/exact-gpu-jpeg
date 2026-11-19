@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="494" viewBox="0 0 960 494" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" role="img" aria-label="exact-gpu-jpeg on a GTX 1070: a 30 MP camera photo decodes in 11.3 ms against 164 ms for nvJPEG and 185 ms for libjpeg-turbo on one CPU core; its pixels are identical to libjpeg-turbo on 102 of 102 public test JPEGs, nvJPEG's on 0 of 102">
+<title>exact-gpu-jpeg on a GTX 1070: a 30 MP camera photo decodes in 11.3 ms against 164 ms for nvJPEG and 185 ms for libjpeg-turbo on one CPU core; its pixels are identical to libjpeg-turbo on 102 of 102 public test JPEGs, nvJPEG's on 0 of 102</title>
+<rect width="960" height="494" fill="#ffffff"/>
+<text x="40" y="34" font-size="19" fill="#1d1d1b" text-anchor="start" font-weight="700">exact-gpu-jpeg: libjpeg-turbo's exact pixels, decoded on the GPU</text>
+<text x="40" y="58" font-size="12.5" fill="#5f5d58" text-anchor="start" font-weight="normal">NVIDIA GTX 1070 (2016) with an Intel i7-6700, Windows 10; measured 2026-11-18 on the release source.</text>
+<text x="40" y="92" font-size="15" fill="#1d1d1b" text-anchor="start" font-weight="700">Decode one 30 MP camera photo (4:2:2), one at a time</text>
+<rect x="40" y="97.5" width="135" height="21.5" rx="10.8" fill="#f6d32d" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="49" y="113" font-size="12.5" fill="#1d1d1b" text-anchor="start" font-weight="700">↓ Lower is better</text>
+<rect x="40" y="130" width="49.7" height="34" rx="3" fill="#1a5fb4"/>
+<text x="99.72" y="153.0" text-anchor="start"><tspan font-size="13" fill="#1d1d1b" font-weight="700">exact-gpu-jpeg: </tspan><tspan font-size="17" fill="#1d1d1b" font-weight="800">11.3 ms</tspan><tspan font-size="13" fill="#1d1d1b" font-weight="600"> (16.4x faster than libjpeg-turbo on 1 CPU core)</tspan></text>
+<rect x="40" y="172" width="721.6" height="34" rx="3" fill="#277a4c"/>
+<text x="50" y="194.0" font-size="13" fill="#ffffff" text-anchor="start" font-weight="700">nvJPEG (its own C API), same GPU</text>
+<text x="771.5999999999999" y="195.0" text-anchor="start"><tspan font-size="17" fill="#1d1d1b" font-weight="800">164 ms</tspan><tspan font-size="13" fill="#1d1d1b" font-weight="600"></tspan></text>
+<rect x="40" y="214" width="814.0" height="34" rx="3" fill="#6b6965"/>
+<text x="50" y="236.0" font-size="13" fill="#ffffff" text-anchor="start" font-weight="700">libjpeg-turbo, 1 CPU core</text>
+<text x="864.0" y="237.0" text-anchor="start"><tspan font-size="17" fill="#1d1d1b" font-weight="800">185 ms</tspan><tspan font-size="13" fill="#1d1d1b" font-weight="600"></tspan></text>
+<line x1="40" y1="260" x2="920" y2="260" stroke="#8a877f" stroke-width="1"/>
+<line x1="40.0" y1="260" x2="40.0" y2="264" stroke="#8a877f"/>
+<text x="40.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">0</text>
+<line x1="150.0" y1="260" x2="150.0" y2="264" stroke="#8a877f"/>
+<text x="150.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">25</text>
+<line x1="260.0" y1="260" x2="260.0" y2="264" stroke="#8a877f"/>
+<text x="260.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">50</text>
+<line x1="370.0" y1="260" x2="370.0" y2="264" stroke="#8a877f"/>
+<text x="370.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">75</text>
+<line x1="480.0" y1="260" x2="480.0" y2="264" stroke="#8a877f"/>
+<text x="480.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">100</text>
+<line x1="590.0" y1="260" x2="590.0" y2="264" stroke="#8a877f"/>
+<text x="590.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">125</text>
+<line x1="700.0" y1="260" x2="700.0" y2="264" stroke="#8a877f"/>
+<text x="700.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">150</text>
+<line x1="810.0" y1="260" x2="810.0" y2="264" stroke="#8a877f"/>
+<text x="810.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">175</text>
+<line x1="920.0" y1="260" x2="920.0" y2="264" stroke="#8a877f"/>
+<text x="920.0" y="277" font-size="11" fill="#5f5d58" text-anchor="middle" font-weight="normal">200</text>
+<text x="480.0" y="294" font-size="12" fill="#5f5d58" text-anchor="middle" font-weight="normal">milliseconds per photo</text>
+<text x="40" y="334" font-size="15" fill="#1d1d1b" text-anchor="start" font-weight="700">Pixels identical to libjpeg-turbo, on 102 public test JPEGs</text>
+<rect x="40" y="339.5" width="141" height="21.5" rx="10.8" fill="#f6d32d" stroke="#1d1d1b" stroke-width="1.5"/>
+<text x="49" y="355" font-size="12.5" fill="#1d1d1b" text-anchor="start" font-weight="700">↑ Higher is better</text>
+<rect x="40" y="372" width="880.0" height="34" rx="3" fill="#1a5fb4"/>
+<text x="50" y="394.0" font-size="13" fill="#ffffff" text-anchor="start" font-weight="700">exact-gpu-jpeg</text>
+<text x="910" y="395" text-anchor="end"><tspan font-size="17" fill="#ffffff" font-weight="800">102 of 102</tspan><tspan font-size="13" fill="#ffffff" font-weight="700"> identical</tspan></text>
+<rect x="40" y="414" width="3.0" height="34" rx="3" fill="#277a4c"/>
+<text x="53" y="437.0" text-anchor="start"><tspan font-size="13" fill="#1d1d1b" font-weight="700">nvJPEG (torchvision), same GPU: </tspan><tspan font-size="17" fill="#1d1d1b" font-weight="800">0 of 102 identical</tspan><tspan font-size="13" fill="#1d1d1b" font-weight="600"> (up to 110 levels off)</tspan></text>
+<text x="40" y="482" font-size="11.5" fill="#5f5d58" text-anchor="start" font-weight="normal">Sources: bench/results/20261118/nvjpeg_direct.json and public_set_run3.json. Where it is slower (small images one at a time) is listed in the README.</text>
+</svg>

@@ -1,0 +1,17 @@
+{
+ "label": "s0 + branch-free coefficient writer (no divergent switch)",
+ "files": 12,
+ "one_at_a_time_mean": {
+  "wall_ms": 18.92,
+  "passes": 4.42,
+  "upload_ms": 2.04,
+  "huffman_ms": 9.34,
+  "pixels_ms": 3.33
+ },
+ "photos_per_s": {
+  "gpu_1_threads_run0": 52.1,
+  "gpu_1_threads_run1": 52.9,
+  "gpu_2_threads_run0": 63.0,
+  "gpu_2_threads_run1": 64.2
+ }
+}

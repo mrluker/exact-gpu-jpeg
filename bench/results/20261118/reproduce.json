@@ -1,0 +1,200 @@
+{
+ "environment": {
+  "os": "Windows-10-10.0.19045-SP0",
+  "cpu": "Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",
+  "cpu_threads": 8,
+  "python": "3.12.10",
+  "exact_gpu_jpeg": "0.1.0",
+  "cupy": "14.2.0",
+  "numpy": "2.5.4",
+  "pillow": "13.0.0",
+  "pillow_libjpeg_turbo": "3.2.0",
+  "simplejpeg": "1.9.0",
+  "torchvision": "not installed (no nvJPEG column)",
+  "gpu": "NVIDIA GeForce GTX 1070",
+  "driver": "560.94",
+  "gpu_memory": "8192 MiB"
+ },
+ "device_report": {
+  "device": 0,
+  "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+  "compute_capability": "6.1",
+  "total_memory_mb": 8191,
+  "free_memory_mb": 7203,
+  "cuda_runtime": "12.9",
+  "nvrtc": "12.9",
+  "derived_settings": {
+   "memory_budget_share": 0.9,
+   "batch_data_bytes": 67106816
+  },
+  "minimum_compute_capability": "5.0",
+  "self_check": {
+   "decode": "passed",
+   "batch": "passed",
+   "encode": "passed",
+   "fast_dct": "passed",
+   "fast_upsample": "passed",
+   "output": "passed"
+  },
+  "gpu_path": "on",
+  "copy_check": {
+   "packed": "not run yet"
+  },
+  "cpu_below": {
+   "pixels": 166294,
+   "source": "saved",
+   "crossing": 166294
+  },
+  "cpu_decoder": "simplejpeg 1.9.0 (accurate and fast modes)"
+ },
+ "self_check": {
+  "device": 0,
+  "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+  "ok": true,
+  "reason": null,
+  "ms": {
+   "decode": 128.1,
+   "batch": 61.9,
+   "encode": 70.6,
+   "fast_dct": 9.3,
+   "fast_upsample": 13.0,
+   "output": 38.1
+  },
+  "cpu_below": {
+   "pixels": 166294,
+   "source": "saved",
+   "crossing": 166294
+  }
+ },
+ "decode": [
+  {
+   "mp": 0.25,
+   "width": 616,
+   "height": 408,
+   "kbytes": 35.7,
+   "identical": true,
+   "cpu_ms": 0.799,
+   "gpu_ms": 1.026,
+   "route": "gpu"
+  },
+  {
+   "mp": 1,
+   "width": 1224,
+   "height": 816,
+   "kbytes": 136.3,
+   "identical": true,
+   "cpu_ms": 3.892,
+   "gpu_ms": 1.305,
+   "route": "gpu"
+  },
+  {
+   "mp": 2,
+   "width": 1736,
+   "height": 1160,
+   "kbytes": 279.2,
+   "identical": true,
+   "cpu_ms": 7.735,
+   "gpu_ms": 1.571,
+   "route": "gpu"
+  },
+  {
+   "mp": 6,
+   "width": 3000,
+   "height": 2000,
+   "kbytes": 840.0,
+   "identical": true,
+   "cpu_ms": 23.09,
+   "gpu_ms": 2.28,
+   "route": "gpu"
+  },
+  {
+   "mp": 12,
+   "width": 4240,
+   "height": 2824,
+   "kbytes": 1655.0,
+   "identical": true,
+   "cpu_ms": 44.886,
+   "gpu_ms": 3.144,
+   "route": "gpu"
+  },
+  {
+   "mp": 24,
+   "width": 6000,
+   "height": 4000,
+   "kbytes": 3359.7,
+   "identical": true,
+   "cpu_ms": 90.406,
+   "gpu_ms": 5.455,
+   "route": "gpu"
+  }
+ ],
+ "batch": [
+  {
+   "mp": 0.25,
+   "loop_per_s": 947,
+   "batch_per_s": 8175,
+   "identical": true
+  },
+  {
+   "mp": 1,
+   "loop_per_s": 716,
+   "batch_per_s": 3284,
+   "identical": true
+  }
+ ],
+ "encode": [
+  {
+   "mp": 0.25,
+   "width": 616,
+   "height": 408,
+   "cpu_ms": 0.998,
+   "gpu_ms": 0.412,
+   "identical": true
+  },
+  {
+   "mp": 1,
+   "width": 1224,
+   "height": 816,
+   "cpu_ms": 6.02,
+   "gpu_ms": 0.733,
+   "identical": true
+  },
+  {
+   "mp": 2,
+   "width": 1736,
+   "height": 1160,
+   "cpu_ms": 12.52,
+   "gpu_ms": 1.082,
+   "identical": true
+  },
+  {
+   "mp": 6,
+   "width": 3000,
+   "height": 2000,
+   "cpu_ms": 34.578,
+   "gpu_ms": 2.273,
+   "identical": true
+  },
+  {
+   "mp": 12,
+   "width": 4240,
+   "height": 2824,
+   "cpu_ms": 70.527,
+   "gpu_ms": 4.536,
+   "identical": true
+  },
+  {
+   "mp": 24,
+   "width": 6000,
+   "height": 4000,
+   "cpu_ms": 153.225,
+   "gpu_ms": 8.622,
+   "identical": true
+  }
+ ],
+ "cpu_below_at_end": {
+  "pixels": 166294,
+  "source": "saved",
+  "crossing": 166294
+ }
+}

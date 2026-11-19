@@ -1,0 +1,897 @@
+{
+ "env": {
+  "gpu": "NVIDIA GeForce GTX 1070",
+  "nvjpeg": "12.3.3",
+  "nvjpeg_library": "nvjpeg64_12.dll",
+  "torch": "2.14.1+cu126",
+  "torchvision": "0.29.1+cu126",
+  "cupy": "14.2.0",
+  "simplejpeg": "1.9.0",
+  "exact_gpu_jpeg": "0.1.0"
+ },
+ "measured": "2026-11-18",
+ "backends_accepted": [
+  "DEFAULT",
+  "HYBRID",
+  "GPU_HYBRID"
+ ],
+ "backends_refused": {
+  "HARDWARE": 7
+ },
+ "images_per_set": 64,
+ "sizes": {
+  "0.25mp": [
+   616,
+   408
+  ],
+  "0.5mp": [
+   864,
+   576
+  ],
+  "1mp": [
+   1224,
+   816
+  ],
+  "2mp": [
+   1736,
+   1160
+  ],
+  "6mp": [
+   3000,
+   2000
+  ]
+ },
+ "sets": {
+  "0.25mp": {
+   "nvjpegDecode DEFAULT": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 947.1,
+    "rounds": [
+     653.7,
+     991.2,
+     947.1
+    ]
+   },
+   "nvjpegDecode DEFAULT, 8 states": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 1202.6,
+    "rounds": [
+     1142.9,
+     1202.8,
+     1202.6
+    ]
+   },
+   "nvjpegDecodeBatched DEFAULT": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 1013.1,
+    "rounds": [
+     1017.0,
+     1013.1,
+     1004.7
+    ]
+   },
+   "nvjpegDecode HYBRID": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 967.3,
+    "rounds": [
+     976.5,
+     946.4,
+     967.3
+    ]
+   },
+   "nvjpegDecode HYBRID, 8 states": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 1190.1,
+    "rounds": [
+     1150.9,
+     1190.1,
+     1205.4
+    ]
+   },
+   "nvjpegDecodeBatched HYBRID": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 998.9,
+    "rounds": [
+     998.9,
+     845.7,
+     1002.0
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 978.5,
+    "rounds": [
+     981.1,
+     843.1,
+     978.5
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID, 8 states": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 1170.8,
+    "rounds": [
+     1216.8,
+     1132.2,
+     1170.8
+    ]
+   },
+   "nvjpegDecodeBatched GPU_HYBRID": {
+    "max_abs_diff": 50,
+    "mean_abs_diff": 0.639,
+    "identical_images": 0,
+    "images_per_s": 1562.1,
+    "rounds": [
+     1562.1,
+     1539.6,
+     1586.3
+    ]
+   },
+   "torchvision decode_jpeg, one call per image": {
+    "images_per_s": 866.0,
+    "rounds": [
+     877.0,
+     866.0,
+     722.0
+    ]
+   },
+   "torchvision decode_jpeg, batched": {
+    "images_per_s": 977.2,
+    "rounds": [
+     977.2,
+     990.9,
+     935.8
+    ]
+   },
+   "exact-gpu-jpeg decode, one call per image": {
+    "identical_images": 64,
+    "images_per_s": 887.1,
+    "rounds": [
+     890.4,
+     860.9,
+     887.1
+    ]
+   },
+   "exact-gpu-jpeg decode_batch": {
+    "identical_images": 64,
+    "images_per_s": 7309.7,
+    "rounds": [
+     7335.7,
+     7180.3,
+     7309.7
+    ]
+   },
+   "libjpeg-turbo, 1 thread": {
+    "images_per_s": 1121.5,
+    "rounds": [
+     1145.4,
+     1065.3,
+     1121.5
+    ]
+   },
+   "libjpeg-turbo, 8 threads": {
+    "images_per_s": 3045.6,
+    "rounds": [
+     3045.6,
+     2887.1,
+     3104.7
+    ]
+   }
+  },
+  "0.5mp": {
+   "nvjpegDecode DEFAULT": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 601.4,
+    "rounds": [
+     599.7,
+     601.4,
+     605.2
+    ]
+   },
+   "nvjpegDecode DEFAULT, 8 states": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 708.5,
+    "rounds": [
+     697.7,
+     722.6,
+     708.5
+    ]
+   },
+   "nvjpegDecodeBatched DEFAULT": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 573.3,
+    "rounds": [
+     577.6,
+     573.3,
+     553.6
+    ]
+   },
+   "nvjpegDecode HYBRID": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 586.3,
+    "rounds": [
+     592.3,
+     586.3,
+     570.8
+    ]
+   },
+   "nvjpegDecode HYBRID, 8 states": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 677.1,
+    "rounds": [
+     722.0,
+     677.1,
+     563.9
+    ]
+   },
+   "nvjpegDecodeBatched HYBRID": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 558.0,
+    "rounds": [
+     565.6,
+     552.5,
+     558.0
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 584.7,
+    "rounds": [
+     592.1,
+     584.7,
+     560.6
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID, 8 states": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 713.5,
+    "rounds": [
+     721.9,
+     713.5,
+     672.8
+    ]
+   },
+   "nvjpegDecodeBatched GPU_HYBRID": {
+    "max_abs_diff": 49,
+    "mean_abs_diff": 0.603,
+    "identical_images": 0,
+    "images_per_s": 934.2,
+    "rounds": [
+     934.2,
+     925.8,
+     948.1
+    ]
+   },
+   "torchvision decode_jpeg, one call per image": {
+    "images_per_s": 495.8,
+    "rounds": [
+     485.5,
+     542.9,
+     495.8
+    ]
+   },
+   "torchvision decode_jpeg, batched": {
+    "images_per_s": 564.2,
+    "rounds": [
+     564.2,
+     581.0,
+     557.3
+    ]
+   },
+   "exact-gpu-jpeg decode, one call per image": {
+    "identical_images": 64,
+    "images_per_s": 762.6,
+    "rounds": [
+     760.4,
+     769.2,
+     762.6
+    ]
+   },
+   "exact-gpu-jpeg decode_batch": {
+    "identical_images": 64,
+    "images_per_s": 4942.2,
+    "rounds": [
+     4942.2,
+     5111.3,
+     4879.1
+    ]
+   },
+   "libjpeg-turbo, 1 thread": {
+    "images_per_s": 487.9,
+    "rounds": [
+     487.9,
+     496.9,
+     441.6
+    ]
+   },
+   "libjpeg-turbo, 8 threads": {
+    "images_per_s": 1700.3,
+    "rounds": [
+     1700.9,
+     1700.3,
+     1662.0
+    ]
+   }
+  },
+  "1mp": {
+   "nvjpegDecode DEFAULT": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 335.3,
+    "rounds": [
+     333.4,
+     339.8,
+     335.3
+    ]
+   },
+   "nvjpegDecode DEFAULT, 8 states": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 404.7,
+    "rounds": [
+     404.7,
+     407.1,
+     400.1
+    ]
+   },
+   "nvjpegDecodeBatched DEFAULT": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 305.9,
+    "rounds": [
+     303.7,
+     305.9,
+     306.1
+    ]
+   },
+   "nvjpegDecode HYBRID": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 330.7,
+    "rounds": [
+     328.6,
+     330.7,
+     334.9
+    ]
+   },
+   "nvjpegDecode HYBRID, 8 states": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 397.5,
+    "rounds": [
+     397.5,
+     402.8,
+     396.4
+    ]
+   },
+   "nvjpegDecodeBatched HYBRID": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 305.8,
+    "rounds": [
+     305.8,
+     310.2,
+     295.4
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 333.7,
+    "rounds": [
+     333.7,
+     340.1,
+     305.0
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID, 8 states": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 403.3,
+    "rounds": [
+     404.9,
+     389.1,
+     403.3
+    ]
+   },
+   "nvjpegDecodeBatched GPU_HYBRID": {
+    "max_abs_diff": 47,
+    "mean_abs_diff": 0.573,
+    "identical_images": 0,
+    "images_per_s": 530.0,
+    "rounds": [
+     530.0,
+     531.1,
+     529.0
+    ]
+   },
+   "torchvision decode_jpeg, one call per image": {
+    "images_per_s": 318.5,
+    "rounds": [
+     318.5,
+     318.8,
+     318.4
+    ]
+   },
+   "torchvision decode_jpeg, batched": {
+    "images_per_s": 336.1,
+    "rounds": [
+     335.5,
+     336.1,
+     337.7
+    ]
+   },
+   "exact-gpu-jpeg decode, one call per image": {
+    "identical_images": 64,
+    "images_per_s": 664.7,
+    "rounds": [
+     664.7,
+     664.6,
+     676.5
+    ]
+   },
+   "exact-gpu-jpeg decode_batch": {
+    "identical_images": 64,
+    "images_per_s": 3193.5,
+    "rounds": [
+     3187.2,
+     3219.6,
+     3193.5
+    ]
+   },
+   "libjpeg-turbo, 1 thread": {
+    "images_per_s": 257.9,
+    "rounds": [
+     257.9,
+     257.1,
+     258.6
+    ]
+   },
+   "libjpeg-turbo, 8 threads": {
+    "images_per_s": 846.4,
+    "rounds": [
+     846.8,
+     846.4,
+     827.5
+    ]
+   }
+  },
+  "2mp": {
+   "nvjpegDecode DEFAULT": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 178.4,
+    "rounds": [
+     178.1,
+     178.4,
+     179.2
+    ]
+   },
+   "nvjpegDecode DEFAULT, 8 states": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 214.4,
+    "rounds": [
+     214.4,
+     217.6,
+     210.4
+    ]
+   },
+   "nvjpegDecodeBatched DEFAULT": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 158.8,
+    "rounds": [
+     162.4,
+     158.4,
+     158.8
+    ]
+   },
+   "nvjpegDecode HYBRID": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 180.9,
+    "rounds": [
+     180.9,
+     181.4,
+     178.7
+    ]
+   },
+   "nvjpegDecode HYBRID, 8 states": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 215.7,
+    "rounds": [
+     218.1,
+     212.5,
+     215.7
+    ]
+   },
+   "nvjpegDecodeBatched HYBRID": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 159.0,
+    "rounds": [
+     157.7,
+     159.0,
+     161.3
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 180.6,
+    "rounds": [
+     177.6,
+     181.8,
+     180.6
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID, 8 states": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 217.2,
+    "rounds": [
+     217.2,
+     219.1,
+     212.8
+    ]
+   },
+   "nvjpegDecodeBatched GPU_HYBRID": {
+    "max_abs_diff": 44,
+    "mean_abs_diff": 0.547,
+    "identical_images": 0,
+    "images_per_s": 288.0,
+    "rounds": [
+     288.2,
+     287.7,
+     288.0
+    ]
+   },
+   "torchvision decode_jpeg, one call per image": {
+    "images_per_s": 172.4,
+    "rounds": [
+     172.9,
+     172.4,
+     170.1
+    ]
+   },
+   "torchvision decode_jpeg, batched": {
+    "images_per_s": 178.4,
+    "rounds": [
+     178.4,
+     179.6,
+     178.0
+    ]
+   },
+   "exact-gpu-jpeg decode, one call per image": {
+    "identical_images": 64,
+    "images_per_s": 548.0,
+    "rounds": [
+     548.0,
+     537.6,
+     555.3
+    ]
+   },
+   "exact-gpu-jpeg decode_batch": {
+    "identical_images": 64,
+    "images_per_s": 1881.4,
+    "rounds": [
+     1881.4,
+     1886.8,
+     1859.0
+    ]
+   },
+   "libjpeg-turbo, 1 thread": {
+    "images_per_s": 130.0,
+    "rounds": [
+     129.7,
+     130.7,
+     130.0
+    ]
+   },
+   "libjpeg-turbo, 8 threads": {
+    "images_per_s": 439.8,
+    "rounds": [
+     442.1,
+     438.5,
+     439.8
+    ]
+   }
+  },
+  "6mp": {
+   "nvjpegDecode DEFAULT": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 64.2,
+    "rounds": [
+     65.2,
+     64.1,
+     64.2
+    ]
+   },
+   "nvjpegDecode DEFAULT, 8 states": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 78.5,
+    "rounds": [
+     78.8,
+     78.5,
+     78.1
+    ]
+   },
+   "nvjpegDecodeBatched DEFAULT": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 55.9,
+    "rounds": [
+     56.4,
+     55.5,
+     55.9
+    ]
+   },
+   "nvjpegDecode HYBRID": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 65.1,
+    "rounds": [
+     65.4,
+     65.1,
+     64.9
+    ]
+   },
+   "nvjpegDecode HYBRID, 8 states": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 78.2,
+    "rounds": [
+     78.2,
+     78.2,
+     78.2
+    ]
+   },
+   "nvjpegDecodeBatched HYBRID": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 56.2,
+    "rounds": [
+     56.4,
+     56.2,
+     55.1
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 64.9,
+    "rounds": [
+     64.8,
+     64.9,
+     65.0
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID, 8 states": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 78.4,
+    "rounds": [
+     78.7,
+     78.4,
+     78.0
+    ]
+   },
+   "nvjpegDecodeBatched GPU_HYBRID": {
+    "max_abs_diff": 38,
+    "mean_abs_diff": 0.517,
+    "identical_images": 0,
+    "images_per_s": 100.8,
+    "rounds": [
+     99.4,
+     100.8,
+     100.8
+    ]
+   },
+   "torchvision decode_jpeg, one call per image": {
+    "images_per_s": 63.3,
+    "rounds": [
+     63.2,
+     63.3,
+     64.3
+    ]
+   },
+   "torchvision decode_jpeg, batched": {
+    "images_per_s": 65.2,
+    "rounds": [
+     65.2,
+     65.8,
+     65.2
+    ]
+   },
+   "exact-gpu-jpeg decode, one call per image": {
+    "identical_images": 64,
+    "images_per_s": 410.0,
+    "rounds": [
+     410.0,
+     404.9,
+     411.9
+    ]
+   },
+   "exact-gpu-jpeg decode_batch": {
+    "identical_images": 64,
+    "images_per_s": 730.2,
+    "rounds": [
+     727.4,
+     735.0,
+     730.2
+    ]
+   },
+   "libjpeg-turbo, 1 thread": {
+    "images_per_s": 44.6,
+    "rounds": [
+     44.6,
+     44.5,
+     45.0
+    ]
+   },
+   "libjpeg-turbo, 8 threads": {
+    "images_per_s": 154.3,
+    "rounds": [
+     154.3,
+     153.0,
+     157.2
+    ]
+   }
+  }
+ },
+ "camera_photos": {
+  "files": 12,
+  "results": {
+   "nvjpegDecode DEFAULT": {
+    "max_abs_diff": 15,
+    "mean_abs_diff": 0.472,
+    "identical_images": 0,
+    "images_per_s": 6.1,
+    "rounds": [
+     6.1,
+     6.2,
+     5.2
+    ]
+   },
+   "nvjpegDecode DEFAULT, 8 states": {
+    "max_abs_diff": 15,
+    "mean_abs_diff": 0.472,
+    "identical_images": 0,
+    "images_per_s": 6.8,
+    "rounds": [
+     6.8,
+     6.8,
+     6.8
+    ]
+   },
+   "nvjpegDecode HYBRID": {
+    "max_abs_diff": 15,
+    "mean_abs_diff": 0.472,
+    "identical_images": 0,
+    "images_per_s": 5.8,
+    "rounds": [
+     6.2,
+     5.2,
+     5.8
+    ]
+   },
+   "nvjpegDecode HYBRID, 8 states": {
+    "max_abs_diff": 15,
+    "mean_abs_diff": 0.472,
+    "identical_images": 0,
+    "images_per_s": 6.7,
+    "rounds": [
+     6.8,
+     6.7,
+     6.6
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID": {
+    "max_abs_diff": 15,
+    "mean_abs_diff": 0.472,
+    "identical_images": 0,
+    "images_per_s": 6.1,
+    "rounds": [
+     6.2,
+     6.1,
+     6.1
+    ]
+   },
+   "nvjpegDecode GPU_HYBRID, 8 states": {
+    "max_abs_diff": 15,
+    "mean_abs_diff": 0.472,
+    "identical_images": 0,
+    "images_per_s": 6.7,
+    "rounds": [
+     6.8,
+     6.7,
+     6.7
+    ]
+   },
+   "torchvision decode_jpeg, one call per image": {
+    "images_per_s": 6.1,
+    "rounds": [
+     6.1,
+     6.0,
+     6.1
+    ]
+   },
+   "exact-gpu-jpeg decode, one call per image": {
+    "identical_images": 12,
+    "images_per_s": 88.5,
+    "rounds": [
+     88.5,
+     88.7,
+     87.7
+    ]
+   },
+   "libjpeg-turbo, 1 thread": {
+    "images_per_s": 5.4,
+    "rounds": [
+     5.4,
+     5.4,
+     5.4
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,1283 @@
+{
+ "measured": "2026-11-18 21:00",
+ "gpu": "NVIDIA GeForce GTX 1070, driver 560.94",
+ "large_bytes": 3361640,
+ "nvml_warm": {
+  "graphics_mhz": 1506,
+  "memory_mhz": 3802,
+  "pstate": 2,
+  "power_w": 33.7
+ },
+ "rows": [
+  {
+   "call": "large",
+   "pause_s": 0.25,
+   "keep_alive_s": null,
+   "tries": 15,
+   "first_ms_median": 5.75,
+   "first_ms_range": [
+    5.42,
+    6.92
+   ],
+   "slow": 0,
+   "normal_again_ms": [],
+   "driver": [],
+   "runs": [
+    {
+     "first3": [
+      5.78,
+      5.28,
+      6.04
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.49,
+      5.38,
+      6.03
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.42,
+      6.02,
+      5.37
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.45,
+      6.49,
+      5.45
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.69,
+      5.99,
+      5.31
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.11,
+      5.68,
+      5.28
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.47,
+      5.97,
+      5.34
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.92,
+      5.38,
+      5.25
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.49,
+      5.35,
+      5.54
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.71,
+      5.98,
+      7.66
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.53,
+      5.71,
+      6.73
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.69,
+      6.97,
+      5.65
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.54,
+      6.42,
+      5.28
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.94,
+      6.51,
+      5.6
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.75,
+      6.75,
+      5.3
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 1,
+   "keep_alive_s": null,
+   "tries": 8,
+   "first_ms_median": 5.66,
+   "first_ms_range": [
+    5.45,
+    6.2
+   ],
+   "slow": 0,
+   "normal_again_ms": [],
+   "driver": [],
+   "runs": [
+    {
+     "first3": [
+      5.93,
+      5.48,
+      5.29
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.2,
+      5.64,
+      5.23
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.45,
+      6.45,
+      5.35
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.67,
+      6.48,
+      5.7
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.66,
+      5.84,
+      5.19
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.48,
+      6.87,
+      5.29
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.58,
+      6.11,
+      5.37
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.66,
+      5.95,
+      5.25
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 2,
+   "keep_alive_s": null,
+   "tries": 8,
+   "first_ms_median": 5.63,
+   "first_ms_range": [
+    5.4,
+    6.08
+   ],
+   "slow": 0,
+   "normal_again_ms": [],
+   "driver": [],
+   "runs": [
+    {
+     "first3": [
+      6.08,
+      5.48,
+      5.4
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.9,
+      6.44,
+      5.26
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.72,
+      6.0,
+      5.22
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.65,
+      6.51,
+      5.38
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.4,
+      6.23,
+      5.24
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.59,
+      6.62,
+      5.35
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.59,
+      5.98,
+      5.24
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.62,
+      6.7,
+      5.53
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 5,
+   "keep_alive_s": null,
+   "tries": 8,
+   "first_ms_median": 5.65,
+   "first_ms_range": [
+    5.39,
+    15.94
+   ],
+   "slow": 1,
+   "normal_again_ms": [
+    165
+   ],
+   "driver": [
+    "P5 911 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      15.94,
+      16.72,
+      17.01
+     ],
+     "normal_from_ms": 165,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 911,
+      "memory_mhz": 810,
+      "pstate": 5,
+      "power_w": 20.8
+     }
+    },
+    {
+     "first3": [
+      5.59,
+      6.92,
+      5.66
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.39,
+      5.66,
+      5.34
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.46,
+      5.19,
+      6.46
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.71,
+      5.2,
+      6.92
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.49,
+      5.29,
+      6.27
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.05,
+      5.42,
+      5.31
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      8.74,
+      6.96,
+      8.37
+     ],
+     "normal_from_ms": 9,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 10,
+   "keep_alive_s": null,
+   "tries": 6,
+   "first_ms_median": 6.33,
+   "first_ms_range": [
+    5.58,
+    18.07
+   ],
+   "slow": 1,
+   "normal_again_ms": [
+    135
+   ],
+   "driver": [
+    "P5 708 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      5.84,
+      5.9,
+      5.2
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.58,
+      5.35,
+      6.61
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.1,
+      5.42,
+      5.36
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      18.07,
+      17.08,
+      16.93
+     ],
+     "normal_from_ms": 135,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 708,
+      "memory_mhz": 810,
+      "pstate": 5,
+      "power_w": 20.2
+     }
+    },
+    {
+     "first3": [
+      5.74,
+      5.38,
+      6.82
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.82,
+      5.39,
+      5.39
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "small",
+   "pause_s": 0.25,
+   "keep_alive_s": null,
+   "tries": 15,
+   "first_ms_median": 1.34,
+   "first_ms_range": [
+    1.29,
+    1.87
+   ],
+   "slow": 3,
+   "normal_again_ms": [
+    4,
+    4,
+    6
+   ],
+   "driver": [
+    "P2 1873 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      1.45,
+      1.08,
+      0.99
+     ],
+     "normal_from_ms": 4,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 46.1
+     }
+    },
+    {
+     "first3": [
+      1.37,
+      1.01,
+      0.98
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.36,
+      1.08,
+      1.0
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.42,
+      1.02,
+      1.0
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.49,
+      1.07,
+      1.0
+     ],
+     "normal_from_ms": 4,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.9
+     }
+    },
+    {
+     "first3": [
+      1.29,
+      1.09,
+      0.97
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.34,
+      1.03,
+      0.97
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.31,
+      1.04,
+      1.01
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.29,
+      1.06,
+      0.99
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.35,
+      0.98,
+      0.96
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.31,
+      1.0,
+      1.02
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.29,
+      1.04,
+      0.99
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.87,
+      1.68,
+      1.13
+     ],
+     "normal_from_ms": 6,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.3
+     }
+    },
+    {
+     "first3": [
+      1.31,
+      1.03,
+      1.09
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.34,
+      1.22,
+      1.38
+     ],
+     "normal_from_ms": 4,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "small",
+   "pause_s": 1,
+   "keep_alive_s": null,
+   "tries": 15,
+   "first_ms_median": 1.41,
+   "first_ms_range": [
+    1.19,
+    1.86
+   ],
+   "slow": 7,
+   "normal_again_ms": [
+    4,
+    4,
+    8,
+    4,
+    5
+   ],
+   "driver": [
+    "P2 1873 MHz",
+    "P2 936 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      1.52,
+      1.03,
+      1.06
+     ],
+     "normal_from_ms": 4,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.4
+     }
+    },
+    {
+     "first3": [
+      1.81,
+      1.05,
+      1.08
+     ],
+     "normal_from_ms": 4,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.4
+     }
+    },
+    {
+     "first3": [
+      1.55,
+      1.42,
+      1.26
+     ],
+     "normal_from_ms": 8,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.5
+     }
+    },
+    {
+     "first3": [
+      1.34,
+      1.1,
+      1.21
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.24,
+      0.95,
+      0.94
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.56,
+      1.08,
+      1.02
+     ],
+     "normal_from_ms": 4,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.3
+     }
+    },
+    {
+     "first3": [
+      1.33,
+      1.14,
+      1.09
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.19,
+      1.02,
+      0.97
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.61,
+      1.19,
+      1.09
+     ],
+     "normal_from_ms": 5,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 1873,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 45.2
+     }
+    },
+    {
+     "first3": [
+      1.35,
+      1.06,
+      0.99
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.34,
+      1.05,
+      0.98
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.41,
+      1.1,
+      1.02
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.34,
+      1.01,
+      0.94
+     ],
+     "normal_from_ms": 1,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      1.83,
+      1.45,
+      1.47
+     ],
+     "normal_from_ms": null,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 936,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 30.1
+     }
+    },
+    {
+     "first3": [
+      1.86,
+      1.48,
+      1.35
+     ],
+     "normal_from_ms": null,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 936,
+      "memory_mhz": 3802,
+      "pstate": 2,
+      "power_w": 29.8
+     }
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 5,
+   "keep_alive_s": 0.25,
+   "tries": 8,
+   "first_ms_median": 6.92,
+   "first_ms_range": [
+    5.54,
+    38.42
+   ],
+   "slow": 1,
+   "normal_again_ms": [
+    231
+   ],
+   "driver": [
+    "P8 215 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      38.42,
+      33.32,
+      33.4
+     ],
+     "normal_from_ms": 231,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 215,
+      "memory_mhz": 405,
+      "pstate": 8,
+      "power_w": 15.4
+     }
+    },
+    {
+     "first3": [
+      5.54,
+      7.0,
+      5.43
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.67,
+      5.13,
+      6.12
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.87,
+      5.9,
+      7.0
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.6,
+      5.36,
+      5.32
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.32,
+      5.31,
+      5.2
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.23,
+      5.38,
+      5.29
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.37,
+      5.34,
+      5.29
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 5,
+   "keep_alive_s": 0.5,
+   "tries": 8,
+   "first_ms_median": 6.97,
+   "first_ms_range": [
+    5.67,
+    18.51
+   ],
+   "slow": 2,
+   "normal_again_ms": [
+    209,
+    204
+   ],
+   "driver": [
+    "P5 708 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      14.86,
+      14.75,
+      14.84
+     ],
+     "normal_from_ms": 209,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 708,
+      "memory_mhz": 810,
+      "pstate": 5,
+      "power_w": 19.9
+     }
+    },
+    {
+     "first3": [
+      7.32,
+      5.41,
+      5.33
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.91,
+      5.34,
+      5.17
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.04,
+      5.36,
+      5.32
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.69,
+      6.77,
+      5.29
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.93,
+      6.82,
+      5.5
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.67,
+      6.6,
+      5.27
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      18.51,
+      17.57,
+      17.07
+     ],
+     "normal_from_ms": 204,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 708,
+      "memory_mhz": 810,
+      "pstate": 5,
+      "power_w": 19.3
+     }
+    }
+   ]
+  },
+  {
+   "call": "large",
+   "pause_s": 5,
+   "keep_alive_s": 1,
+   "tries": 8,
+   "first_ms_median": 6.26,
+   "first_ms_range": [
+    5.52,
+    18.29
+   ],
+   "slow": 1,
+   "normal_again_ms": [
+    214
+   ],
+   "driver": [
+    "P5 708 MHz"
+   ],
+   "runs": [
+    {
+     "first3": [
+      5.67,
+      5.38,
+      5.9
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.52,
+      5.21,
+      6.31
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      5.67,
+      5.4,
+      6.46
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.88,
+      5.32,
+      5.31
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      7.2,
+      5.38,
+      5.35
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      6.74,
+      5.44,
+      5.4
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    },
+    {
+     "first3": [
+      18.29,
+      14.71,
+      16.55
+     ],
+     "normal_from_ms": 214,
+     "slow": true,
+     "nvml_after_first": {
+      "graphics_mhz": 708,
+      "memory_mhz": 810,
+      "pstate": 5,
+      "power_w": 18.5
+     }
+    },
+    {
+     "first3": [
+      5.78,
+      7.26,
+      5.42
+     ],
+     "normal_from_ms": 0,
+     "slow": false,
+     "nvml_after_first": null
+    }
+   ]
+  }
+ ],
+ "sustained_ms": {
+  "large": 6.276,
+  "small": 0.957
+ }
+}

@@ -1,0 +1,1 @@
+machine at the start: {"time": "2026-11-18 20:13:27", "processes_that_may_disturb": ["grep.exe"], "gpu_memory_used_mib": "622", "gpu_compute_processes": 22, "host_memory_free_mb": "4753", "cpu_load_percent": "36"}

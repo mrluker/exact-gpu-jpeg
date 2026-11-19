@@ -1,0 +1,56 @@
+{
+ "what": "decode benchmark camera group rerun",
+ "start": "2026-11-13 12:56:57",
+ "wall_s": 55.957254000008106,
+ "returncode": 0,
+ "idle_before": {
+  "gpu_util_max": 6.0,
+  "cpu_load_max": 20.0,
+  "gpu_mem_mib": 2244.0,
+  "gpu_temp_c": 38.0,
+  "samples": [
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2244.0,
+    "gpu_temp_c": 37.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 9.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2244.0,
+    "gpu_temp_c": 38.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 12.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2244.0,
+    "gpu_temp_c": 37.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 20.0
+   },
+   {
+    "gpu_util": 5.0,
+    "gpu_mem_mib": 2244.0,
+    "gpu_temp_c": 37.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 9.0
+   },
+   {
+    "gpu_util": 6.0,
+    "gpu_mem_mib": 2244.0,
+    "gpu_temp_c": 38.0,
+    "gpu_sm_mhz": 139.0,
+    "cpu_load": 13.0
+   }
+  ]
+ },
+ "gpu_after": {
+  "gpu_util": 2.0,
+  "gpu_mem_mib": 2244.0,
+  "gpu_temp_c": 46.0,
+  "gpu_sm_mhz": 1898.0
+ },
+ "otherwise_idle": true
+}
