@@ -6,6 +6,9 @@ result here is from one PC, a GTX 1070 on Windows 10; the library has not been r
 
 ![exact-gpu-jpeg on a GTX 1070: a 30 MP camera photo decodes in 11.3 ms against 164 ms for nvJPEG and 185 ms for libjpeg-turbo on one CPU core; its pixels are identical to libjpeg-turbo on 102 of 102 public test JPEGs, nvJPEG's on 0 of 102.](docs/images/headline.svg)
 
+**Also for Apple GPUs:** [exact-jpeg-metal](https://github.com/mrluker/exact-jpeg-metal) is the sister library for Macs and
+iPhones (Metal), with the same byte-identical claim, tested on the same 102 public JPEGs.
+
 **Tested hard.** 120,000 fuzzed inputs without a crash or hang. 2,250 test files, 1,259 of them real camera and phone
 photos (Sony ILCE-7M4, 7M3 and 6300, iPhone X and 7 among them): every one it decoded on the GPU was byte-identical
 to libjpeg-turbo, and the rest were declined to the CPU decoder. On a public set, imagecompression.info's 8-bit test
@@ -57,6 +60,8 @@ whole decode runs on the GPU, including the Huffman stage that most decoders lea
 - **On the public set**, one image at a time, it was faster than both libjpeg-turbo on one thread and nvJPEG on all
   102 JPEGs: a median of 12.5× and 10.7×. The closest case is a rendered frame at 4:2:0, at 1.22× libjpeg-turbo.
 <!-- numbers: bench/results/20261118/nvjpeg_direct.json (camera photo one at a time, batches); bench/results/20261118/bench.json (eight CPU threads, two GPU threads); bench/results/20261118/epilogue.json; bench/results/20261118/encode.json (the three sizes' pillow_ms, gpu_from_host_ms and gpu_ms, summed); bench/results/20261118/public_set_run3.json -->
+
+![Decode throughput, images per second, one panel per size: exact-gpu-jpeg on 1 and 2 GPU threads against libjpeg-turbo on all 8 CPU threads and on 1 core: 444 and 462 against 388 and 89 at 2 MP, 131 and 144 against 37 and 9 at 24 MP, 88 and 93 against 24 and 5 for 30 MP camera photos.](docs/images/decode-throughput.png)
 
 **3. Decoding the same photo again: UnHuff.** *UnHuff: a Huffman-free coefficient format for exact repeat JPEG decodes.* A viewer, a preview or a culling pass often decodes
 the same file several times. `RepeatCache` keeps an UnHuff copy of a file in GPU memory, its decoded coefficients
@@ -156,6 +161,8 @@ two encoders need not mean the same thing by "quality 95".
 <!-- numbers: bench/results/20261118/public_set_run3.json (summary: nvjpeg_encode_q95_444) -->
 
 ![Encoding a photo's three web exports, one at a time, ms per image: at 3840x2560 exact-gpu-jpeg 15.0 ms from host memory and 5.18 ms with the pixels already on the GPU, against 60.4 ms for simplejpeg and 90.6 ms for Pillow; its files are byte-identical to Pillow's.](docs/images/encode.png)
+
+![Encoding many images at once, images per second: at 3840x2560 exact-gpu-jpeg with the pixels on the GPU does 218 on 2 GPU threads, 3.3x simplejpeg on 8 CPU threads (66.2), and 69.7 from host memory; at 1200x800 simplejpeg on 8 CPU threads is fastest at 1,305, against 1,049 for exact-gpu-jpeg from GPU memory and 567 from host memory. Pillow, the byte-identical reference, does 13 to 204.](docs/images/encode-throughput.png)
 
 **The public set.** `python bench/public_set.py out.json` repeats these checks and times on your own GPU: it downloads
 imagecompression.info's 8-bit test images and libjpeg-turbo's three benchmark frames, checks the archives' SHA-256

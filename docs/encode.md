@@ -6,6 +6,8 @@
 
 ![Encoding a photo's three web exports one at a time on a GTX 1070 + i7-6700, ms per image (lower is better): at 3840 x 2560 (quality 95, 4:4:4) exact-gpu-jpeg takes 15.0 ms from host memory and 5.18 ms with the pixels already on the GPU, against 60.4 ms for simplejpeg and 90.6 ms for Pillow on one CPU thread; at 1500 x 1000, 2.64 and 1.05 ms against 7.90 and 11.3 ms; at 1200 x 800 (quality 87, 4:2:0), 1.73 and 0.78 ms against 2.84 and 5.21 ms. exact-gpu-jpeg's files are byte-identical to Pillow's; simplejpeg's are not.](images/encode.png)
 
+![Encoding many images at once on a GTX 1070 + i7-6700, images per second (higher is better): at 3840 x 2560 exact-gpu-jpeg does 70 a second from host memory on 2 GPU threads and 218 with the pixels already on the GPU, against 66 for simplejpeg on 8 CPU threads and 13 for Pillow; at 1500 x 1000, 378 from host memory and 772 from the GPU against 482 for simplejpeg; at 1200 x 800, 567 from host memory and 1,049 from the GPU against 1,305 for simplejpeg on 8 CPU threads, which is faster there. exact-gpu-jpeg's files are byte-identical to Pillow's; simplejpeg's are not.](images/encode-throughput.png)
+
 ## To bytes
 
 ```python

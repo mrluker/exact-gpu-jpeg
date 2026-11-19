@@ -37,9 +37,11 @@ C = {  # one colour per series, the same in every chart and key; white text on e
     "nvjpeg_api": "#277a4c", "pillow": "#bc4300", "simplejpeg": "#5e5c64", "gpu_conv": "#0e3d73", "upload": "#7a4fa0",
     "huffman": "#1a5fb4", "pixels": "#1f7a52",
     "gpu_host": "#1a5fb4", "gpu_dev": "#0e3d73", "sj1": "#5e5c64", "pil1": "#bc4300",
+    "eh1": "#1a5fb4", "eh2": "#0e3d73", "ed1": "#7a4fa0", "ed2": "#4b2a73",          # encode many at once: blue from
+    "sj4": "#6b6965", "sj8": "#3d3846", "pil4": "#bc4300", "pil8": "#7f2d00",        # host, purple from the GPU
     "rep_normal": "#1a5fb4", "rep_light": "#0e3d73", "rep_full": "#7a4fa0", "nvjpeg_one": "#277a4c",
 }
-BOLD = {"gpu", "gpu1", "gpu2", "gpu_host", "gpu_dev", "rep_light"}   # exact-gpu-jpeg's bars: their outside text in bold
+BOLD = {"gpu", "gpu1", "gpu2", "gpu_host", "gpu_dev", "rep_light", "eh1", "eh2", "ed1", "ed2"}   # exact-gpu-jpeg's bars: their outside text in bold
 ON_FILL, ON_WHITE = 5.0, 4.5                     # the least contrast for text on a bar, and for text on the page
 NAMES = {"gpu": "exact-gpu-jpeg", "gpu1": "exact-gpu-jpeg, 1 GPU thread", "gpu2": "exact-gpu-jpeg, 2 GPU threads",
          "cpu1": "libjpeg-turbo, 1 CPU core", "cpu8": "libjpeg-turbo, 8 CPU threads", "nvjpeg": "nvJPEG (torchvision)",
@@ -47,6 +49,10 @@ NAMES = {"gpu": "exact-gpu-jpeg", "gpu1": "exact-gpu-jpeg, 1 GPU thread", "gpu2"
          "simplejpeg": "simplejpeg (libjpeg-turbo)", "gpu_conv": "exact-gpu-jpeg, then a separate conversion",
          "gpu_host": "exact-gpu-jpeg, from host memory", "gpu_dev": "exact-gpu-jpeg, pixels already on the GPU",
          "sj1": "simplejpeg, 1 CPU thread", "pil1": "Pillow, 1 CPU thread",
+         "eh1": "exact-gpu-jpeg, from host memory, 1 GPU thread", "eh2": "exact-gpu-jpeg, from host memory, 2 GPU threads",
+         "ed1": "exact-gpu-jpeg, pixels on the GPU, 1 GPU thread", "ed2": "exact-gpu-jpeg, pixels on the GPU, 2 GPU threads",
+         "sj4": "simplejpeg, 4 CPU threads", "sj8": "simplejpeg, 8 CPU threads", "pil4": "Pillow, 4 CPU threads",
+         "pil8": "Pillow, 8 CPU threads",
          "rep_normal": "exact-gpu-jpeg, normal decode", "rep_light": 'exact-gpu-jpeg, from the UnHuff copy, check="light"',
          "rep_full": 'exact-gpu-jpeg, from the UnHuff copy, check="full" (the default)', "nvjpeg_one": "nvJPEG (its own C API)"}
 FS = 11          # bar text
@@ -104,19 +110,23 @@ def header(fig, h, title, better, subtitle, handles, ncol):
         return y + 0.1
     fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.01, 1 - y / h), ncol=ncol, frameon=False,
                fontsize=11)
-    return y + 0.55
+    return y + 0.55 + KEY_ROW * (math.ceil(len(handles) / ncol) - 1)
 
 
-def figure(title, better, subtitle, n_bars, keys, width=13):
-    """n_bars: the number of bars in each panel, one entry per panel."""
-    head = 2.25 + 0.22 * len(textwrap.wrap(subtitle, 150))
+KEY_ROW = 0.27     # inches for each further row of the key
+
+
+def figure(title, better, subtitle, n_bars, keys, width=13, key_cols=None):
+    """n_bars: the number of bars in each panel, one entry per panel. key_cols: the key's columns (default: one row;
+    the key fills its columns top to bottom)."""
+    key_cols = key_cols or max(len(keys), 1)
+    head = 2.25 + 0.22 * len(textwrap.wrap(subtitle, 150)) + KEY_ROW * (math.ceil(len(keys) / key_cols) - 1)
     heights = [n * BAR_IN for n in n_bars]
     h = head + sum(heights) + (len(n_bars) - 1) * GAP + BOTTOM
     fig, axes = plt.subplots(len(n_bars), 1, figsize=(width, h), dpi=DPI, facecolor="white",
                              gridspec_kw=dict(height_ratios=heights))
     axes = [axes] if len(n_bars) == 1 else list(axes)
-    top = header(fig, h, title, better, subtitle, [Patch(color=C[k], label=NAMES.get(k, k)) for k in keys],
-                 max(len(keys), 1))
+    top = header(fig, h, title, better, subtitle, [Patch(color=C[k], label=NAMES.get(k, k)) for k in keys], key_cols)
     fig.subplots_adjust(left=0.02, right=0.98, top=1 - (top + 0.3) / h, bottom=BOTTOM / h,
                         hspace=GAP / (sum(heights) / len(heights)))
     return fig, axes
@@ -510,6 +520,45 @@ def chart_one_at_a_time():
     save(fig, "one-at-a-time.png")
 
 
+def ratio_text(r, base_name):
+    """N.Nx faster/slower, with two decimals within 10 % of level (1.05x faster, 1.01x slower)."""
+    k = r if r >= 1 else 1 / r
+    return (f"{k:.2f}x" if k < 1.1 else f"{k:.1f}x") + (" faster than " if r >= 1 else " slower than ") + base_name
+
+
+def chart_encode_throughput():
+    """Encoding many images at once (encode.json's throughput): exact-gpu-jpeg on 1 and 2 GPU threads, from host
+    memory and with the pixels already on the GPU, against simplejpeg and Pillow on 4 and 8 CPU threads. Each of
+    exact-gpu-jpeg's bars is compared with the fastest CPU encoder at that size."""
+    e = load("20261118", "encode.json")
+    sizes = [("3840_q95_444", "4:4:4"), ("1500_q90_444", "4:4:4"), ("1200_q87_420", "4:2:0")]
+    cpu = [("sj4", "simplejpeg_4t_per_s"), ("sj8", "simplejpeg_8t_per_s"), ("pil4", "pillow_4t_per_s"),
+           ("pil8", "pillow_8t_per_s")]
+    ours = [("eh1", "gpu_from_host_1t_per_s"), ("eh2", "gpu_from_host_2t_per_s"), ("ed1", "gpu_1t_per_s"),
+            ("ed2", "gpu_2t_per_s")]
+    bests = [max(cpu, key=lambda c: e["sizes"][k][c[1]])[0] for k, _ in sizes]
+    which = (f"{NAMES[bests[0]]} at all three sizes" if len(set(bests)) == 1
+             else "; ".join(f"{e['sizes'][k]['width']} px: {NAMES[b]}" for (k, _), b in zip(sizes, bests)))
+    fig, axes = figure("Encoding many images at once: a photo's three web exports", HIGHER,
+                       f"{MACHINE}; measured 2026-11-18 (v0.1.0, the release source), machine otherwise idle. Images per "
+                       f"second, each thread encoding one image after another: exact-gpu-jpeg's GPU threads each have "
+                       f"their own Encoder (there is no batch call for encoding), the CPU threads each run their library. "
+                       f"{e['photos']} camera photos resized (Lanczos) to each size, with their EXIF (bench/encode_bench.py). "
+                       "exact-gpu-jpeg's files are byte-identical to Pillow's; simplejpeg's (libjpeg-turbo with its own "
+                       "defaults) are not. From host memory: a NumPy array, uploaded by the call (like for like with the "
+                       "CPU encoders). Each exact-gpu-jpeg bar is compared with the fastest alternative, the fastest CPU "
+                       f"encoder at that size: {which}.",
+                       [8] * len(sizes), [k for k, _ in ours + cpu], key_cols=4, width=15)
+    for ax, (k, sub) in zip(axes, sizes):
+        r = e["sizes"][k]
+        best_key, best_field = max(cpu, key=lambda c: r[c[1]])
+        best = r[best_field]
+        bars = [(s, r[f], NAMES[s], per_s(r[f]), ratio_text(r[f] / best, "the fastest alternative")) for s, f in ours]
+        bars += [(s, r[f], NAMES[s], per_s(r[f])) for s, f in cpu]
+        panel(ax, f"{r['width']} x {r['height']}, quality {r['quality']}, {sub}", bars, "images per second")
+    save(fig, "encode-throughput.png")
+
+
 if __name__ == "__main__":
     G = decode_groups()
     chart_batches()
@@ -520,3 +569,4 @@ if __name__ == "__main__":
     chart_encode()
     chart_repeat()
     chart_one_at_a_time()
+    chart_encode_throughput()

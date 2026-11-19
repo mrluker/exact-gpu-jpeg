@@ -21,6 +21,9 @@ On one GTX 1070, a 30 MP camera photo (4:2:2), decoded one at a time from bytes 
 time (at 0.25 MP, 887 images a second against 1,122 for libjpeg-turbo on one thread), on small encodes against
 eight CPU threads, and on progressive files, which go to the CPU. Everything was measured on one PC.
 
+*A sister library for Apple GPUs, [exact-jpeg-metal](https://github.com/mrluker/exact-jpeg-metal), makes the same
+byte-identical claim on Macs and iPhones and was tested on the same 102 public JPEGs.*
+
 ---
 
 ## 1. Why exactness matters
@@ -389,6 +392,8 @@ against 103 ms with Pillow.
 | 3840×2560 q95 4:4:4 | 66 / **70** | 188 / 218 | 50 / 66 | 13 / 13 |
 | 1500×1000 q90 4:4:4 | 337 / 378 | 661 / 772 | 376 / **482** | 93 / 91 |
 | 1200×800 q87 4:2:0 | 538 / 567 | 1,049 / 972 | 1,060 / **1,305** | 201 / 204 |
+
+![Encoding many images at once, images per second: at 3840x2560 exact-gpu-jpeg with the pixels on the GPU does 218 on 2 GPU threads, 3.3x simplejpeg on 8 CPU threads (66.2), and 69.7 from host memory; at 1200x800 simplejpeg on 8 CPU threads is fastest at 1,305, against 1,049 for exact-gpu-jpeg from GPU memory and 567 from host memory. Pillow, the byte-identical reference, does 13 to 204.](images/encode-throughput.png)
 
 ---
 

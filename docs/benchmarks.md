@@ -387,6 +387,8 @@ threads are its many-at-once route:
 | 1200×800 q87 4:2:0 | 538 / 567 | 1,049 / 972 | 1,060 / **1,305** | 201 / 204 |
 <!-- numbers: bench/results/20261118/encode.json (both tables) -->
 
+![Encoding many images at once on a GTX 1070 + i7-6700, images per second (higher is better): at 3840 x 2560 exact-gpu-jpeg does 70 a second from host memory on 2 GPU threads and 218 with the pixels already on the GPU, against 66 for simplejpeg on 8 CPU threads and 13 for Pillow; at 1500 x 1000, 378 from host memory and 772 from the GPU against 482 for simplejpeg; at 1200 x 800, 567 from host memory and 1,049 from the GPU against 1,305 for simplejpeg on 8 CPU threads, which is faster there. exact-gpu-jpeg's files are byte-identical to Pillow's; simplejpeg's are not.](images/encode-throughput.png)
+
 - **One at a time, from host memory**, this library is faster than both CPU encoders at every size: 1.6× simplejpeg
   at 1200×800 up to 4.0× at 3840×2560.
 - **Many at once, from host memory**, simplejpeg on eight threads is faster at 1500×1000 (482 against 378) and at
